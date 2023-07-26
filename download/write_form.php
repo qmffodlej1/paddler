@@ -17,7 +17,7 @@
 	if ($mode=="modify")
 	{
 		$sql = "select * from $table where num=$num";
-		$result = mysql_query($sql, $connect);
+		$result = $connect->query($sql);
 
 		$row = mysql_fetch_array($result);       
 	
@@ -40,38 +40,38 @@
 <link href="../css/common.css" rel="stylesheet" type="text/css" media="all">
 <link href="../css/board3.css" rel="stylesheet" type="text/css" media="all">
 <script>
-  function check_input()
-   {
-      if (!document.board_form.subject.value)
-      {
-          alert("제목을 입력하세요1");    
-          document.board_form.subject.focus();
-          return;
-      }
+function check_input() {
+    if (!document.board_form.subject.value)
+    {
+        alert("제목을 입력하세요1");    
+        document.board_form.subject.focus();
+        return;
+    }
 
-      if (!document.board_form.content.value)
-      {
-          alert("내용을 입력하세요!");    
-          document.board_form.content.focus();
-          return;
-      }
-      document.board_form.submit();
-   }
+    if (!document.board_
+	form.content.value)
+    {
+        alert("내용을 입력하세요!");    
+        document.board_form.content.focus();
+        return;
+    }
+document.board_form.submit();
+}
 </script>
 </head>
 
 <body>
 <div id="wrap">
 
-  <div id="header">
+<div id="header">
     <? include "../lib/top_login2.php"; ?>
-  </div>  <!-- end of header -->
+</div>  <!-- end of header -->
 
-  <div id="menu">
+<div id="menu">
 	<? include "../lib/top_menu2.php"; ?>
-  </div>  <!-- end of menu --> 
+</div>  <!-- end of menu --> 
 
-  <div id="content">
+<div id="content">
 	<div id="col1">
 		<div id="left_menu">
 <?
@@ -111,15 +111,15 @@
 			<div id="write_row1"><div class="col1"> 닉네임 </div><div class="col2"><?=$usernick?></div></div>
 			<div class="write_line"></div>
 			<div id="write_row2"><div class="col1"> 제목   </div>
-			                     <div class="col2"><input type="text" name="subject" value="<?=$item_subject?>" ></div>
+			<div class="col2"><input type="text" name="subject" value="<?=$item_subject?>" ></div>
 			</div>
 			<div class="write_line"></div>
 			<div id="write_row3"><div class="col1"> 내용   </div>
-			                     <div class="col2"><textarea rows="15" cols="79" name="content"><?=$item_content?></textarea></div>
+			<div class="col2"><textarea rows="15" cols="79" name="content"><?=$item_content?></textarea></div>
 			</div>
 			<div class="write_line"></div>
 			<div id="write_row4"><div class="col1"> 첨부파일1   </div>
-			                     <div class="col2"><input type="file" name="upfile[]"> * 5MB까지 업로드 가능!</div>
+			<div class="col2"><input type="file" name="upfile[]"> * 5MB까지 업로드 가능!</div>
 			</div>
 			<div class="clear"></div>
 <? 	if ($mode=="modify" && $item_file_0)
@@ -132,7 +132,7 @@
 ?>
 			<div class="write_line"></div>
 			<div id="write_row5"><div class="col1"> 첨부파일2  </div>
-			                     <div class="col2"><input type="file" name="upfile[]">  * 5MB까지 업로드 가능!</div>
+			<div class="col2"><input type="file" name="upfile[]">  * 5MB까지 업로드 가능!</div>
 			</div>
 <? 	if ($mode=="modify" && $item_file_1)
 	{
@@ -145,7 +145,7 @@
 			<div class="write_line"></div>
 			<div class="clear"></div>
 			<div id="write_row6"><div class="col1"> 첨부파일3   </div>
-			                     <div class="col2"><input type="file" name="upfile[]">  * 5MB까지 업로드 가능!</div>
+			<div class="col2"><input type="file" name="upfile[]">  * 5MB까지 업로드 가능!</div>
 			</div>
 <? 	if ($mode=="modify" && $item_file_2)
 	{
@@ -161,13 +161,13 @@
 		</div>
 
 		<div id="write_button"><a href="#"><img src="../img/ok.png" onclick="check_input()"></a>&nbsp;
-								<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>
+		<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>
 		</div>
 
 		</form>
 
 	</div> <!-- end of col2 -->
-  </div> <!-- end of content -->
+    </div> <!-- end of content -->
 </div> <!-- end of wrap -->
 
 </body>
