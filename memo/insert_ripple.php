@@ -1,6 +1,20 @@
 <?
    session_start();
-?>
+   if (isset($_SESSION['userid'])) 
+{
+        $userid = $_SESSION['userid'];
+        $username = $_SESSION['username'];
+        $usernick = $_SESSION['usernick'];
+        $userlevel = $_SESSION['userlevel'];
+}
+$table = "memo";
+$num = $_POST['num'];
+$ripple_content = $_POST['ripple_content'];
+if (isset($_GET['mode'])) {
+$mode = $_GET['mode'];
+$find = $_POST['find'];
+$search = $_POST['search'];
+}?>
 <meta charset="utf-8">
 <?
    if(!$userid) {
@@ -28,8 +42,8 @@
    $sql = "select * from member where id='$userid'";
    $result = $connect->query($sql);
    $row = $result->fetch_array(MYSQLI_ASSOC);
-   $name = $row[name];
-   $nick = $row[nick];
+   $name = $row['name'];
+   $nick = $row['nick'];
 
    $regist_day = date("Y-m-d (H:i)");  // 현재의 '년-월-일-시-분'을 저장
 
@@ -38,7 +52,7 @@
    $sql .= "values($num, '$userid', '$name', '$nick', '$ripple_content', '$regist_day')";    
    
    $result = $connect->query($sql);
-   mysql_close();                // DB 연결 끊기
+   $connect->close();              // DB 연결 끊기
    
    echo "
 	   <script>

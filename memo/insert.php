@@ -1,4 +1,18 @@
-<? session_start(); ?>
+<? session_start(); 
+if (isset($_SESSION['userid'])) 
+{
+        $userid = $_SESSION['userid'];
+        $username = $_SESSION['username'];
+        $usernick = $_SESSION['usernick'];
+        $userlevel = $_SESSION['userlevel'];
+}
+$table = "memo";
+$content = $_POST['content'];
+if (isset($_GET['mode'])) {
+$mode = $_GET['mode'];
+$find = $_POST['find'];
+$search = $_POST['search'];
+}?>
 <meta charset="utf-8">
 <?
 	if(!$userid) {
@@ -29,14 +43,14 @@
 	$result = $connect->query($sql);
 
 	$row = $result->fetch_array(MYSQLI_ASSOC);
-	$name = $row[name];
-	$nick = $row[nick];
+	$name = $row['name'];
+	$nick = $row['nick'];
 
 	$sql = "insert into memo (id, name, nick, content, regist_day) ";
 	$sql .= "values('$userid', '$name', '$nick', '$content', '$regist_day')";
 
 	$result = $connect->query($sql);
-	mysql_close();                // DB 연결 끊기
+	$connect->close();                // DB 연결 끊기
 
 	echo "
 	   <script>

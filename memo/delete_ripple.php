@@ -1,10 +1,10 @@
 <?
       include "../lib/dbconn.php";
-
+    $num = $_GET['num'];
 	$sql = "delete from memo_ripple where num=$num";
 	$result = $connect->query($sql);
 
-      mysql_close();
+	$connect->close();  
 
       echo "
 	   <script>
