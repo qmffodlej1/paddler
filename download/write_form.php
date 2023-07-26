@@ -1,17 +1,18 @@
 <? 
+	$item_subject = NULL;
+	$item_content = NULL;
 	session_start(); 
 	$table = $_GET['table'];
-	$mode = $_GET['mode'];
-	$num = $_GET['num'];
-	$page = $_GET['page'];
-
+	$mode = $_POST['mode']??NULL;
+	$num = $_POST['num']??NULL;
+	$page = $_POST['page']??NULL; 
 	if (isset($_SESSION['userid'])) 
 	{
 			$userid = $_SESSION['userid'];
 			$username = $_SESSION['username'];
 			$usernick = $_SESSION['usernick'];
 			$userlevel = $_SESSION['userlevel'];
-	}
+	}  //세션에서 받아온다.
 	include "../lib/dbconn.php";
 
 	if ($mode=="modify")
@@ -19,7 +20,7 @@
 		$sql = "select * from $table where num=$num";
 		$result = $connect->query($sql);
 
-		$row = mysql_fetch_array($result);       
+		$row = $connect->query($sql);;       
 	
 		$item_subject     = $row[subject];
 		$item_content     = $row[content];
@@ -31,7 +32,13 @@
 		$copied_file_0 = $row[file_copied_0];
 		$copied_file_1 = $row[file_copied_1];
 		$copied_file_2 = $row[file_copied_2];
-	}
+		
+	} //수정 부분
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		if (isset($_POST["submit_button"])) {
+			check_input();
+		}
+	}//만약 저장 버튼을 누르면 check input 호출
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -160,7 +167,9 @@ document.board_form.submit();
 			<div class="clear"></div>
 		</div>
 
-		<div id="write_button"><a href="#"><img src="../img/ok.png" onclick="check_input()"></a>&nbsp;
+		<div id="write_button">
+		<a href="#"><img src="../img/ok.png" method="post"></a>&nbsp;
+        <input type="submit" name="submit_button" value="Submit">
 		<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>
 		</div>
 
