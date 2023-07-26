@@ -1,6 +1,18 @@
 <?php
 session_start();
-
+if (isset($_SESSION['userid'])) 
+{
+        $userid = $_SESSION['userid'];
+        $username = $_SESSION['username'];
+        $usernick = $_SESSION['usernick'];
+        $userlevel = $_SESSION['userlevel'];
+}
+$table = "memo";
+if (isset($_GET['mode'])) {
+$mode = $_GET['mode'];
+$find = $_POST['find'];
+$search = $_POST['search'];
+}
 $scale = 5; // 한 화면에 표시되는 글 수
 include "../lib/dbconn.php";
 $table = "memo";
