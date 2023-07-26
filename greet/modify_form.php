@@ -1,12 +1,21 @@
 <? 
 	session_start(); 
 	include "../lib/dbconn.php";
+	$num = $_GET['num'];
 
 	$sql = "select * from greet where num=$num";
 	$result = $connect->query($sql);
 	$row = $result->fetch_array(MYSQLI_ASSOC);
-	$item_subject     = $row[subject];
-	$item_content     = $row[content];
+	$item_subject     = $row['subject'];
+	$item_content     = $row['content'];
+	if (isset($_SESSION['userid'])) 
+	{
+			$userid = $_SESSION['userid'];
+			$username = $_SESSION['username'];
+			$usernick = $_SESSION['usernick'];
+			$userlevel = $_SESSION['userlevel'];
+	}
+
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

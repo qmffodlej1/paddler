@@ -1,6 +1,21 @@
 <? 
 	session_start(); 
-
+	if (isset($_SESSION['userid'])) 
+	{
+			$userid = $_SESSION['userid'];
+			$username = $_SESSION['username'];
+			$usernick = $_SESSION['usernick'];
+			$userlevel = $_SESSION['userlevel'];
+	}
+	
+	$table = "greet";
+	$num = $_GET['num'];
+	if (isset($_GET['mode'])) {
+	$mode = $_GET['mode'];
+	$find = $_POST['find'];
+	$search = $_POST['search'];
+	}
+	$mode = "";
 	include "../lib/dbconn.php";
 
 	$sql = "select * from greet where num=$num";
@@ -9,18 +24,18 @@
 
       // 하나의 레코드 가져오기
 	
-	$item_num     = $row[num];
-	$item_id      = $row[id];
-	$item_name    = $row[name];
-  	$item_nick    = $row[nick];
-	$item_hit     = $row[hit];
+	$item_num     = $row['num'];
+	$item_id      = $row['id'];
+	$item_name    = $row['name'];
+  	$item_nick    = $row['nick'];
+	$item_hit     = $row['hit'];
 
-    $item_date    = $row[regist_day];
+    $item_date    = $row['regist_day'];
 
-	$item_subject = str_replace(" ", "&nbsp;", $row[subject]);
+	$item_subject = str_replace(" ", "&nbsp;", $row['subject']);
 
-	$item_content = $row[content];
-	$is_html      = $row[is_html];
+	$item_content = $row['content'];
+	$is_html      = $row['is_html'];
 
 	if ($is_html!="y")
 	{
@@ -31,7 +46,8 @@
 	$new_hit = $item_hit + 1;
 
 	$sql = "update greet set hit=$new_hit where num=$num";   // 글 조회수 증가시킴
-	mysql_query($sql, $connect);
+	$result = $connect->query($sql); // 옛날 코드라서 바꿔줘야한다
+	//mysql_query($sql, $connect);
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

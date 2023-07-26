@@ -13,6 +13,7 @@
 	$find = $_POST['find'];
 	$search = $_POST['search'];
 	}
+	$mode = "";
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -123,7 +124,7 @@
    {
       $result->data_seek($i);   
       // 가져올 레코드로 위치(포인터) 이동  
-      $row = $result->fetch_arry(MYSQLI_ASSOC);       
+      $row = $result->fetch_array(MYSQLI_ASSOC);       
       // 하나의 레코드 가져오기
 	
 	  $item_num     = $row['num'];

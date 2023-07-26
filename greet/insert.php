@@ -1,4 +1,26 @@
-<? session_start(); ?>
+<? session_start();
+if (isset($_SESSION['userid'])) 
+{
+		$userid = $_SESSION['userid'];
+		$username = $_SESSION['username'];
+		$usernick = $_SESSION['usernick'];
+		$userlevel = $_SESSION['userlevel'];
+}
+$table = @$_GET['table'];
+$mode = @$_GET['mode'];
+$num = @$_GET['num'];
+$page = @$_GET['page'];
+$html_ok = @$_POST['html_ok'];
+$subject = @$_POST['subject'];
+$content = @$_POST['content'];
+
+if (isset($_GET['mode'])) {
+$mode = $_GET['mode'];
+$find = $_POST['find'];
+$search = $_POST['search'];
+
+}
+?>
 <meta charset="utf-8">
 <?
 	if(!$userid) {
@@ -54,7 +76,7 @@
 		$sql .= "values('$userid', '$username', '$usernick', '$subject', '$content', '$regist_day', 0, '$is_html')";
 	}
 	$result = $connect->query($sql);
-	mysql_close();                // DB 연결 끊기
+	$connect->close();                // DB 연결 끊기
 
 	echo "
 	   <script>
