@@ -1,6 +1,18 @@
-<? 
+<?
 	session_start();
-	$table = "greet"; 
+	if (isset($_SESSION['userid'])) 
+	{
+			$userid = $_SESSION['userid'];
+			$username = $_SESSION['username'];
+			$usernick = $_SESSION['usernick'];
+			$userlevel = $_SESSION['userlevel'];
+	}
+	$table = "greet";
+	if (isset($_GET['mode'])) {
+	$mode = $_GET['mode'];
+	$find = $_POST['find'];
+	$search = $_POST['search'];
+	}
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
