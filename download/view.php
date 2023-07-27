@@ -13,37 +13,41 @@
 	include "../lib/dbconn.php";
 
 	$sql = "select * from $table where num=$num";
-	$result = mysql_query($sql, $connect);
+//	$result = mysql_query($sql, $connect);
+$result = mysqli_query($connect, $sql);
 
-    $row = mysql_fetch_array($result);       
+ //   $row = mysql_fetch_array($result);       
+ $row = mysqli_fetch_array($result);
 
-	$item_num     = $row[num];
-	$item_id      = $row[id];
-	$item_name    = $row[name];
-  	$item_nick    = $row[nick];
-	$item_hit     = $row[hit];
+	$item_num     = $row['num'];
+	$item_id      = $row['id'];
+	$item_name    = $row['name'];
+  	$item_nick    = $row['nick'];
+	$item_hit     = $row['hit'];
 
-	$file_name[0]   = $row[file_name_0];
-	$file_name[1]   = $row[file_name_1];
-	$file_name[2]   = $row[file_name_2];
+	$file_name[0]   = $row['file_name_0'];
+	$file_name[1]   = $row['file_name_1'];
+	$file_name[2]   = $row['file_name_2'];
 
-	$file_type[0]   = $row[file_type_0];
-	$file_type[1]   = $row[file_type_1];
-	$file_type[2]   = $row[file_type_2];
+	$file_type[0]   = $row['file_type_0'];
+	$file_type[1]   = $row['file_type_1'];
+	$file_type[2]   = $row['file_type_2'];
 
-	$file_copied[0] = $row[file_copied_0];
-	$file_copied[1] = $row[file_copied_1];
-	$file_copied[2] = $row[file_copied_2];
+	$file_copied[0] = $row['file_copied_0'];
+	$file_copied[1] = $row['file_copied_1'];
+	$file_copied[2] = $row['file_copied_2'];
 
-    $item_date    = $row[regist_day];
-	$item_subject = str_replace(" ", "&nbsp;", $row[subject]);
+    $item_date    = $row['regist_day'];
+	$item_subject = str_replace(" ", "&nbsp;", $row['subject']);
 
-	$item_content = str_replace(" ", "&nbsp;", $row[content]);
+	$item_content = str_replace(" ", "&nbsp;", $row['content']);
 	$item_content = str_replace("\n", "<br>", $item_content);
 	$new_hit = $item_hit + 1;
 
 	$sql = "update $table set hit=$new_hit where num=$num";   // 글 조회수 증가시킴
-	mysql_query($sql, $connect);
+//	mysql_query($sql, $connect);
+	$result = $connect->query($sql); // 옛날 코드라서 바꿔줘야한다
+
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -115,7 +119,7 @@
 
 		<div id="view_button">
 				<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>&nbsp;
-<? 
+<!-- <? 
 	if($userid && $userid==$item_id)
 	{
 ?>
@@ -123,7 +127,17 @@
 				<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')"><img src="../img/delete.png"></a>&nbsp;
 <?
 	}
+?> -->
+<? 
+	if($userid==$item_id || $userlevel==1 || $userid=="admin")
+	{
 ?>
+				<a href="modify_form.php?num=<?=$num?>&page=<?=$page?>"><img src="../img/modify.png"></a>&nbsp;
+				<a href="javascript:del('delete.php?num=<?=$num?>')"><img src="../img/delete.png"></a>&nbsp;
+<?
+	}
+?>
+
 <? 
 	if($userid)
 	{
