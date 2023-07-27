@@ -35,7 +35,7 @@
 			 <div class="clear"></div>
 
 			 <div id="login1">
-				<img src="../img/mul.png" width="190px" height="190px">
+				<img src="../img/mul.png" width="160px" height="160px">
 			 </div>
 			 <div id="login2" class="login2">
 				<div id="id_input_button">
@@ -49,12 +49,12 @@
 						</ul>						
 					</div>
 					<div id="login_button">
-						<input type="submit" class="button" value="로그인"><br><br>
-						<a href="../member/member_form.php"><input type="summit" class="button1" value="회원가입하기"></a>
+						<input type="submit" class="button_1" value="로그인"><br>
+						<a href="../member/member_form.php"><input type="summit" class="button_1" value="회원가입하기"></a>
 					</div>
 				</div>
 				<div class="clear"></div>
-				<br><div id="join_button">아직 회원이 아니십니까?❣°ʚ(❛ั ᴗ ❛ั)ɞ°❣&nbsp;&nbsp;&nbsp;&nbsp;</div>
+				<div id="join_button">아직 회원이 아니십니까?❣°ʚ(❛ั ᴗ ❛ั)ɞ°❣&nbsp;&nbsp;&nbsp;&nbsp;</div>
 			 </div>			 
 		</div> <!-- end of form_login -->
 
