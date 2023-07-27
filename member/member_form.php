@@ -7,7 +7,7 @@
     <style>
         /* 가운데 정렬을 위한 스타일링 */
         .center-table {
-            margin-left: 200px;
+            margin-left: 600px;
         }
     </style>
 <script>
@@ -84,6 +84,13 @@
 </script>
 <div id="container">
     <body>
+    <script>
+        function showConfirmation() {
+
+                alert("회원가입완료!");
+
+        }
+    </script>
         <header class="header">
 		<a href="../index.php"> <!-- 로고를 클릭하면 현재 페이지(index.php)로 연결되도록 설정 -->
                 <img src="../img/logo2.png" class="logo" alt="로고">
@@ -105,25 +112,25 @@
 	<div id="col2">
         <form  name="member_form" method="post" action="insert.php"> 
 		<div id="title">
-			<img src="../img/title_join.gif">
+			<h1>회 원 가 입</h1>
 		</div>
 <div class="center-table">
-    <table border="0">
+    <table>
         <tr>
-            <td>ID</td>
+            <td>아이디</td>
             <td>
-                    <input type="text" name="id">
+                    <input type="text" name="id" class="input_1">
             </td>
             <td>
                 <a href="#">
-                <img src="../img/check_id.gif" onclick="check_id()">
+                <input type="button" class="button" onclick="check_id()" value="중복확인">
                 </a>
             </td>
         </tr>
         <tr>
-            <td>Password</td>
+            <td>비밀번호</td>
             <td>
-            <input type="password" name="pass">
+            <input type="password" name="pass" class="input_1">
             </td>
         </tr>
         <tr>
@@ -135,54 +142,54 @@
         </tr>
         <tr>
             <td id="id3">
-                Check Password
-            </td>
+            비밀번호 확인
+        </td>
             <td>
-                <input type="password" name="pass_confirm">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Name
-            </td>
-            <td>
-                <input type="text" name="name">
+                <input type="password" class="input_1" name="pass_confirm">
             </td>
         </tr>
         <tr>
             <td>
-                Nick Name
+            이름
             </td>
             <td>
-                <input type="text" name="nick">
-            </td>
-            <td>
-                <div id="nick2" ><a href="#"><img src="../img/check_id.gif" onclick="check_nick()"></a>
+                <input type="text" name="name" class="input_1">
             </td>
         </tr>
         <tr>
             <td>
-                Phone
+                별명
             </td>
             <td>
-                <select class="hp" name="hp1"> 
+                <input type="text" name="nick" class="input_1">
+            </td>
+            <td>
+                <div id="nick2" ><input type="button" class="button" onclick="check_nick()" value="중복확인"></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            휴대전화
+            </td>
+            <td>
+                <select class="hp input_2" name="hp1"> 
                     <option value='010'>010</option>
                     <option value='011'>011</option>
                     <option value='016'>016</option>
                     <option value='017'>017</option>
                     <option value='018'>018</option>
                     <option value='019'>019</option>
-                </select>
-                -
-            <input type="text" class="hp" name="hp2"> - <input type="text" class="hp" name="hp3">
+                </select>- <input type="text" class="hp input_3" name="hp2">- <input type="text" class="hp input_3" name="hp3">
+        </td>
+        </table>
     </table>
 			<div class="clear"></div>
 </dev>
 		<div id="button">
             <a href="#">
-                <img src="../img/button_save.gif"  onclick="check_input().call(this)">
+                <input type="button" class="button" onclick="showConfirmation(),check_input().call(this)" value="회원가입">
             </a>&nbsp;&nbsp;
-		    <a href="#"><img src="../img/button_reset.gif" onclick="reset_form()"></a>
+		    <a href="#"><input type="button" class="button" onclick="reset_form()" value="리셋"></a>
 		</div>
 	    </form>
 	</div> <!-- end of col2 -->
