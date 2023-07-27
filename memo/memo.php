@@ -7,9 +7,16 @@ if (isset($_SESSION['userid']))
         $usernick = $_SESSION['usernick'];
         $userlevel = $_SESSION['userlevel'];
 }
+$table = "memo";
+if (isset($_GET['mode'])) {
+$mode = $_GET['mode'];
+$find = $_POST['find'];
+$search = $_POST['search'];
+}
 $scale = 5; // 한 화면에 표시되는 글 수
 include "../lib/dbconn.php";
 $table = "memo";
+
 $sql = "select * from $table order by num desc";
 $result = $connect->query($sql);
 $total_record = $result->num_rows;
@@ -39,7 +46,7 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
             <li id="writer_title4">
                 <?php
                 if ($userid == "admin" || $userid == $memo_id) {
-                    echo "<a href='delete.php?num=$memo_num' style='color: red;'>[삭제]</a>";
+                    echo "<a href='delete.php?num=$memo_num'>[삭제]</a>";
                 }
                 ?>
             </li>
@@ -82,9 +89,7 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
             <form name="ripple_form" method="post" action="insert_ripple.php">
                 <input type="hidden" name="num" value="<?= $memo_num ?>">
                 <div id="ripple_insert">
-                    <div id="ripple_textarea">
-                        <textarea rows="3" cols="80" name="ripple_content"></textarea>
-                    </div>
+                        <input type="text" class="input_1" name="ripple_content">
                     <div id="ripple_button"><input type="image" src="../img/memo_ripple_button.png"></div>
                 </div>
             </form>
@@ -127,7 +132,15 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
             </div> <!-- end of menu -->
         </div> <!-- end of wrap -->
         <div id="content">
-        <?php
+            <div id="col2">
+                <div id="memo_row1">
+                    <form name="memo_form" method="post" action="./insert.php">
+                        <div id="memo_writer"><span>▷ <?= $usernick ?></span></div>
+                        <div id="memo1"><textarea rows="6" cols="95" name="content"></textarea></div>
+                        <div id="memo2"><button class="button">입력</button></div>
+                    </form>
+                </div> <!-- end of memo_row1 -->
+                <?php
                 for ($i = $start; $i < $start + $scale && $i < $total_record; $i++) {
                     $result->data_seek($i);
                     $row = $result->fetch_array(MYSQLI_ASSOC);
@@ -141,14 +154,6 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
                     displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $memo_num, $userid);
                 }
                 ?>
-            <div id="col2">
-                <div id="memo_row1">
-                    <form name="memo_form" method="post" action="./insert.php">
-                        <div id="memo_writer" style='color:black'><span>▷ <?= $usernick ?></span></div>
-                        <div id="memo1"><textarea rows="6" cols="95" name="content"></textarea></div>
-                        <div id="memo2"><button class="button">입력</button></div>
-                    </form>
-                </div> <!-- end of memo_row1 -->
             </div> <!-- end of col2 -->
         </div> <!-- end of content -->
     </div> <!-- end of container -->
