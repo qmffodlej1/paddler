@@ -7,6 +7,7 @@
     <style>
         /* 가운데 정렬을 위한 스타일링 */
         .center-table {
+		margin-left: 200px;
         }
     </style>
 <script>
