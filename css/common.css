@@ -8,20 +8,6 @@
 	font-family: 'NEXON Lv2 Gothic', sans-serif;
 	color: rgb(255, 255, 255);
 }
-/* body {
-	margin:0;
-	padding:0;
-	font-size:20px;
-	font-weight:normal;
-    font-family: 'NEXON Lv2 Gothic';
-	/* background-color: #09131A; 컨테이너 배경 색상을 설정 */
-/* }
-#container {
-	height: 930px;
-	margin: 0 auto; /* 가로 중앙 정렬을 설정 */
-	/*background-color: #09131A;  컨테이너 배경 색상을 설정 */
-/*}*/ 
- /* 대화형 뷰(Desktop) */
  body {
 	background-color: #F0F0F0;
 	font-family: Arial, sans-serif;
@@ -87,6 +73,7 @@
 	position: absolute;
 	bottom: 20px;
 	right: 20px;
+	color: white;
 }
 
 /* 로고 이미지 스타일 */
@@ -134,7 +121,7 @@ html, body {
   .button {
 	width: 140px;
 	height: 45px;
-	font-family: 'nexon';
+	font-family: 'NEXON Lv2 Gothic';
 	font-size: 11px;
 	text-align: center;
 	text-transform: uppercase;
@@ -162,15 +149,6 @@ S
 .linespace_10 {
 	height:10px;
 }
-/* #container {
-	height: 100%;
-	margin-bottom: 0px;
-	padding-bottom: 0px;
-	border-bottom: 0px;
-	background-color: #09131A; /* 컨테이너 배경 색상을 설정 */
-	/*vertical-align: bottom;
-} */
-
 .btn {
 	margin: 1rem;
   
@@ -383,12 +361,31 @@ S
 	padding-bottom:5px;
 }
 .input_1{
-	height: 0.5px;
-	width: 60%;
+	height: 20px;
+	width: 90%;
 	border: 1px solid #b4b4b4;
-	padding: 30px;
+	padding: 10px;
 	border-radius: 60px;
 	display: block;
-	margin: auto;
+	size: 1;
+}
+.input_2{ 
+	height: 45px;
+	width: 20%;
+	border: 1px solid #b4b4b4;
+	padding: 10px 5px 0px;
+	border-radius: 60px;
+	display: inline-block;
+	padding-bottom: 18px;
+}
+
+.input_3 {
+	height: 20px;
+	width: 27%;
+	border: 1px solid #b4b4b4;
+	padding: 10px;
+	border-radius: 60px;
+	display: inline-block;
+	margin-right: 10px;
 }
 

@@ -13,7 +13,10 @@
 	min-height:558px;
 	float:left;
 }
-
+#title{
+	font-family: 'NEXON Lv2 Gothic', sans-serif;
+	margin-left: 90px;
+}
 #content #col2 #title{
 	margin-left:15px;
 	margin-top:30px;
@@ -90,7 +93,6 @@
 	float:left;
 	margin-left:5px;
 }
-
 #content #col2 #form_join #join2 input.hp {
     width:40px;
 	height:18px;
@@ -120,7 +122,7 @@
 	text-align: center;
 	width:50%;
 	height:300px;
-	padding-left: 500px;
+	padding-left: 580px;
 }
 
 #login_form #login_msg {
@@ -173,7 +175,7 @@
 	text-align: center;
 }
 #login_button{
-	padding-top: 40px;
+	padding-top: 17px;
 }
 #login2 #login_button {
 	float:left;
@@ -187,17 +189,16 @@
 	border-bottom:solid 1px #dddddd;
 }
 #join_button{
-	margin-left: 400px;
+	margin-left: 330px;
 	width: 500px;
 }
 #login2 #join_button {
-	margin-top:20px;
 	margin-left:30px;
 }
-.button1 {
+.button_1 {
 	width: 140px;
 	height: 45px;
-	font-family: 'nexon';
+	font-family: 'NEXON Lv2 Gothic', sans-serif;
 	font-size: 11px;
 	text-align: center;
 	text-transform: uppercase;
@@ -211,13 +212,20 @@
 	transition: all 0.3s ease 0s;
 	cursor: pointer;
 	outline: none;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 	}
   
-  .button1:hover {
+  .button_1:hover {
 	background-color: rgba(41, 42, 112, 0.4);
 	box-shadow: 0px 15px 20px rgba(1, 1, 20, 0.4);
 	color: #fff;
 	transform: translateY(-7px);
 	text-align: center;
   }
+td {
+	font-family: 'NEXON Lv2 Gothic', sans-serif;
+	text-align: center;
+}
+select {
+	float: left;
+}
