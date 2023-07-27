@@ -166,10 +166,10 @@ document.board_form.submit();
 
 			<div class="clear"></div>
 		</div>
-
 		<div id="write_button">
-		<a href="#"><img src="../img/ok.png" method="post"></a>&nbsp;
-        <input type="submit" name="submit_button" value="Submit">
+		<!--<a href="#"><img src="../img/ok.png" method="post" type="submit" value="Submit"></a>&nbsp;-->
+		<form name="board_form" method="post" action="write_form.php"><input type="image" src="../img/ok.png" alt="Submit">
+        </form>
 		<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>
 		</div>
 
