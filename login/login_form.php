@@ -26,40 +26,35 @@
             </div> <!-- end of menu -->
         </div> <!-- end of wrap -->
 	<div id="col2">
-        <form  name="member_form" method="post" action="login.php"> 
+        <form name="member_form" method="post" action="login.php"> 
 		<div id="title">
-			<img src="../img/title_login.gif">
+			<h1>로 그 인</h1>
 		</div>
        
 		<div id="login_form">
-		     <img id="login_msg" src="../img/login_msg.gif">
 			 <div class="clear"></div>
 
 			 <div id="login1">
-				<img src="../img/login_key.gif">
+				<img src="../img/mul.png" width="190px" height="190px">
 			 </div>
-			 <div id="login2">
+			 <div id="login2" class="login2">
 				<div id="id_input_button">
-					<div id="id_pw_title">
-						<ul>
-						<li><img src="../img/id_title.gif"></li>
-						<li><img src="../img/pw_title.gif"></li>
-						</ul>
 					</div>
 					<div id="id_pw_input">
 						<ul>
-						<li><input type="text" name="id" class="login_input"></li>
-						<li><input type="password" name="pass" class="login_input"></li>
+						<a>아이디</a><br>
+						<li><input type="text" name="id" class="input_1"></li><br>
+						<a>비밀번호</a><br>
+						<li><input type="password" name="pass" class="input_1"></li>
 						</ul>						
 					</div>
 					<div id="login_button">
-						<input type="image" src="../img/login_button.gif">
+						<input type="submit" class="button" value="로그인"><br><br>
+						<a href="../member/member_form.php"><input type="summit" class="button1" value="회원가입하기"></a>
 					</div>
 				</div>
 				<div class="clear"></div>
-
-				<div id="login_line"></div>
-				<div id="join_button"><img src="../img/no_join.gif">&nbsp;&nbsp;&nbsp;&nbsp;<a href="../member/member_form.php"><img src="../img/join_button.gif"></a></div>
+				<br><div id="join_button">아직 회원이 아니십니까?❣°ʚ(❛ั ᴗ ❛ั)ɞ°❣&nbsp;&nbsp;&nbsp;&nbsp;</div>
 			 </div>			 
 		</div> <!-- end of form_login -->
 
