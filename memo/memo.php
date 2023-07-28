@@ -15,8 +15,6 @@ $search = $_POST['search'];
 }
 $scale = 5; // 한 화면에 표시되는 글 수
 include "../lib/dbconn.php";
-$table = "memo";
-
 $sql = "select * from $table order by num desc";
 $result = $connect->query($sql);
 $total_record = $result->num_rows;
@@ -40,7 +38,7 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
 ?>
     <div id="memo_writer_title">
         <ul>
-            <li id="writer_title1"><?= $number ?></li>
+            <li id="writer_title1"><?= $memo_num ?></li>
             <li id="writer_title2"><?= $memo_nick ?></li>
             <li id="writer_title3"><?= $memo_date ?></li>
             <li id="writer_title4">
@@ -48,7 +46,7 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
                 if ($userid == "admin" || $userid == $memo_id) {?>
                     <form action="delete.php" method="get">
                     <input type="hidden" name="num" value="<?php echo $memo_num; ?>">
-                    <input type="submit" value="삭제">
+                    <button class="button">삭제</button>
                     </form>
                 <?php
                 }
@@ -58,7 +56,6 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
     </div>
     <div id="memo_content"><?= $memo_content ?></div>
     <div id="ripple">
-        <div id="ripple1">덧글</div>
         <div id="ripple2">
             <?php
 			include "../lib/dbconn.php";
@@ -82,7 +79,7 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
                                 <!-- 이 부분은 원하는 위치에 넣어주세요. -->
                                 <form action="delete_ripple.php" method="get">
                                 <input type="hidden" name="num" value="<?php echo $ripple_num; ?>">
-                                <input type="submit" value="삭제">
+                                <button class="button">삭제</button>
                                 </form>
                                 <?php
                             }
@@ -97,8 +94,8 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
             <form name="ripple_form" method="post" action="insert_ripple.php">
                 <input type="hidden" name="num" value="<?= $memo_num ?>">
                 <div id="ripple_insert">
-                        <input type="text" class="input_1" name="ripple_content">
-                    <div id="ripple_button"><input type="image" src="../img/memo_ripple_button.png"></div>
+                        <input type="text" class="input_1" placeholder="덧글을 입력하세용!" name="ripple_content">
+                    <div id="ripple_button"><button class="button">덧글입력</button></div>
                 </div>
             </form>
             <div class="clear"></div>
@@ -140,7 +137,13 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
             </div> <!-- end of menu -->
         </div> <!-- end of wrap -->
         <div id="content">
-            <div id="col2">
+        <div id="memo_row1">
+                                <form name="memo_form" method="post" action="./insert.php">
+                                <div id="memo_writer"><span>▷ <?= $usernick ?></span></div>
+                                <div id="memo1"><textarea rows="6" cols="95" name="content"></textarea></div>
+                                <div id="memo2"><button class="button">입력</button></div>
+        </div>
+            <div id="col_2">
                 <?php
                 for ($i = $start; $i < $start + $scale && $i < $total_record; $i++) {
                     $result->data_seek($i);
@@ -154,13 +157,7 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
                     displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $memo_num, $userid);
                 }
                 ?>
-                                <div id="memo_row1">
-                                <form name="memo_form" method="post" action="./insert.php">
-                                <div id="memo_writer"><span>▷ <?= $usernick ?></span></div>
-                                <div id="memo1"><textarea rows="6" cols="95" name="content"></textarea></div>
-                                <div id="memo2"><button class="button">입력</button></div>
                     </form>
-                </div> <!-- end of memo_row1 -->
             </div> <!-- end of col2 -->
         </div> <!-- end of content -->
     </div> <!-- end of container -->
