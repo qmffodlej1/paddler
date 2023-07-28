@@ -3,9 +3,9 @@
 	$item_content = NULL;
 	session_start(); 
 	$table = $_GET['table'];
-	$mode = $_POST['mode']??NULL;
-	$num = $_POST['num']??NULL;
-	$page = $_POST['page']??NULL; 
+	$mode = @$_POST['mode'];
+	$num = @$_POST['num'];
+	$page = @$_POST['page']; 
 	if (isset($_SESSION['userid'])) 
 	{
 			$userid = $_SESSION['userid'];
@@ -14,7 +14,6 @@
 			$userlevel = $_SESSION['userlevel'];
 	}  //세션에서 받아온다.
 	include "../lib/dbconn.php";
-
 	if ($mode=="modify")
 	{
 		$sql = "select * from $table where num=$num";
@@ -48,21 +47,20 @@
 <link href="../css/board3.css" rel="stylesheet" type="text/css" media="all">
 <script>
 function check_input() {
-    if (!document.board_form.subject.value)
-    {
-        alert("제목을 입력하세요1");    
+    if (!document.board_form.subject.value) {
+        alert("제목을 입력하세요!");    
         document.board_form.subject.focus();
-        return;
+        return false; // 폼 제출을 막기 위해 false를 반환
     }
 
-    if (!document.board_
-	form.content.value)
-    {
+    if (!document.board_form.content.value) {
         alert("내용을 입력하세요!");    
         document.board_form.content.focus();
-        return;
+        return false; // 폼 제출을 막기 위해 false를 반환
     }
-document.board_form.submit();
+
+    // 폼이 제출됩니다. (이미지를 클릭했을 때만 호출됩니다.)
+    return true; // 폼 제출을 위해 true를 반환
 }
 </script>
 </head>
@@ -167,11 +165,13 @@ document.board_form.submit();
 			<div class="clear"></div>
 		</div>
 		<div id="write_button">
-		<!--<a href="#"><img src="../img/ok.png" method="post" type="submit" value="Submit"></a>&nbsp;-->
-		<form name="board_form" method="post" action="write_form.php"><input type="image" src="../img/ok.png" alt="Submit">
-        </form>
+			<?php if ($mode==""){?>
+				<form name="board_form" action="write_form.php">
+    			<input type="image" src="../img/ok.png" alt="Submit" onclick="return check_input();">
+			</form>
 		<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>
 		</div>
+		<?php } ?>
 
 		</form>
 

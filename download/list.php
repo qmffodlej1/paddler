@@ -173,7 +173,7 @@
 	if($userid)
 	{
 ?>
-		<a href="write_form.php?table=<?=$table?>"><img src="../img/write.png"></a>
+<a href="write_form.php?table=<?= $table ?>"><img src="../img/write.png"></a>
 <?
 	}
 ?>
