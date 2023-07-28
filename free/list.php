@@ -1,5 +1,6 @@
 <?
 	session_start();
+	$page = $_GET['page'];
 	if (isset($_SESSION['userid'])) 
 	{
 			$userid = $_SESSION['userid'];
@@ -7,6 +8,7 @@
 			$usernick = $_SESSION['usernick'];
 			$userlevel = $_SESSION['userlevel'];
 	}
+	
 	$table = "free";
 	$ripple = "free_ripple";
 	if (isset($_GET['mode'])) {
@@ -49,13 +51,13 @@
 	$total_record = $result->num_rows; // 전체 글 수
 
 	// 전체 페이지 수($total_page) 계산 
-	if ($total_record % $scale == 0)     
-		$total_page = floor($total_record/$scale);      
-	else
-		$total_page = floor($total_record/$scale) + 1; 
+	if ($total_record % $scale == 0){     
+		$total_page = floor($total_record/$scale); }     
+	else{
+		$total_page = floor($total_record/$scale) + 1;} 
  
-	if (!$page)                 // 페이지번호($page)가 0 일 때
-		$page = 1;              // 페이지 번호를 1로 초기화
+	if (!$page){                 // 페이지번호($page)가 0 일 때
+		$page = 1;}              // 페이지 번호를 1로 초기화
  
 	// 표시할 페이지($page)에 따라 $start 계산  
 	$start = ($page - 1) * $scale;      
