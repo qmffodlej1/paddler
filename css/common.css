@@ -92,16 +92,10 @@ a:hover, a:visited, a:link, a.nexon {
 	font-weight:normal;
 	color:#ffffff;
 }
+
 ul, li {
-	float: left;
-	text-align: center;
 	margin:0;
 	padding:0;
-}
-ul.nexon, li.nexon {
-	margin:0;
-	padding:0;
-	margin-right: 50px;
 	list-style:none;
 	float: left;
 	font-family: 'NEXON Lv2 Gothic';
@@ -388,4 +382,6 @@ S
 	display: inline-block;
 	margin-right: 10px;
 }
-
+h3 {
+	font-size: 13px;
+}

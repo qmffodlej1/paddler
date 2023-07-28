@@ -72,6 +72,10 @@
 	margin-left:5px;
 }
 
+#id3 {
+	padding-right: 20px;
+}
+
 #content #col2 #form_join #join2 #id3 {
 
 	float:left;
@@ -122,7 +126,7 @@
 	text-align: center;
 	width:50%;
 	height:300px;
-	padding-left: 580px;
+	padding-left: 600px;
 }
 
 #login_form #login_msg {
@@ -133,14 +137,13 @@
 #login_form #login1 {
 	float:left;
     margin-left:80px;
-	margin-top:20px;
+	margin-top: 40px;
 }
 
 #login_form #login2 {
 	float:left;
 	width:500px;
 	height:150px;
-    margin-left:60px;
 	margin-top:40px;
 }
 
@@ -148,7 +151,7 @@
 	float:left;
 	width:80px;
 	height:50px;
-	text-align:right;
+	text-align:center;
 }
 
 #login2 #id_pw_title ul{
@@ -162,10 +165,12 @@
 #login2 #id_pw_input {
 	float:left;
 	height:50px;
+	
 }
 
 #login2 #id_pw_input li{
 	padding-bottom:7px;
+	margin-left: 50px;
 }
 
 #login2 #id_pw_input input.login_input {
@@ -173,9 +178,12 @@
 	height:18px;
 	border:solid 1px #cccccc;
 	text-align: center;
+	margin-left: 50px;
 }
 #login_button{
+	margin-top: 27px;
 	padding-top: 17px;
+	padding-right: 10px;
 }
 #login2 #login_button {
 	float:left;
@@ -189,6 +197,7 @@
 	border-bottom:solid 1px #dddddd;
 }
 #join_button{
+	margin-top: 20px;
 	margin-left: 330px;
 	width: 500px;
 }
@@ -228,4 +237,8 @@ td {
 }
 select {
 	float: left;
+}
+.aa {
+	margin-bottom: 100px;
+	padding-bottom: 100px;
 }

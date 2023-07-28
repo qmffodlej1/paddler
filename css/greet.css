@@ -15,19 +15,23 @@
 /* list css */
 
 #list_search {
-	height:30px;
+	height:20px;
+	margin-left: 100px;
 	padding-top:10px;
+	font-family: 'NEXON Lv2 Gothic';
 }
 
 #list_search #list_search1 {
 	float:left;
 	margin-top:2px;
+	font-family: 'NEXON Lv2 Gothic';
 }
 
 #list_search #list_search2 {
 	float:left;
 	margin-left:300px;
 	margin-top:4px;
+	font-family: 'NEXON Lv2 Gothic';
 }
 
 
@@ -35,6 +39,7 @@
 	float:left;
 	margin-left:5px;
 	margin-top:1px;
+	font-family: 'NEXON Lv2 Gothic';
 }
 
 #list_search #list_search3 select {
@@ -61,15 +66,17 @@
 }
 
 #list_top_title {
+	text-align: left;
 	height:20px;
-	padding:7px;  
-	border-top:solid 2px #aaaaaa;
-	background-color:#eeeeee;
+	width: 1890px;
+	border-top:solid 2px #aaaaaa;;
 	margin-bottom:3px;
 }
-
+#list_top_title ul{
+	display:inline block;
+}
 #list_top_title li {
-	display:inline;
+	padding-left: 190px;
 }
 
 #list_top_title #list_title1 {
@@ -94,42 +101,58 @@
 
 #list_content {
 	height:380px;
+	width: 1800px;
+}
+#list_item ul{
+	height:18px;
+	width: 1800px;
+	margin-top:2px;
+	float: left;
+	border-bottom:solid 1px #eeeeee;
+}
+#list_item li{
+	height:18px;
+	width: 200px;
+	margin-top:2px;
+	border-bottom:solid 1px #eeeeee;
 }
 
 #list_item {
 	height:18px;
+	width: 200px;
 	margin-top:2px;
-	padding:6px;  
+	margin-left: 50px;
+	float: left;
 	border-bottom:solid 1px #eeeeee;
 }
 
 #list_item #list_item1{
 	float:left;
 	width:40px;
-	text-align:center;
+	margin-left: 90px;
 }
 
 #list_item #list_item2{
 	float:left;
-	width:560px;
+	width:500px;
+	margin-left: 125px
 }
 
 #list_item #list_item3{
-	float:left;
 	width:65px;
-	text-align:center;
+	margin-left: 650px;
 }
 
 #list_item #list_item4{
 	float:left;
-	width:80px;
-	text-align:center;
+	width:100px;
+	margin-left: 695px;
 }
 
 #list_item #list_item5{
 	float:left;
 	width:40px;
-	text-align:center;
+	margin-left: 765px;
 }
 
 #page_button {
@@ -274,4 +297,39 @@
 	text-align:right;
 	margin-top:15px;
 	margin-bottom:15px;
+}
+.button_3 {
+	width: 70px;
+	height: 20px;
+	font-family: 'NEXON Lv2 Gothic';
+	font-size: 11px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	font-weight: 500;
+	color: #000;
+	background-color: #fff;
+	border: none;
+	border-radius: 45px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	outline: none;
+	margin-bottom: 5px;
+	}
+  
+  .button_3:hover {
+	background-color: rgba(41, 42, 112, 0.4);
+	box-shadow: 0px 15px 20px rgba(1, 1, 20, 0.4);
+	color: #fff;
+	transform: translateY(-7px);
+	text-align: center;
+  }
+ .inpung {
+	border: 1px solid #b4b4b4;
+	border-radius: 60px;
+	display: inline-block;
+}
+.ab {
+	color: #000;
 }
