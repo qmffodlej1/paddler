@@ -21,18 +21,6 @@
 <meta charset="utf-8">
 <link href="../css/common.css" rel="stylesheet" type="text/css" media="all">
 <link href="../css/greet.css" rel="stylesheet" type="text/css" media="all">
-<style type = "text/css">
-div#list{
-display: inline-block;
-}
-div#list_content{
-display: inline-block;
-}
-div#list_item{
-display: inline-block;
-
-}
-</style>
 </head>
 <?
 	include "../lib/dbconn.php";
