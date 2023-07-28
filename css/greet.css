@@ -5,7 +5,9 @@
 	margin-left:15px;
 /*	border:solid 1px #cccccc; */
 }
-
+#title {
+	margin-left: 20px;
+}
 #content #col2 #title{
 	margin-top:30px;
 	height:30px;
@@ -24,12 +26,13 @@
 #list_search #list_search1 {
 	float:left;
 	margin-top:2px;
+	margin-right: 1000px;
 	font-family: 'NEXON Lv2 Gothic';
 }
 
 #list_search #list_search2 {
 	float:left;
-	margin-left:300px;
+	margin-left:130px;
 	margin-top:4px;
 	font-family: 'NEXON Lv2 Gothic';
 }
@@ -37,7 +40,7 @@
 
 #list_search #list_search3 {
 	float:left;
-	margin-left:5px;
+	margin-left:10px;
 	margin-top:1px;
 	font-family: 'NEXON Lv2 Gothic';
 }
@@ -100,21 +103,22 @@
 }
 
 #list_content {
-	height:380px;
 	width: 1800px;
+	padding: 5px;
+	margin: 5px;
 }
 #list_item ul{
 	height:18px;
-	width: 1800px;
+	width: 1700px;
 	margin-top:2px;
 	float: left;
-	border-bottom:solid 1px #eeeeee;
+	padding-bottom: 8px;	
+	border-bottom:solid 3px #ccc8c8;
 }
 #list_item li{
 	height:18px;
 	width: 200px;
 	margin-top:2px;
-	border-bottom:solid 1px #eeeeee;
 }
 
 #list_item {
@@ -123,7 +127,6 @@
 	margin-top:2px;
 	margin-left: 50px;
 	float: left;
-	border-bottom:solid 1px #eeeeee;
 }
 
 #list_item #list_item1{
@@ -133,30 +136,28 @@
 }
 
 #list_item #list_item2{
-	float:left;
 	width:500px;
-	margin-left: 125px
+	margin-left: 200px;
 }
 
 #list_item #list_item3{
-	width:65px;
-	margin-left: 650px;
+	width:65px;	
+	margin-left: 220px;
 }
 
 #list_item #list_item4{
-	float:left;
 	width:100px;
-	margin-left: 695px;
+	margin-left: 180px;
 }
 
 #list_item #list_item5{
-	float:left;
-	width:40px;
-	margin-left: 765px;
+	width:30px;
+	margin-left: 175px;
 }
 
 #page_button {
 	margin-top:20px;
+	margin-left: 270px;
 }
 
 #page_num {
@@ -329,7 +330,4 @@
 	border: 1px solid #b4b4b4;
 	border-radius: 60px;
 	display: inline-block;
-}
-.ab {
-	color: #000;
 }
