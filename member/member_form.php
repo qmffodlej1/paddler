@@ -109,7 +109,7 @@
                 <?php include "../lib/top_menu2.php"; ?>
             </div> <!-- end of menu -->
         </div> <!-- end of wrap -->
-	<div id="col2">
+	<div id="col_2">
         <form  name="member_form" method="post" action="insert.php"> 
 		<div id="title">
 			<h1>회 원 가 입</h1>
