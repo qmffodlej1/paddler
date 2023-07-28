@@ -42,6 +42,8 @@
 }
 
 #memo_writer_title {
+	display: inline-flex;
+	width: 1800px;
 	height:26px;
 	padding-top:10px; 
 	margin-bottom:10px;
@@ -50,11 +52,16 @@
 }
 
 #memo_writer_title ul {
-	margin-left:5px;
+	margin-right: 50px;
+	display: inline-flex;
 }
 
 #memo_writer_title li {
-	display:inline;
+	display: flex;
+}
+
+#writer_title2 {
+	margin-left: 100px;
 }
 
 #memo_writer_title #writer_title2 {
@@ -71,28 +78,32 @@
 }
 
 #memo_content {
-	margin-left:20px;
-	width:800px;
+	width:500px;
+	padding-right: 400px;
+	margin-right: 500px;
 }
 
 #ripple {
 	margin-top:20px;
-
+	margin-left: 100px;
 /*	overflow:hidden; */
 }
 
 #ripple1 {
+	display:flex;
 	float:left;
 	font-weight:bold;
-	text-decoration:underline;
 }
 
 #ripple2 {
 	float:left;
-	padding:10px;
 	width:92%;
-	margin-left:10px;
-	background-color:#eeeeee;
+	margin-left:60px;
+	margin-bottom: 40px;
+}
+#ripple_title {
+	padding-top:10px;
+	padding-left:10px;
 }
 
 #ripple_title {

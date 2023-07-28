@@ -232,9 +232,8 @@ S
 }
 
 #content {
-	overflow: auto;
 	width:1800px;
-	height: 500px;
+	height: 800px;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -242,24 +241,26 @@ S
 #content #main_img {
 	margin-top:20px;
 }
-#col1 {
-	margin-bottom: 100px;
-	width: 100px;
-}
-#col2 {
+#col_2 {
 	width: 1800px;
 	height: 700px;
-	margin-bottom: 100px;
+	margin-top: 100px;
 	text-align:center;
 }
-#content #col1 {
-	margin-top:20px;
-	width:160px;
-	min-height:600px;
-	float:left;
-	border-right:solid 1px #dddddd;
+#col2 {
+	width: 1200px;
+	height: 700px;
+	margin-top: 100px;
+	margin-bottom: 50px;
+	text-align:center;
 }
-
+#col_1 {
+	width: 1500px;
+	height: 700px;
+	text-align:center;
+	margin-top: 50px;
+	margin-left: 200px;
+}
 #left_menu {
     width: 92%;
     height: 270px;

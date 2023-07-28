@@ -126,7 +126,8 @@
 	text-align: center;
 	width:50%;
 	height:300px;
-	padding-left: 600px;
+	margin-left: 300px;
+	padding-left: 250px;
 }
 
 #login_form #login_msg {
@@ -145,6 +146,7 @@
 	width:500px;
 	height:150px;
 	margin-top:40px;
+	border-left: 50px;
 }
 
 #login2 #id_pw_title {
@@ -181,28 +183,18 @@
 	margin-left: 50px;
 }
 #login_button{
+	width: 150px;
+	margin-right: 20px;
 	margin-top: 27px;
 	padding-top: 17px;
-	padding-right: 10px;
 }
 #login2 #login_button {
 	float:left;
-	margin-left:10px;
-}
-
-#login2 #login_line {
-	width: 1800px;
-	height:1px;
-	margin-top:20px;
-	border-bottom:solid 1px #dddddd;
+	margin-right: 50px;
 }
 #join_button{
-	margin-top: 20px;
-	margin-left: 330px;
+	margin-left: 320px;
 	width: 500px;
-}
-#login2 #join_button {
-	margin-left:30px;
 }
 .button_1 {
 	width: 140px;
@@ -241,4 +233,8 @@ select {
 .aa {
 	margin-bottom: 100px;
 	padding-bottom: 100px;
+	margin-right: 20px;
+}
+.aaa {
+	margin-left: 50px;
 }
