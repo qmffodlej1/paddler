@@ -1,6 +1,5 @@
 <?
 	session_start();
-	$page = $_GET['page'];
 	if (isset($_SESSION['userid'])) 
 	{
 			$userid = $_SESSION['userid'];
@@ -8,7 +7,6 @@
 			$usernick = $_SESSION['usernick'];
 			$userlevel = $_SESSION['userlevel'];
 	}
-
 	$table = "greet";
 	if (isset($_GET['mode'])) {
 	$mode = $_GET['mode'];
@@ -38,7 +36,7 @@ display: inline-block;
 </head>
 <?
 	include "../lib/dbconn.php";
-	
+
 	$scale=10;			// 한 화면에 표시되는 글 수
 
     if ($mode=="search")
@@ -69,10 +67,10 @@ display: inline-block;
 		$total_page = floor($total_record/$scale);      
 	else
 		$total_page = floor($total_record/$scale) + 1; 
-		
-	if (!$page){                 // 페이지번호($page)가 0 일 때
+ 
+	if (!$page)                 // 페이지번호($page)가 0 일 때
 		$page = 1;              // 페이지 번호를 1로 초기화
-	}	
+ 
 	// 표시할 페이지($page)에 따라 $start 계산  
 	$start = ($page - 1) * $scale;      
 
@@ -80,7 +78,6 @@ display: inline-block;
 ?>
 <div id="container">
     <body>
-		
         <header class="header">
 		<a href="../index.php"> <!-- 로고를 클릭하면 현재 페이지(index.php)로 연결되도록 설정 -->
                 <img src="../img/logo2.png" class="logo" alt="로고">
@@ -99,7 +96,7 @@ display: inline-block;
                 <?php include "../lib/top_menu2.php"; ?>
             </div> <!-- end of menu -->
         </div> <!-- end of wrap -->
-	<div id="col2">
+	<div id="col_2">
         
 		<div id="title">
 			<h1>가입인사</h1>
@@ -139,7 +136,7 @@ display: inline-block;
       // 가져올 레코드로 위치(포인터) 이동  
       $row = $result->fetch_array(MYSQLI_ASSOC);       
       // 하나의 레코드 가져오기
-
+	
 	  $item_num     = $row['num'];
 	  $item_id      = $row['id'];
 	  $item_name    = $row['name'];
@@ -174,7 +171,7 @@ display: inline-block;
    {
 		if ($page == $i)     // 현재 페이지 번호 링크 안함
 		{
-			echo "<a style='ab' href='list.php?page=$i'><b> $i </b></a>";
+			echo "<a style='ab' href='#'><b> $i </b></a>";
 		}
 		else
 		{ 
