@@ -44,10 +44,13 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
             <li id="writer_title4">
                 <?php
                 if ($userid == "admin" || $userid == $memo_id) {?>
-                    <form action="delete.php" method="get">
-                    <input type="hidden" name="num" value="<?php echo $memo_num; ?>">
-                    <button class="button">삭제</button>
-                    </form>
+                <form action="delete.php" method="get">
+                <input type="hidden" name="num" value="<?= $memo_num ?>">
+                <button class="buttona" type="submit">삭제</button>
+                </form>
+
+                </form>
+
                 <?php
                 }
                 ?>
@@ -71,7 +74,7 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
             ?>
                 <div id="ripple_writer_title">
                     <ul>
-                        <li id="writer_title1"><?= $ripple_nick ?></li>
+                        <li id="writer_title1">↳ <?= $ripple_nick ?></li>
                         <li id="writer_title2"><?= $ripple_date ?></li>
                 <li id="writer_title3">
                             <?php
@@ -79,7 +82,7 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
                                 <!-- 이 부분은 원하는 위치에 넣어주세요. -->
                                 <form action="delete_ripple.php" method="get">
                                 <input type="hidden" name="num" value="<?php echo $ripple_num; ?>">
-                                <button class="button">삭제</button>
+                                <button class="buttonb">삭제</button>
                                 </form>
                                 <?php
                             }
@@ -138,10 +141,17 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
         </div> <!-- end of wrap -->
         <div id="content">
         <div id="memo_row1">
-                                <form name="memo_form" method="post" action="./insert.php">
-                                <div id="memo_writer"><span>▷ <?= $usernick ?></span></div>
-                                <div id="memo1"><textarea rows="6" cols="95" name="content"></textarea></div>
-                                <div id="memo2"><button class="button">입력</button></div>
+        <form name="memo_form" method="post" action="./insert.php">
+  <div id="memo_writer">
+    <span>▷ <?= $usernick ?></span>
+  </div>
+  <div id="memo1">
+    <textarea rows="6" cols="95" name="content"></textarea>
+  </div>
+  <div id="memo2">
+    <button class="button" type="submit">입력</button> <!-- 입력 버튼 -->
+  </div>
+</form>
         </div>
             <div id="col_2">
                 <?php
