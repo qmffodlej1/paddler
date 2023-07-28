@@ -25,7 +25,7 @@
                 <?php include "../lib/top_menu2.php"; ?>
             </div> <!-- end of menu -->
         </div> <!-- end of wrap -->
-	<div id="col2">
+	<div id="col_2">
         <form name="member_form" method="post" action="login.php"> 
 		<div id="title">
 			<h1>로 그 인</h1>
@@ -35,16 +35,16 @@
 			 <div class="clear"></div>
 
 			 <div id="login1">
-				<img src="../img/mul.png" width="160px" height="160px">
+				<img src="../img/mul.png" width="200px" height="200px">
 			 </div>
 			 <div id="login2" class="login2">
 				<div id="id_input_button">
 					</div>
 					<div id="id_pw_input">
 						<ul class="aa">
-						<h3>아이디</h3>
+						<h3 class="aaa">아이디</h3>
 						<li><input type="text" name="id" class="input_1"></li>
-						<h3>비밀번호</h3>
+						<h3 class="aaa">비밀번호</h3>
 						<li><input type="password" name="pass" class="input_1"></li>
 						</ul>						
 					</div>
