@@ -41,16 +41,16 @@
 				<div id="id_input_button">
 					</div>
 					<div id="id_pw_input">
-						<ul>
-						<a>아이디</a><br>
-						<li><input type="text" name="id" class="input_1"></li><br>
-						<a>비밀번호</a><br>
+						<ul class="aa">
+						<h3>아이디</h3>
+						<li><input type="text" name="id" class="input_1"></li>
+						<h3>비밀번호</h3>
 						<li><input type="password" name="pass" class="input_1"></li>
 						</ul>						
 					</div>
 					<div id="login_button">
 						<input type="submit" class="button_1" value="로그인"><br>
-						<a href="../member/member_form.php"><input type="summit" class="button_1" value="회원가입하기"></a>
+						<input onclick="location.href='../member/member_form.php'" type="button" class="button_1" value="회원가입하기"></a>
 					</div>
 				</div>
 				<div class="clear"></div>
