@@ -4,6 +4,9 @@
     font-weight: normal;
     font-style: normal;
 }
+b {
+	color: #000;
+}
 .nexon{
 	font-family: 'NEXON Lv2 Gothic', sans-serif;
 	color: rgb(255, 255, 255);
@@ -82,15 +85,6 @@
 	height: auto; /* 로고 이미지의 높이는 자동으로 조정 */
 	float: left; /* 로고를 왼쪽으로 정렬 */
 	margin-right: 20px; /* 로고와 오른쪽 여백 설정 */
-}
-a {
-	text-decoration:none;
-	font-family:'NEXON Lv2 Gothic';
-}
-a:hover, a:visited, a:link, a.nexon {
-	font: size 13px;
-	font-weight:normal;
-	color:#ffffff;
 }
 
 ul, li {
@@ -254,6 +248,7 @@ S
 }
 #col2 {
 	width: 1800px;
+	height: 700px;
 	margin-bottom: 100px;
 	text-align:center;
 }
