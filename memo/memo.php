@@ -45,8 +45,12 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
             <li id="writer_title3"><?= $memo_date ?></li>
             <li id="writer_title4">
                 <?php
-                if ($userid == "admin" || $userid == $memo_id) {
-                    echo "<a href='delete.php?num=$memo_num'>[삭제]</a>";
+                if ($userid == "admin" || $userid == $memo_id) {?>
+                    <form action="delete.php" method="get">
+                    <input type="hidden" name="num" value="<?php echo $memo_num; ?>">
+                    <input type="submit" value="삭제">
+                    </form>
+                <?php
                 }
                 ?>
             </li>
@@ -72,17 +76,21 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
                     <ul>
                         <li id="writer_title1"><?= $ripple_nick ?></li>
                         <li id="writer_title2"><?= $ripple_date ?></li>
-                        <li id="writer_title3">
+                <li id="writer_title3">
                             <?php
-                            if ($userid == "admin" || $userid == $ripple_id) {
-                                echo "<a href='delete_ripple.php?num=$ripple_num'>[삭제]</a>";
+                            if ($userid == "admin" || $userid == $ripple_id) {?>
+                                <!-- 이 부분은 원하는 위치에 넣어주세요. -->
+                                <form action="delete_ripple.php" method="get">
+                                <input type="hidden" name="num" value="<?php echo $ripple_num; ?>">
+                                <input type="submit" value="삭제">
+                                </form>
+                                <?php
                             }
                             ?>
                         </li>
-                    </ul>
-                </div>
-                <div id="ripple_content"><?= $ripple_content ?></div>
-                <div class="hor_line_ripple"></div>
+                        </ul>
+                        <div id="ripple_content"><?= $ripple_content ?></div>
+                        <div class="hor_line_ripple"></div></div>
             <?php
             }
             ?>
@@ -133,13 +141,6 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
         </div> <!-- end of wrap -->
         <div id="content">
             <div id="col2">
-                <div id="memo_row1">
-                    <form name="memo_form" method="post" action="./insert.php">
-                        <div id="memo_writer"><span>▷ <?= $usernick ?></span></div>
-                        <div id="memo1"><textarea rows="6" cols="95" name="content"></textarea></div>
-                        <div id="memo2"><button class="button">입력</button></div>
-                    </form>
-                </div> <!-- end of memo_row1 -->
                 <?php
                 for ($i = $start; $i < $start + $scale && $i < $total_record; $i++) {
                     $result->data_seek($i);
@@ -150,10 +151,16 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
                     $memo_nick = $row['nick'];
                     $memo_content = str_replace("\n", "<br>", $row['content']);
                     $memo_content = str_replace(" ", "&nbsp;", $memo_content);
-
                     displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $memo_num, $userid);
                 }
                 ?>
+                                <div id="memo_row1">
+                                <form name="memo_form" method="post" action="./insert.php">
+                                <div id="memo_writer"><span>▷ <?= $usernick ?></span></div>
+                                <div id="memo1"><textarea rows="6" cols="95" name="content"></textarea></div>
+                                <div id="memo2"><button class="button">입력</button></div>
+                    </form>
+                </div> <!-- end of memo_row1 -->
             </div> <!-- end of col2 -->
         </div> <!-- end of content -->
     </div> <!-- end of container -->
