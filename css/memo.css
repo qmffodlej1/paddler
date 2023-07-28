@@ -21,7 +21,6 @@
 #memo1 {
     display: inline-block; /* 메모 작성 폼을 가운데 정렬합니다. */
     text-align: center; /* 메모 작성 폼 내부를 왼쪽 정렬합니다. */
-	margin-left: 50px;
 }
 
 #memo2 {
@@ -70,17 +69,15 @@
 }
 
 #memo_writer_title #writer_title3 {
-	margin-left:100px;
+	margin-left:200px;
 }
 
 #memo_writer_title #writer_title4 {
-	margin-left:540px;
+	margin-left: 50px;
 }
 
 #memo_content {
-	width:500px;
-	padding-right: 400px;
-	margin-right: 500px;
+	float: left;
 }
 
 #ripple {
@@ -106,11 +103,6 @@
 	padding-left:10px;
 }
 
-#ripple_title {
-	padding-top:10px;
-	padding-left:10px;
-}
-
 #ripple_title li {
 	display:inline;
 }
@@ -120,9 +112,9 @@
 }
 
 #ripple_content {
-	padding-top:10px;
-	padding-left:10px;
-	padding-bottom:10px;
+	height: 28px;
+	margin-top: 20px;
+	margin-right: 900px;
 	border-bottom:dotted 1px #cccccc;
 }
 
@@ -140,3 +132,42 @@
 	margin-top:10px;
 	text-align:center;
 }
+.buttona {
+	width: 50px;
+	height: 20px;
+	font-family: 'NEXON Lv2 Gothic';
+	font-size: 11px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	font-weight: 500;
+	color: #000;
+	background-color: #fff;
+	border: none;
+	border-radius: 45px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	outline: none;
+	margin-left: 50px;
+	}
+	.buttonb {
+		width: 50px;
+		height: 20px;
+		font-family: 'NEXON Lv2 Gothic';
+		font-size: 11px;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 2.5px;
+		font-weight: 500;
+		color: #000;
+		background-color: #fff;
+		border: none;
+		border-radius: 45px;
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease 0s;
+		cursor: pointer;
+		outline: none;
+		margin-left: 45px;
+		margin-bottom: 10px;
+		}
