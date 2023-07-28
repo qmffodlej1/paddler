@@ -3,7 +3,7 @@ $host = "localhost"; // 호스트 주소
 $user = "roror"; // 데이터베이스 사용자명
 $pass = "qhdks12"; // 데이터베이스 비밀번호
 $db = "db_home"; // 데이터베이스 이름
-$page = 1;
+// $page = 1;
 
 $connect = new mysqli($host, $user, $pass, $db);
 
