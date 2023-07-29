@@ -132,7 +132,7 @@ $result = mysqli_query($connect, $sql);
 	if($userid==$item_id || $userlevel==1 || $userid=="admin")
 	{
 ?>
-				<a href="modify_form.php?num=<?=$num?>&page=<?=$page?>"><img src="../img/modify.png"></a>&nbsp;
+				<a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><img src="../img/modify.png"></a>&nbsp;
 				<a href="javascript:del('delete.php?num=<?=$num?>')"><img src="../img/delete.png"></a>&nbsp;
 <?
 	}

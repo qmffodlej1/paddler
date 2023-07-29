@@ -166,13 +166,12 @@ document.board_form.submit();
 			<div class="clear"></div>
 		</div>
 		<div id="write_button">
-			<?php if ($mode==""){?>
-				<form name="board_form" action="write_form.php">
-    			<input type="image" src="../img/ok.png" alt="Submit" onclick="return check_input();">
-			</form>
+		<!--<a href="#"><img src="../img/ok.png" method="post" type="submit" value="Submit"></a>&nbsp;-->
+		<form name="board_form" method="post" action="write_form.php"><input type="image" src="../img/ok.png" onclick="check_input()" alt="Submit">
+        </form>
 		<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>
 		</div>
-		<?php } ?>
+
 		</form>
 
 	</div> <!-- end of col2 -->
