@@ -47,8 +47,8 @@
 		$upfile_error[$i]    = $files["error"][$i];
 
 		$file = explode(".", $upfile_name[$i]);
-		$file_name = $file[0];
-		$file_ext  = $file[1];
+		@$file_name = $file[0];
+		@$file_ext  = $file[1];
 
 		if (!$upfile_error[$i]) {
 			$new_file_name = date("Y_m_d_H_i_s");
@@ -123,7 +123,7 @@
 		$sql .= " file_name_0, file_name_1, file_name_2, file_type_0, file_type_1, file_type_2, file_copied_0,  file_copied_1, file_copied_2) ";
 		$sql .= " values('$userid', '$username', '$usernick', '$subject', '$content', '$regist_day', 0, ";
 		$sql .= " '$upfile_name[0]', '$upfile_name[1]',  '$upfile_name[2]', '$upfile_type[0]', '$upfile_type[1]',  '$upfile_type[2]', ";
-		$sql .= " '$copied_file_name[0]', '$copied_file_name[1]','$copied_file_name[2]')";
+		@$sql .= " '$copied_file_name[0]', '$copied_file_name[1]','$copied_file_name[2]')";
 		$connect->query($sql); // 데이터베이스 연결 객체를 사용하여 쿼리 실행
 	}
 	$connect->close();  // DB 연결 끊기
