@@ -351,6 +351,17 @@ S
 	padding-bottom:5px;
 }
 .input_1{
+	height: 30px;
+	width: 80%;
+	border: 1px solid #b4b4b4;
+	border-radius: 60px;
+	display: inline-block;
+	size: 1;
+	margin-right: 20px;
+	padding: 10px;
+	
+}
+.input_12{
 	height: 20px;
 	width: 90%;
 	border: 1px solid #b4b4b4;

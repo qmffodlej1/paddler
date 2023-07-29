@@ -60,7 +60,7 @@
 }
 
 #writer_title2 {
-	margin-left: 100px;
+	margin-left: 20px;
 }
 
 #memo_writer_title #writer_title2 {
@@ -78,6 +78,7 @@
 
 #memo_content {
 	float: left;
+	text-align: left;
 }
 
 #ripple {
@@ -98,6 +99,9 @@
 	margin-left:60px;
 	margin-bottom: 40px;
 }
+#ripple_writer_title {
+	display: flex;
+}
 #ripple_title {
 	padding-top:10px;
 	padding-left:10px;
@@ -113,19 +117,13 @@
 
 #ripple_content {
 	height: 28px;
+	margin-left: 50px;
+}
+
+#ripple_insert #ripple_button {
+	padding: 0px;
+	margin-right: 80px;
 	margin-top: 20px;
-	margin-right: 900px;
-	border-bottom:dotted 1px #cccccc;
-}
-
-#ripple_insert {
-	margin-top:10px;
-}
-
-#ripple_button {
-	float:left;
-	margin-left:5px;
-	margin-top:15px;
 }
 
 #page_num {
@@ -154,6 +152,7 @@
 	.buttonb {
 		width: 50px;
 		height: 20px;
+		float: right;
 		font-family: 'NEXON Lv2 Gothic';
 		font-size: 11px;
 		text-align: center;
@@ -168,6 +167,16 @@
 		transition: all 0.3s ease 0s;
 		cursor: pointer;
 		outline: none;
-		margin-left: 45px;
 		margin-bottom: 10px;
 		}
+	.dksl {
+		display:inline-block;
+		width: 800px;
+		height: 40px;
+		margin-left: 135px;
+		margin-bottom: 20px;
+		padding-top: 20px;
+		padding-left: 20px;
+		background-color: #e8e6eb;
+		border-radius: 40px;
+	}
