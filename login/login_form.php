@@ -35,7 +35,7 @@
 			 <div class="clear"></div>
 
 			 <div id="login1">
-				<img src="../img/mul.png" width="200px" height="200px">
+				<img src="../img/mul.png" width="180px" height="180px">
 			 </div>
 			 <div id="login2" class="login2">
 				<div id="id_input_button">
@@ -43,9 +43,9 @@
 					<div id="id_pw_input">
 						<ul class="aa">
 						<h3 class="aaa">아이디</h3>
-						<li><input type="text" name="id" class="input_1"></li>
+						<li><input type="text" name="id" class="input_12"></li>
 						<h3 class="aaa">비밀번호</h3>
-						<li><input type="password" name="pass" class="input_1"></li>
+						<li><input type="password" name="pass" class="input_12"></li>
 						</ul>						
 					</div>
 					<div id="login_button">
