@@ -143,7 +143,7 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
         <div id="memo_row1">
         <form name="memo_form" method="post" action="./insert.php">
   <div id="memo_writer">
-    <span>▷ <?= $usernick ?></span>
+    <span>▷ <?= @$usernick ?></span>
   </div>
   <div id="memo1">
     <textarea rows="6" cols="95" name="content"></textarea>
@@ -164,7 +164,7 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
                     $memo_nick = $row['nick'];
                     $memo_content = str_replace("\n", "<br>", $row['content']);
                     $memo_content = str_replace(" ", "&nbsp;", $memo_content);
-                    displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $memo_num, $userid);
+                    displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $memo_num, @$userid);
                 }
                 ?>
                     </form>
