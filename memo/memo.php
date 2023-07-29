@@ -72,10 +72,11 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
                 $ripple_date = $row_ripple['regist_day'];
             ?>
                 <div id="ripple_writer_title">
-                    <ul>
+                    <ul class="dksl">
                         <li id="writer_title1">↳ <?= $ripple_nick ?></li>
-                        <li id="writer_title2"><?= $ripple_date ?></li>
-                <li id="writer_title3">
+                        <li id="writer_title2"><?= $ripple_date ?>: </li>
+                         <li id="ripple_content"><?= $ripple_content ?></li>
+                         <li id="writer_title3">
                             <?php
                             if ($userid == "admin" || $userid == $ripple_id) {?>
                                 <!-- 이 부분은 원하는 위치에 넣어주세요. -->
@@ -88,7 +89,6 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
                             ?>
                         </li>
                         </ul>
-                        <div id="ripple_content"><?= $ripple_content ?></div>
                         <div class="hor_line_ripple"></div></div>
             <?php
             }
