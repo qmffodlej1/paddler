@@ -166,13 +166,14 @@ function check_input() {
 
 			<div class="clear"></div>
 		</div>
-< 			<?php if ($mode==""){?>
-< 				<form name="board_form" action="write_form.php">
-<     			<input type="image" src="../img/ok.png" alt="Submit" onclick="return check_input();">
-< 			</form>
+			<div class="clear"></div>
+			<?php if ($mode==""){?>
+				<form name="board_form" action="write_form.php">
+    			<input type="image" src="../img/ok.png" alt="Submit" onclick="return check_input();">
+			</form>
 		<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>
 		</div>
-
+		<?php } ?>
 		</form>
 
 	</div> <!-- end of col2 -->
