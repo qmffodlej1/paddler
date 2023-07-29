@@ -52,16 +52,17 @@ function check_input() {
     {
         alert("제목을 입력하세요!");    
         document.board_form.subject.focus();
-        return;
+        return false;
     }
 
     if (!document.board_form.content.value)
     {
         alert("내용을 입력하세요!");    
         document.board_form.content.focus();
-        return;
+        return false;
     }
-document.board_form.submit();
+// document.board_form.submit();
+	return true;
 }
 </script>
 </head>
