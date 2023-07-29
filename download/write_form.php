@@ -118,11 +118,11 @@ function check_input() {
 			<div id="write_row1"><div class="col1"> 닉네임 </div><div class="col2"><?=$usernick?></div></div>
 			<div class="write_line"></div>
 			<div id="write_row2"><div class="col1"> 제목   </div>
-			<div class="col2"><input type="text" name="subject" value="<?=$item_subject?>" ></div>
+			<div class="col2"><input type="text" name="subject" value="<?=@$item_subject?>" ></div>
 			</div>
 			<div class="write_line"></div>
 			<div id="write_row3"><div class="col1"> 내용   </div>
-			<div class="col2"><textarea rows="15" cols="79" name="content"><?=$item_content?></textarea></div>
+			<div class="col2"><textarea rows="15" cols="79" name="content"><?=@$item_content?></textarea></div>
 			</div>
 			<div class="write_line"></div>
 			<div id="write_row4"><div class="col1"> 첨부파일1   </div>
@@ -167,13 +167,11 @@ function check_input() {
 			<div class="clear"></div>
 		</div>
 			<div class="clear"></div>
-			<?php if ($mode==""){?>
 				<form name="board_form" action="write_form.php">
     			<input type="image" src="../img/ok.png" alt="Submit" onclick="return check_input();">
 			</form>
 		<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>
 		</div>
-		<?php } ?>
 		</form>
 
 	</div> <!-- end of col2 -->
