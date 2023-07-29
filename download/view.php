@@ -100,7 +100,7 @@ $result = mysqli_query($connect, $sql);
 <?
 	for ($i=0; $i<3; $i++)
 	{
-		if ($userid && $file_copied[$i])
+		if (@$userid && $file_copied[$i])
 		{
 			$show_name = $file_name[$i];
 			$real_name = $file_copied[$i];
@@ -129,7 +129,7 @@ $result = mysqli_query($connect, $sql);
 	}
 ?> -->
 <? 
-	if($userid==$item_id || $userlevel==1 || $userid=="admin")
+	if(@$userid==$item_id || @$userlevel==1 || @$userid=="admin")
 	{
 ?>
 				<a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><img src="../img/modify.png"></a>&nbsp;
@@ -139,7 +139,7 @@ $result = mysqli_query($connect, $sql);
 ?>
 
 <? 
-	if($userid)
+	if(@$userid)
 	{
 ?>
 				<a href="write_form.php?table=<?=$table?>"><img src="../img/write.png"></a>
