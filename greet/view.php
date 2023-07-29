@@ -104,7 +104,7 @@
 		<div id="view_button">
 				<a href="list.php?page=<?=$page?>"><img src="../img/list.png"></a>&nbsp;
 <? 
-	if($userid==$item_id || $userlevel==1 || $userid=="admin")
+	if(@$userid==$item_id || @$userlevel==1 || @$userid=="admin")
 	{
 ?>
 				<a href="modify_form.php?num=<?=$num?>&page=<?=$page?>"><img src="../img/modify.png"></a>&nbsp;
@@ -113,7 +113,7 @@
 	}
 ?>
 <? 
-	if($userid )
+	if(@$userid )
 	{
 ?>
 				<a href="write_form.php"><img src="../img/write.png"></a>
