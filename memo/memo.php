@@ -25,7 +25,6 @@ if ($total_record % $scale == 0)
 else
     $total_page = floor($total_record / $scale) + 1;
 
-if (!$page) // 페이지번호($page)가 0 일 때
     $page = 1; // 페이지 번호를 1로 초기화
 
 // 표시할 페이지($page)에 따라 $start 계산  
