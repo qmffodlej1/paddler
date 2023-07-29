@@ -17,9 +17,9 @@
 
    $row = $result->fetch_array(MYSQLI_ASSOC);
 
-   $copied_name[0] = $row[file_copied_0];
-   $copied_name[1] = $row[file_copied_1];
-   $copied_name[2] = $row[file_copied_2];
+   @$copied_name[0] = $row['file_copied_0'];
+   @$copied_name[1] = $row['file_copied_1'];
+   @$copied_name[2] = $row['file_copied_2'];
 
    for ($i=0; $i<3; $i++)
    {
@@ -31,9 +31,8 @@
    }
 
    $sql = "delete from $table where num = $num";
-   mysql_query($sql, $connect);
+   $result = $connect->query($sql);
 
-   mysql_close();
 
    echo "
 	   <script>
