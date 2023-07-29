@@ -1,6 +1,6 @@
 <? 
 	session_start(); 
-	@$page = $_GET['page']
+	@$page = $_GET['page'];
 	if (isset($_SESSION['userid'])) 
 	{
 			$userid = $_SESSION['userid'];
