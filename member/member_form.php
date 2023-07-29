@@ -119,7 +119,7 @@
         <tr>
             <td>아이디</td>
             <td>
-                    <input type="text" name="id" class="input_1">
+                    <input type="text" name="id" class="input_12">
             </td>
             <td>
                 <a href="#">
@@ -130,7 +130,7 @@
         <tr>
             <td>비밀번호</td>
             <td>
-            <input type="password" name="pass" class="input_1">
+            <input type="password" name="pass" class="input_12">
             </td>
         </tr>
         <tr>
@@ -145,7 +145,7 @@
             비밀번호 확인
         </td>
             <td>
-                <input type="password" class="input_1" name="pass_confirm">
+                <input type="password" class="input_12" name="pass_confirm">
             </td>
         </tr>
         <tr>
@@ -153,7 +153,7 @@
             이름
             </td>
             <td>
-                <input type="text" name="name" class="input_1">
+                <input type="text" name="name" class="input_12">
             </td>
         </tr>
         <tr>
@@ -161,7 +161,7 @@
                 별명
             </td>
             <td>
-                <input type="text" name="nick" class="input_1">
+                <input type="text" name="nick" class="input_12">
             </td>
             <td>
                 <div id="nick2" ><input type="button" class="button" onclick="check_nick()" value="중복확인"></a>
