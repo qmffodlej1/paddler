@@ -1,11 +1,11 @@
 <? 
-	$item_subject = NULL;
-	$item_content = NULL;
+	// $item_subject = NULL;
+	// $item_content = NULL;
 	session_start(); 
-	$table = $_GET['table'];
-	$mode = @$_POST['mode'];
-	$num = @$_POST['num'];
-	$page = @$_POST['page']; 
+	@$table = $_GET['table'];
+	@$mode = $_GET['mode'];
+	@$num = $_GET['num'];
+	@$page = $_GET['page']; 
 	if (isset($_SESSION['userid'])) 
 	{
 			$userid = $_SESSION['userid'];
@@ -14,23 +14,24 @@
 			$userlevel = $_SESSION['userlevel'];
 	}  //세션에서 받아온다.
 	include "../lib/dbconn.php";
+
 	if ($mode=="modify")
 	{
 		$sql = "select * from $table where num=$num";
 		$result = $connect->query($sql);
 
-		$row = $connect->query($sql);;       
+		$row = $result->fetch_array(MYSQLI_ASSOC);       
 	
-		$item_subject     = $row[subject];
-		$item_content     = $row[content];
+		$item_subject     = $row['subject'];
+		$item_content     = $row['content'];
 
-		$item_file_0 = $row[file_name_0];
-		$item_file_1 = $row[file_name_1];
-		$item_file_2 = $row[file_name_2];
+		$item_file_0 = $row['file_name_0'];
+		$item_file_1 = $row['file_name_1'];
+		$item_file_2 = $row['file_name_2'];
 
-		$copied_file_0 = $row[file_copied_0];
-		$copied_file_1 = $row[file_copied_1];
-		$copied_file_2 = $row[file_copied_2];
+		$copied_file_0 = $row['file_copied_0'];
+		$copied_file_1 = $row['file_copied_1'];
+		$copied_file_2 = $row['file_copied_2'];
 		
 	} //수정 부분
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -47,20 +48,20 @@
 <link href="../css/board3.css" rel="stylesheet" type="text/css" media="all">
 <script>
 function check_input() {
-    if (!document.board_form.subject.value) {
+    if (!document.board_form.subject.value)
+    {
         alert("제목을 입력하세요!");    
         document.board_form.subject.focus();
-        return false; // 폼 제출을 막기 위해 false를 반환
+        return;
     }
 
-    if (!document.board_form.content.value) {
+    if (!document.board_form.content.value)
+    {
         alert("내용을 입력하세요!");    
         document.board_form.content.focus();
-        return false; // 폼 제출을 막기 위해 false를 반환
+        return;
     }
-
-    // 폼이 제출됩니다. (이미지를 클릭했을 때만 호출됩니다.)
-    return true; // 폼 제출을 위해 true를 반환
+document.board_form.submit();
 }
 </script>
 </head>
@@ -172,7 +173,6 @@ function check_input() {
 		<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>
 		</div>
 		<?php } ?>
-
 		</form>
 
 	</div> <!-- end of col2 -->
