@@ -115,11 +115,11 @@
 			</div>
 			<div class="write_line"></div>
 			<div id="write_row2"><div class="col1"> 제목   </div>
-			                     <div class="col2"><input type="text" name="subject" value="<?=$item_subject?>" ></div>
+			                     <div class="col2"><input type="text" name="subject" value="<?=@$item_subject?>" ></div>
 			</div>
 			<div class="write_line"></div>
 			<div id="write_row3"><div class="col1"> 내용   </div>
-			                     <div class="col2"><textarea rows="15" cols="79" name="content"><?=$item_content?></textarea></div>
+			                     <div class="col2"><textarea rows="15" cols="79" name="content"><?@=$item_content?></textarea></div>
 			</div>
 			<div class="write_line"></div>
 			<div id="write_row4"><div class="col1"> 이미지파일1   </div>
