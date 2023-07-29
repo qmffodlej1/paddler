@@ -157,7 +157,7 @@
 			<li id="writer_title2"><?=$ripple_date?></li>
 			<li id="writer_title3"> 
 		      <? 
-					if($userid=="admin" || $userid==$ripple_id)
+					if(@$userid=="admin" || @$userid==$ripple_id)
 			          echo "<a href='delete_ripple.php?table=$table&num=$item_num&ripple_num=$ripple_num'>[삭제]</a>"; 
 			  ?>
 			</li>
@@ -181,7 +181,7 @@
 		<div id="view_button">
 				<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>&nbsp;
 <? 
-	if($userid && ($userid==$item_id))
+	if(@$userid && ($userid==$item_id))
 	{
 ?>
 				<a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><img src="../img/modify.png"></a>&nbsp;
@@ -190,7 +190,7 @@
 	}
 ?>
 <? 
-	if($userid)
+	if(@$userid)
 	{
 ?>
 				<a href="write_form.php?table=<?=$table?>"><img src="../img/write.png"></a>
