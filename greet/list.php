@@ -173,7 +173,7 @@
 				<div id="button">
 					<a href="list.php?page=<?=$page?>"><input href="#" type=button class="button_3" value="목록"></a>&nbsp;
 <?php 		
-	if($userid)
+	if(@$userid)
 	{
 ?>
 		<input onclick="location.href='write_form.php'" type=button class="button_3" value="글쓰기">
