@@ -171,7 +171,7 @@
 				<div id="button">
 					<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>&nbsp;
 <? 
-	if($userid)
+	if(@$userid)
 	{
 ?>
 <a href="write_form.php?table=<?= $table ?>"><img src="../img/write.png"></a>
