@@ -143,36 +143,47 @@
 		</div>
 		<div id="form_join">
 			<div id="join1">
-			<ul>
-			<li>* 아이디</li>
-			<li>* 비밀번호</li>
-			<li>* 비밀번호 확인</li>
-			<li>* 이름</li>
-			<li>* 닉네임</li>
-			<li>* 휴대폰</li>
-			<li>&nbsp;&nbsp;&nbsp;이메일</li>
-			</ul>
-			</div>
-			<div id="join2">
-			<ul>
-			<li><?= $row['id'] ?></li>
-			<li><input type="password" name="pass" value="<?= $row['pass'] ?>"></li>
-			<li><input type="password" name="pass_confirm" value="<?= $row['pass'] ?>"></li>
-			<li><input type="text" name="name" value="<?= $row['name'] ?>"></li>
-			<li><div id="nick1"><input type="text" name="nick" value="<?=$row['nick'] ?>"></div><div id="nick2" ><a href="#"><img src="../img/check_id.gif" onclick="check_nick()"></a></div></li>
-			<li><input type="text" class="hp" name="hp1" value="<?=$hp1?>"> 
-             - <input type="text" class="hp" name="hp2" value="<?=$hp2?>"> - <input type="text" class="hp" name="hp3" value="<?=$hp3?>"></li>
-			<li><input type="text" id="email1" name="email1" value="<?=$email1?>"> @ <input type="text" name="email2" 
-			           value="<?=$email2?>"></li>
-			</ul>
-			</div>
+                <table class="center-table">
+                    <tr>
+                        <td> 아이디 </td>
+                        <td> <?php echo $row['id']?>
+                    </tr>
+                    <tr>
+                        <td> 비밀번호 </td>
+                        <td> <input type="password" name="pass" value=""></td>
+                    </tr>
+                        <td> 비밀번호 확인 </td>
+                        <td> <input type="password" name="pass_confirm" value=""></td>
+                    </tr>
+                    <tr>
+                        <td> 이름 </td>
+                        <td><input type="text" name="name" value="<?= $row['name'] ?>"></td>
+                    </tr>   
+                    <tr>
+                        <td>닉네임</td>
+                        <td><div id="nick1"><input type="text" name="nick" value="<?=$row['nick'] ?>"></div></td>
+                        <td><div id="nick2" ><a href="#"><img src="../img/check_id.gif" onclick="check_nick()"></td>
+                    </tr>
+                    <tr>
+                        <td>휴대폰</td>
+                        <td><input type="text" class="hp" name="hp1" value="<?=$hp1?>">-
+                            <input type="text" class="hp" name="hp2" value="<?=$hp2?>"> -
+                            <input type="text" class="hp" name="hp3" value="<?=$hp3?>">
+                        </td>
+                    </tr>
+                        <td> 이메일 </td>
+                        <td> <input type="text" id="email1" name="email1" value="<?=$email1?>"> @ <input type="text" name="email2" value="<?=$email2?>"> </td>
+                    </tr>
+                </table>
+            </div>
+		</div>
 			<div class="clear"></div>
 			<div id="must"> * 는 필수 입력항목입니다.^^</div>
-		</div>
-
-		<div id="button"><a href="#"><img src="../img/button_save.gif"  onclick="check_input()"></a>&nbsp;&nbsp;
-		                 <a href="#"><img src="../img/button_reset.gif" onclick="reset_form()"></a>
-		</div>
+		    <div id="button">
+                <a href="#"><img src="../img/button_save.gif"  onclick="check_input()"></a>&nbsp;&nbsp;
+		        <a href="#"><img src="../img/button_reset.gif" onclick="reset_form()"></a>
+		    </div>
+        </div>
 	    </form>
 	</div>
   </div>
