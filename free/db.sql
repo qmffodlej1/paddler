@@ -101,3 +101,5 @@ create table memo_ripple (
    regist_day char(20),
    primary key(num)
 );
+
+create table anonym like free;create table anonym_ripple like free_ripple;
