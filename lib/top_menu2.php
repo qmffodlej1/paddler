@@ -29,8 +29,8 @@ a:hover, a:visited, a:link, a.nexon {
 li a {
     display: block;
     color: white;
-    padding: 10px 20px;
-    margin-left: 240px;
+    padding: 10px;
+    margin-left: 180px;
     font-family: 'NEXON Lv2 Gothic';
     font-size: 20px;
 }
@@ -44,7 +44,8 @@ li a:hover {
 <li><a href="../greet/list.php">가입인사</a></li>
 <li><a href="../download/list.php">자료실</a></li>
 <li><a href="../free/list.php">자유게시판</a></li>
-<li><a href="#" onclick="window.open('../survey/survey.php', '','scrollbars=no, toolbars=no,width=180,height=230')" border="0">설문조사</a></li>
+<li><a href="../anonym/list.php">익명게시판</a></li>
+<li><a href="../quote/quote.php">오늘의명언</a></li>
 </ul>
 </div>
     </head>
