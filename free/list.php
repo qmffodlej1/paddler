@@ -83,41 +83,37 @@
                 <?php include "../lib/top_menu2.php"; ?>
             </div> <!-- end of menu -->
         </div> <!-- end of wrap -->
-	<div id="col2">        
-		<div id="title">
-			<img src="../img/title_free.gif">
+	<div id="col_2">        
+	<div id="title">
+			<h1>자유게시판</h1>
 		</div>
-
-		<form  name="board_form" method="post" action="list.php?table=<?=$table?>&mode=search"> 
+		<form  name="board_form" method="post" action="list.php?mode=search"> 
 		<div id="list_search">
 			<div id="list_search1">▷ 총 <?= $total_record ?> 개의 게시물이 있습니다.  </div>
-			<div id="list_search2"><img src="../img/select_search.gif"></div>
+			<div id="list_search2"><b><a>SELECT</a></b></div>
 			<div id="list_search3">
-				<select name="find">
+				<select class="inpung" name="find">
                     <option value='subject'>제목</option>
                     <option value='content'>내용</option>
                     <option value='nick'>별명</option>
                     <option value='name'>이름</option>
 				</select></div>
-			<div id="list_search4"><input type="text" name="search"></div>
-			<div id="list_search5"><input type="image" src="../img/list_search_button.gif"></div>
+			<div id="list_search4"><input class="inpung" type="text" name="search"></div>
+			<div id="list_search5"><input href="#" type=button class="button_3" value="목록"></div>
 		</div>
 		</form>
 		<div class="clear"></div>
-
+		<div id="list">
 		<div id="list_top_title">
 			<ul>
-				<li id="list_title1"><img src="../img/list_title1.gif"></li>
-				<li id="list_title2"><img src="../img/list_title2.gif"></li>
-				<li id="list_title3"><img src="../img/list_title3.gif"></li>
-				<li id="list_title4"><img src="../img/list_title4.gif"></li>
-				<li id="list_title5"><img src="../img/list_title5.gif"></li>
+				<li id="list_title1"><h3>번호</h3></li>
+				<li id="list_title2"><h3>제목</h3></li>
+				<li id="list_title3"><h3>글쓴이</h3></li>
+				<li id="list_title4"><h3>등록일</h3></li>
+				<li id="list_title5"><h3>조회</h3></li>
 			</ul>		
 		</div>
-
-		<div id="list_content">
-<?	
-
+<?		
    for ($i=$start; $i<$start+$scale && $i < $total_record; $i++)                    
    {
       $result->data_seek($i);
@@ -136,19 +132,18 @@
 	  $result2 = $connect->query($sql);
 	  $num_ripple = $result2->num_rows;
       
-?>
-			<div id="list_item">
-				<div id="list_item1"><?=$number?></div>
-				<div id="list_item2"><a href="view.php?table=<?=$table?>&num=<?=$item_num?>&page=<?=$page?>"><?=$item_subject?></a>
-<?
-		if ($num_ripple)
-				echo "[$num_ripple]";
-?>
-				</div>
-				<div id="list_item3"><?=$item_nick?></div>
-				<div id="list_item4"><?=$item_date?></div>
-				<div id="list_item5"><?=$item_hit?></div>
-			</div>
+
+	  ?>		<div id="list_content">
+	  <div id="list_item">
+		  <ul>
+		  <li id="list_item1"><?= $number ?></li>
+		  <li style="cursor:pointer" onclick="location.href='view.php?num=<?=$item_num?>&page=<?=$page?>'" id="list_item2"><?= $item_subject ?></li>
+		  <li div id="list_item3"><?= $item_nick ?></li>
+		  <li div id="list_item4"><?= $item_date ?></li>
+		  <li div id="list_item5"><?= $item_hit ?></li>
+		  </ul>
+	  </div>
+	 </div>
 <?
    	   $number--;
    }
@@ -172,12 +167,12 @@
 			&nbsp;&nbsp;&nbsp;&nbsp;다음 ▶
 				</div>
 				<div id="button">
-					<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>&nbsp;
+					<a href="list.php?table=<?=$table?>&page=<?=$page?>"><input href="#" type=button class="button_3" value="목록"></a>&nbsp;
 <? 
 	if(@$userid)
 	{
 ?>
-		<a href="write_form.php?table=<?=$table?>"><img src="../img/write.png"></a>
+		<input onclick="location.href='write_form.php'" type=button class="button_3" value="글쓰기">
 <?
 	}
 ?>

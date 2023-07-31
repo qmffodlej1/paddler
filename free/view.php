@@ -1,6 +1,6 @@
 <? 
 	session_start();
-	$table = $_GET['table'];
+	$table = "free";
 	$num = $_GET['num'];
 	$page = $_GET['page'];
 	if (isset($_SESSION['userid']))
@@ -89,25 +89,26 @@
     }
 </script>
 </head>
-
-<body>
-<div id="wrap">
-  <div id="header">
-    <? include "../lib/top_login2.php"; ?>
-  </div>  <!-- end of header -->
-
-  <div id="menu">
-	<? include "../lib/top_menu2.php"; ?>
-  </div>  <!-- end of menu --> 
-
-  <div id="content">
-	<div id="col1">
-		<div id="left_menu">
-<?
-			include "../lib/left_menu.php";
-?>
-		</div>
-	</div>
+<div id="container">
+    <body>
+        <header class="header">
+		<a href="../index.php"> <!-- 로고를 클릭하면 현재 페이지(index.php)로 연결되도록 설정 -->
+                <img src="../img/logo2.png" class="logo" alt="로고">
+            </a>
+            <?php
+            if (empty($userid)) {
+                echo '<div id="top_login"><a href="../login/login_form.php">로그인</a> | <a href="../member/member_form.php">회원가입</a></div>';
+            } else {
+                echo '<div id="top_login">' . $usernick . ' (level: ' . $userlevel . ') | <a href="../login/logout.php">로그아웃</a> | <a href="../login/member_form_modify.php">정보수정</a></div>';
+            }
+            ?>
+        </header>
+		<div id="body">
+        <div id="wrap">
+            <div id="menu">
+                <?php include "../lib/top_menu2.php"; ?>
+            </div> <!-- end of menu -->
+        </div> <!-- end of wrap -->
 
 	<div id="col2">        
 		<div id="title">

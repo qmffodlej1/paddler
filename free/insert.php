@@ -1,6 +1,6 @@
 <? 
 	session_start(); 
-	$table = @$_GET['table'];
+	$table = "free";
 	$mode = @$_GET['mode'];
 	$num = @$_GET['num'];
 	$page = @$_GET['page'];
