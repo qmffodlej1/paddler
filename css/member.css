@@ -8,7 +8,7 @@
 	font-family: 'NEXON Lv2 Gothic', sans-serif;
 	color: rgb(255, 255, 255);
 }
-#content #col2 {
+#content #col_2 {
 	width:836px;
 	min-height:558px;
 	float:left;
@@ -17,24 +17,27 @@
 	font-family: 'NEXON Lv2 Gothic', sans-serif;
 	margin-left: 90px;
 }
-#content #col2 #title{
+#content #col_2 #title{
 	margin-left:15px;
 	margin-top:30px;
 	width:96%;
 	height:30px;
 	border-bottom:solid 1px #cccccc;
 }
+#form_join {
+	text-align: center;
+	display: flex;
+	margin-left: 670px;
+}
 
-
-#content #col2 #form_join{
+#content #col_2 #form_join{
 	margin-left:15px;
 	width:96%;
 	height:300px;
 	border-bottom:solid 1px #cccccc;
 }
 
-#content #col2 #form_join #join1 {
-	float:left;
+#content #col_2 #form_join #join1 {
 	width:120px;
 	height:250px;
 	background-color:#dddddd;   
@@ -71,9 +74,8 @@
 	float:left;
 	margin-left:5px;
 }
-
-#id3 {
-	padding-right: 20px;
+id3 {
+	display: flex;
 }
 
 #content #col2 #form_join #join2 #id3 {
@@ -226,6 +228,7 @@
 td {
 	font-family: 'NEXON Lv2 Gothic', sans-serif;
 	text-align: center;
+	display: flex;
 }
 select {
 	float: left;
@@ -237,4 +240,65 @@ select {
 }
 .aaa {
 	margin-left: 50px;
+}
+.phone-input {
+	display: flex;
+	align-items: center;
+}
+
+.phone-input input[type="text"] {
+	width: 25.8%;
+	border: 1px solid #b4b4b4;
+	border-radius: 60px;
+	padding: 10px;
+	margin-right: 5px;
+}
+
+.phone-input b {
+	margin-right: 5px;
+}
+.phone-inputt {
+	display: flex;
+	align-items: center;
+}
+
+.phone-inputt input[type="text"] {
+	width: 29.5%;
+	border: 1px solid #b4b4b4;
+	border-radius: 60px;
+	padding: 10px;
+	margin-right: 5px;
+}
+.phone-inputt select {
+	width: 19%;
+	border: 1px solid #b4b4b4;
+	border-radius: 60px;
+	padding: 10px;
+	margin-right: 5px;
+}
+
+.phone-inputt b {
+	margin-right: 5px;
+}
+#must {
+    margin-right: 20px;
+}
+
+#button {
+    text-align: center;
+	margin-left: 140px;
+    margin-top: 450px;
+    position: absolute; /* Change to absolute positioning */
+}
+
+.right-bottom {
+	display: inline-flex;
+}
+#buttong {
+    text-align: center;
+	margin-right: 600px;
+	padding-top: 20px;
+}
+.center-bottom {
+	display: inline-flex;
 }

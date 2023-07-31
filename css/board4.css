@@ -314,10 +314,9 @@
 }
 
 #view_button {
-	width:98%;
-	text-align:right;
-	margin-top:15px;
-	margin-bottom:15px;
+	width:25%;
+	margin-top: 20px;
+	float: right;
 }
 .button_3 {
 	width: 70px;
@@ -359,8 +358,9 @@
 }
 
 #reply_box {
-    float: left;
-    width: 70%; /* 리플 입력란이 차지하는 너비 조정 */
+	display: inline-flex;
+	justify-content: space-between;
+    width: 1890px;
 }
 
 #reply_title {
@@ -369,9 +369,12 @@
 	float: left;
 		font-family: 'NEXON Lv2 Gothic';
 }
-
+#reply_input {
+	width: 1890px;
+	display: inline-flex;
+}
 #reply_input textarea {
-    width: 100%;
+    width: 900px;
     resize: none;
 }
 
@@ -379,9 +382,15 @@
     float: left;
     width: 10%;
 	margin-right: 200px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
-
+#ripple {
+	width:1890px;
+	height: 400px;
+}
+#ripple_form {
+	width: 600px;
+}
 #ripple_box1, #ripple_input, #ripple_display {
 	text-align: left;
 }
@@ -407,9 +416,12 @@
 }
 
 #ripple_writer_title {
-    justify-content: space-between;
     align-items: center;
-	margin-right: 200px;
+	height: 70px;
+	margin-top: 100px;
+	margin-right: 1780px;
+	display: inline-block;
+	width: 100px;
 }
 li#writer_title3 {
     /* 버튼 오른쪽 정렬을 위해 필요한 CSS */
@@ -418,23 +430,16 @@ li#writer_title3 {
     align-items: center;
 }
 .dksl {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 1000px;
+	width: 900px;
 	height: 40px;
-	margin-bottom: 20px;
-	margin-top: 20px;
-	margin-right: 300px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	padding-left: 20px;
 	background-color: #e8e6eb;
 	border-radius: 40px;
+	margin-left: 490px;
 }
-
 .dksl li {
-	display: flex;
 	align-items: center;
 }
 
@@ -443,6 +448,7 @@ li#writer_title3 {
 #writer_title2,
 #ripple_content,
 #writer_tilte3 {
+	margin-top: 10px;
 	margin-right: 100px; /* 원하는 간격(px)으로 조정해주세요 */
 }
 
@@ -498,3 +504,13 @@ li#writer_title3 {
 	a {
 		font-family: 'NEXON Lv2 Gothic';
 	}
+	.dlstod{
+		height: 30px;
+		width: 80%;
+		border: 1px solid #b4b4b4;
+		border-radius: 60px;
+		size: 1;
+		margin-top: 20px;
+		margin-right: 20px;
+		padding: 10px;
+}

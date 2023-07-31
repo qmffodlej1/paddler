@@ -242,55 +242,24 @@
 
 #view_title {
 
-		height:18px;
-
-			padding:10px 8px 20px 20px;  
-
-				border-top:solid 2px #aaaaaa;
-
-					border-bottom: dotted 1px #aaaaaa;
-
-						margin-bottom:5px;
-						width: 1860px;
-
-							justify-content: space-between; /* Distribute elements evenly on both ends */
-
-							}
-
-
-
-							#view_title1 {
-
-								float:left;
-
-									width:40%;
-
-									}
-
-
-
-									#view_title2 {
-
-										float:left;
-
-											width:28%;
-
-												text-align:right;
-
-												}#view_title {
-  height: 18px;
-  padding: 10px 8px 20px 20px;
-  border-top: solid 2px #aaaaaa;
-  border-bottom: dotted 1px #aaaaaa;
-  margin-bottom: 5px;
-  display: flex; /* flexbox를 사용하여 엘리먼트를 정렬합니다. */
-  justify-content: space-between; /* 양 끝에 엘리먼트를 배치합니다. */
+height:18px;
+padding:10px 8px 20px 20px;  
+padding-right: 60px;
+border-top:solid 2px #aaaaaa;
+border-bottom: dotted 1px #aaaaaa;
+margin-bottom:5px;
+width: 1860px;
+height: 18px;
+padding: 10px 8px 20px 20px;
+border-top: solid 2px #aaaaaa;
+border-bottom: dotted 1px #aaaaaa;
+margin-bottom: 5px;
+display: inline-flex;
 }
 
 #view_title1 {
-  /* 타이틀 엘리먼트의 float 속성을 제거합니다. */
-  /* float: left; */
   width: 40%;
+margin-left: 200px;
 }
 
 #view_title2 {
@@ -475,6 +444,26 @@ li#writer_title3 {
 	margin-bottom: 10px;
 	padding: 5px 10px;
 	}
+	.gkgkgk {
+		width: 60px;
+		height: 20px;
+		font-family: 'NEXON Lv2 Gothic';
+		font-size: 11px;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 2.5px;
+		font-weight: 500;
+		color: #000;
+		background-color: #fff;
+		border: none;
+		border-radius: 45px;
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease 0s;
+		cursor: pointer;
+		outline: none;
+		margin-bottom: 10px;
+		padding: 5px 10px;
+		}
 	#ripple_title {
 		padding-top:10px;
 		padding-left:10px;
