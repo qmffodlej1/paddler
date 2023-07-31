@@ -112,7 +112,7 @@
 
 #list_item ul {
     height: auto; /* 댓글 목록의 높이를 자동으로 조정하도록 변경합니다. */
-    width: 100%;
+    width: 110%;
     margin-top: 2px;
     padding-bottom: 8px;
     display: flex; /* flex 컨테이너로 변경하여 항목을 세로로 정렬합니다. */
@@ -126,6 +126,9 @@
     flex: 1;
     display: inline-block;
     text-align: center;
+}
+#list_item1 {
+	margin-left: 20px;
 }
 #page_button {
 	margin-top:20px;

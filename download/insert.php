@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$table = @$_GET['table'];
+	$table = "download";
 	$mode = @$_GET['mode'];
 	$num = @$_GET['num'];
 	$page = @$_GET['page'];
