@@ -84,70 +84,38 @@ $result = mysqli_query($connect, $sql);
                 <?php include "../lib/top_menu2.php"; ?>
             </div> <!-- end of menu -->
         </div> <!-- end of wrap -->
-	<div id="col2">     
-		<div id="title">
-			<img src="../img/title_download.gif">
+	<div id="col_2">     
+	<div id="title">
+			<h1>자 료 실</h1>
 		</div>
-		<div id="view_comment"> &nbsp;</div>
-
 		<div id="view_title">
-			<div id="view_title1"><?= $item_subject ?></div><div id="view_title2"><?= $item_nick ?> | 조회 : <?= $item_hit ?>  
+			<div id="view_title1">제목: <?= $item_subject ?></div><div id="view_title2"><?= $item_nick ?> | 조회 : <?= $item_hit ?>  
 			                      | <?= $item_date ?> </div>	
 		</div>
-
+		<div class="clear"></div>
 		<div id="view_content">
-<?
-	for ($i=0; $i<3; $i++)
-	{
-		if (@$userid && $file_copied[$i])
-		{
-			$show_name = $file_name[$i];
-			$real_name = $file_copied[$i];
-			$real_type = $file_type[$i];
-			$file_path = "./data/".$real_name;
-			$file_size = filesize($file_path);
-
-			echo "▷ 첨부파일 : $show_name ($file_size Byte) &nbsp;&nbsp;&nbsp;&nbsp;
-			       <a href='download.php?table=$table&num=$num&real_name=$real_name&show_name=$show_name&file_type=$real_type'>[저장]</a><br>";
-		}
-	}
-?>
-		    <br>
 			<?= $item_content ?>
 		</div>
-
 		<div id="view_button">
-				<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>&nbsp;
-<!-- <? 
-	if($userid && $userid==$item_id)
-	{
-?>
-				<a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><img src="../img/modify.png"></a>&nbsp;
-				<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')"><img src="../img/delete.png"></a>&nbsp;
-<?
-	}
-?> -->
+				<a href="list.php?table=<?=$table?>&page=<?=$page?>"><button class="gkgkgk">목록</button></a>&nbsp;
 <? 
-	if(@$userid==$item_id || @$userlevel==1 || @$userid=="admin")
+	if(@$userid && ($userid==$item_id))
 	{
 ?>
-				<a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><img src="../img/modify.png"></a>&nbsp;
-				<a href="javascript:del('delete.php?num=<?=$num?>')"><img src="../img/delete.png"></a>&nbsp;
+				<a href="modify_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><button class="gkgkgk">수정</button></a>&nbsp;
+				<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')"><button class="gkgkgk">삭제</button></a>&nbsp;
 <?
 	}
 ?>
-
 <? 
 	if(@$userid)
 	{
 ?>
-				<a href="write_form.php?table=<?=$table?>"><img src="../img/write.png"></a>
+				<a href="write_form.php?table=<?=$table?>"><button class="gkgkgk">글쓰기</button></a>
 <?
 	}
 ?>
 		</div>
-		<div class="clear"></div>
-
 	</div> <!-- end of col2 -->
   </div> <!-- end of content -->
 </div> <!-- end of wrap -->

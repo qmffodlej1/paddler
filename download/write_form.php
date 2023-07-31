@@ -114,7 +114,7 @@ function check_input() {
 ?>
 		<div id="write_form">
 			<div class="write_line"></div>
-			<div id="write_row1"><div class="col1"> 닉네임 </div><div class="col2"><?=$usernick?></div></div>
+			<div id="write_row1"><div class="col1"> 닉네임 </div><div class="col2"><?=@$usernick?></div></div>
 			<div class="write_line"></div>
 			<div id="write_row2"><div class="col1"> 제목   </div>
 			<div class="col2"><input type="text" name="subject" value="<?=@$item_subject?>" ></div>
