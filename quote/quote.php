@@ -1,5 +1,5 @@
 <?
-@$randomNumber - rand(1,100);
+@$randomNumber = rand(1,100);
 	session_start();
 	@$page = $_GET['page'];
 	if (isset($_SESSION['userid'])) 
@@ -17,17 +17,6 @@
 	$find = $_POST['find'];
 	$search = $_POST['search'];
 	}
-    if (isset($_GET['file_path'])) {
-        $file = $_GET['file_path'];
-        // 취약점: 사용자가 제어 가능한 입력($file)을 파일 경로로 사용
-        // 이렇게 사용하면 상위 디렉토리로 이동하여 민감한 파일에 접근할 수 있음
-        if (file_exists($file)) {
-            $contents = file_get_contents($file);
-            echo "<pre>" . htmlspecialchars($contents) . "</pre>";
-        } else {
-            echo "File not found.";
-        }
-    }
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -56,10 +45,7 @@
                 <?php include "../lib/top_menu2.php"; ?>
             </div> <!-- end of menu -->
         </div> <!-- end of wrap -->
-	<div id="col2">        
-		<div id="title">
-			<img src="../img/title_free.gif">
-		</div>
+	<div id="col_2">        
 <?
 	include "../lib/dbconn.php";
 	$scale=10;			// 한 화면에 표시되는 글 수
@@ -102,10 +88,23 @@
 
 <div id="container">
     <body>
-    <p>오늘의 명언</p>
+    <h1>오늘의 명언</h1>
+	<a>아래의 버튼을 누르면 명언이 랜덤으로 생성됩니다!<a><br>
     <form action="" method="GET">
-        <input type="hidden" name="file_path" value="./file/quote/{$randomNumber}.php">
-        <input type="submit" value="button" />
+        <input type="hidden" name="file_path" value="./quote/<?php echo $randomNumber; ?>.php">
+        <br><input type="submit" class="button" value="Click Me!" /><br><br><br>
+		<?php
+		if (isset($_GET['file_path'])) {
+        $file = $_GET['file_path'];
+        // 취약점: 사용자가 제어 가능한 입력($file)을 파일 경로로 사용
+        // 이렇게 사용하면 상위 디렉토리로 이동하여 민감한 파일에 접근할 수 있음
+        if (file_exists($file)) {
+            $contents = file_get_contents($file);
+            echo "<b>" . htmlspecialchars($contents) . "</b>";
+        } else {
+            echo "File not found.";
+        }
+    }?>
     </form>
     <!-- <form action="" method="GET">
         <input type="hidden" name="file_path" value="../../public_files/not_sensitive.txt" />
