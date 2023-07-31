@@ -1,6 +1,6 @@
 <? 
 	session_start();
-	$table = $_GET['table'];
+	$table = "anonym";
 	$num = $_GET['num'];
 	$page = $_GET['page'];
 	if (isset($_SESSION['userid']))
@@ -89,36 +89,36 @@
     }
 </script>
 </head>
-
-<body>
-<div id="wrap">
-  <div id="header">
-    <? include "../lib/top_login2.php"; ?>
-  </div>  <!-- end of header -->
-
-  <div id="menu">
-	<? include "../lib/top_menu2.php"; ?>
-  </div>  <!-- end of menu --> 
-
-  <div id="content">
-	<div id="col1">
-		<div id="left_menu">
-<?
-			include "../lib/left_menu.php";
-?>
-		</div>
-	</div>
-
-	<div id="col2">        
+<div id="container">
+    <body>
+        <header class="header">
+		<a href="../index.php"> <!-- 로고를 클릭하면 현재 페이지(index.php)로 연결되도록 설정 -->
+                <img src="../img/logo2.png" class="logo" alt="로고">
+            </a>
+            <?php
+            if (empty($userid)) {
+                echo '<div id="top_login"><a href="../login/login_form.php">로그인</a> | <a href="../member/member_form.php">회원가입</a></div>';
+            } else {
+                echo '<div id="top_login">' . $usernick . ' (level: ' . $userlevel . ') | <a href="../login/logout.php">로그아웃</a> | <a href="../login/member_form_modify.php">정보수정</a></div>';
+            }
+            ?>
+        </header>
+		<div id="body">
+        <div id="wrap">
+            <div id="menu">
+                <?php include "../lib/top_menu2.php"; ?>
+            </div> <!-- end of menu -->
+        </div> <!-- end of wrap -->
+	<div id="col_2">        
 		<div id="title">
 			<h1>익명게시판</h1>
 		</div>
 
-		<div id="view_comment"> &nbsp;</div>
 		<div id="view_title">
-			<div id="view_title1"><?= $item_subject ?></div><div id="view_title2">익명 | 조회 : <?= $item_hit ?>  
-			                      | <?= $item_date ?> </div>	
-		</div>
+  <div id="view_title1" class="dkshk">제목: <?= $item_subject ?></div>
+  <div id="view_title2">익명 | 조회 : <?= $item_hit ?> | <?= $item_date ?></div>
+  <div class="clear"></div> <!-- 부유(floating) 문제 방지를 위한 추가적인 엘리먼트 -->
+</div>
 
 		<div id="view_content">
 <?
@@ -138,54 +138,68 @@
 		</div>
 
 		<div id="ripple">
-<?
-	    $sql = "select * from anonym_ripple where parent='$item_num'";
-	    $ripple_result = $connect->query($sql);
+    <form name="ripple_form" method="post" action="insert_ripple.php?table=<?=$table?>&num=<?=$item_num?>">
+        <!-- 리플 입력란 및 버튼을 하나의 div로 묶음 -->
+        <div id="reply_box">
+            <div id="reply_title">리플을 남겨주세요!</div>
+            <br>
+            <div id="reply_input">
+                <textarea rows="5" cols="65" name="ripple_content"></textarea>
+            </div>
+            <div id="reply_button">
+                <a href="#"><input type="submit" class="button" value="덧글쓰기"></a>
+            </div>
+        </div>
+    </form>
 
-		while ($row_ripple = $ripple_result->fetch_array(MYSQLI_ASSOC))
-		{
-			$ripple_num     = $row_ripple['num'];
-			$ripple_id      = $row_ripple['id'];
-			$ripple_nick    = $row_ripple['nick'];
-			$ripple_content = str_replace("\n", "<br>", $row_ripple['content']);
-			$ripple_content = str_replace(" ", "&nbsp;", $ripple_content);
-			$ripple_date    = $row_ripple['regist_day'];
+    <?php
+    $sql = "select * from anonym_ripple where parent='$item_num'";
+    $ripple_result = $connect->query($sql);
+
+    while ($row_ripple = $ripple_result->fetch_array(MYSQLI_ASSOC)) {
+        $ripple_num = $row_ripple['num'];
+        $ripple_id = $row_ripple['id'];
+        $ripple_nick = $row_ripple['nick'];
+        $ripple_content = str_replace("\n", "<br>", $row_ripple['content']);
+        $ripple_content = str_replace(" ", "&nbsp;", $ripple_content);
+        $ripple_date = $row_ripple['regist_day'];
+    ?>
+<div id="ripple_writer_title">
+    <ul class="dksl">
+        <li id="writer_title1">익명</li>
+        <li id="writer_title2"><?= $item_date ?>: </li>
+		<li id="ripple_content"><?= $ripple_content ?></li>
+		<li id="writer_tilte3"> 
+		<?php
+                            if ($userid == "admin" || $userid == $ripple_id) {?>
+                                <!-- 이 부분은 원하는 위치에 넣어주세요. -->
+                                <form action="delete_ripple.php" method="get">
+                                <input type="hidden" name="num" value="<?php echo $ripple_num; ?>">
+                                <button class="buttonb">삭제</button>
+                                </form>
+								</form>
+
+
+<?php
+}
 ?>
-			<div id="ripple_writer_title">
-			<ul>
-			<li id="writer_title1">익명</li>
-			<li id="writer_title2"><?=$ripple_date?></li>
-			<li id="writer_title3"> 
-		      <? 
-					if(@$userid=="admin" || @$userid==$ripple_id)
-			          echo "<a href='delete_ripple.php?table=$table&num=$item_num&ripple_num=$ripple_num'>[삭제]</a>"; 
-			  ?>
-			</li>
-			</ul>
-			</div>
-			<div id="ripple_content"><?=$ripple_content?></div>
-			<div class="hor_line_ripple"></div>
-<?
-		}
-?>			
-			<form  name="ripple_form" method="post" action="insert_ripple.php?table=<?=$table?>&num=<?=$item_num?>">  
-			<div id="ripple_box">
-				<div id="ripple_box1"><img src="../img/title_comment.gif"></div>
-				<div id="ripple_box2"><textarea rows="5" cols="65" name="ripple_content"></textarea>
-				</div>
-				<div id="ripple_box3"><a href="#"><img src="../img/ok_ripple.gif"  onclick="check_input()"></a></div>
-			</div>
-			</form>
-		</div> <!-- end of ripple -->
+</li>
+</ul>
+</div>
+    <?php
+    }
+    ?>
+
+</div> <!-- end of ripple -->
 
 		<div id="view_button">
-				<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>&nbsp;
+				<a href="list.php?table=<?=$table?>&page=<?=$page?>"><button>목록</button></a>&nbsp;
 <? 
 	if(@$userid && ($userid==$item_id))
 	{
 ?>
-				<a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><img src="../img/modify.png"></a>&nbsp;
-				<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')"><img src="../img/delete.png"></a>&nbsp;
+				<a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><button>수정</button></a>&nbsp;
+				<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')"><button>삭제</button></a>&nbsp;
 <?
 	}
 ?>
@@ -193,7 +207,7 @@
 	if(@$userid)
 	{
 ?>
-				<a href="write_form.php?table=<?=$table?>"><img src="../img/write.png"></a>
+				<a href="write_form.php?table=<?=$table?>"><button>글쓰기</button></a>
 <?
 	}
 ?>
