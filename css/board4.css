@@ -5,7 +5,9 @@
 	margin-left:15px;
 /*	border:solid 1px #cccccc; */
 }
-
+#title {
+	margin-left: 20px;
+}
 #content #col2 #title{
 	margin-top:30px;
 	height:30px;
@@ -15,26 +17,32 @@
 /* list css */
 
 #list_search {
-	height:30px;
+	height:20px;
+	margin-left: 90px;
 	padding-top:10px;
+	font-family: 'NEXON Lv2 Gothic';
 }
 
 #list_search #list_search1 {
 	float:left;
 	margin-top:2px;
+	margin-right: 980px;
+	font-family: 'NEXON Lv2 Gothic';
 }
 
 #list_search #list_search2 {
 	float:left;
-	margin-left:300px;
+	margin-left:130px;
 	margin-top:4px;
+	font-family: 'NEXON Lv2 Gothic';
 }
 
 
 #list_search #list_search3 {
 	float:left;
-	margin-left:5px;
+	margin-left:10px;
 	margin-top:1px;
+	font-family: 'NEXON Lv2 Gothic';
 }
 
 #list_search #list_search3 select {
@@ -59,81 +67,69 @@
 	margin-left:5px;
 	margin-top:1px;
 }
-
 #list_top_title {
-	height:20px;
-	padding:7px;  
-	border-top:solid 2px #aaaaaa;
-	background-color:#eeeeee;
-	margin-bottom:3px;
+    text-align: left;
+    height: 40px; /* 높이를 늘려서 각 항목이 세로로 정렬되도록 합니다. */
+    width: 1890px;
+    border-top: solid 2px #aaaaaa;
+	border-bottom: dotted 2px #aaaaaa;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center; /* 내부 항목들을 수직 중앙 정렬합니다. */
+}
+
+#list_top_title ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 #list_top_title li {
-	display:inline;
+    width: auto;
+    padding-left: 5px; /* 각 항목들의 왼쪽 간격을 늘려서 정렬합니다. */
 }
-
 #list_top_title #list_title1 {
-	margin-left:5px;
+	margin-left: 165px;
 }
-
 #list_top_title #list_title2 {
-	margin-left:250px;
+	margin-left: 8px;
 }
-
 #list_top_title #list_title3 {
-	margin-left:290px;
+	margin-left: 8px;
+}#list_top_title #list_title4 {
+	margin-right: 6px;
 }
-
-#list_top_title #list_title4 {
-	margin-left:32px;
-}
-
 #list_top_title #list_title5 {
-	margin-left:26px;
+	margin-right: 170px;
 }
-
-#list_content {
-	height:380px;
-}
-
 #list_item {
-	height:18px;
-	margin-top:2px;
-	padding:6px;  
-	border-bottom:solid 1px #eeeeee;
+    width: 1890px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+    display: flex; /* flex 컨테이너로 변경하여 항목을 세로로 정렬합니다. */
+    align-items: center; /* 세로 정렬을 위해 각 항목을 가운데로 정렬합니다. */
 }
 
-#list_item #list_item1{
-	float:left;
-	width:40px;
-	text-align:center;
+#list_item ul {
+    height: auto; /* 댓글 목록의 높이를 자동으로 조정하도록 변경합니다. */
+    width: 100%;
+    margin-top: 2px;
+    padding-bottom: 8px;
+    display: flex; /* flex 컨테이너로 변경하여 항목을 세로로 정렬합니다. */
+    align-items: center; /* 세로 정렬을 위해 각 항목을 가운데로 정렬합니다. */
+    border-bottom: dotted 1px #ccc8c8;
 }
 
-#list_item #list_item2{
-	float:left;
-	width:560px;
+#list_item li {
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    display: inline-block;
+    text-align: center;
 }
-
-#list_item #list_item3{
-	float:left;
-	width:65px;
-	text-align:center;
-}
-
-#list_item #list_item4{
-	float:left;
-	width:80px;
-	text-align:center;
-}
-
-#list_item #list_item5{
-	float:left;
-	width:40px;
-	text-align:center;
-}
-
 #page_button {
 	margin-top:20px;
+	margin-left: 270px;
 }
 
 #page_num {
@@ -163,7 +159,6 @@
 
 #write_form {
 	margin-top:10px;
-	overflow:hidden;
 }
 
 #write_form #write_row1 {
@@ -181,24 +176,6 @@
 #write_form #write_row3 {
     width:99%; 
 	height:251px; 
-	margin:2px 0 2px 0; 
-}
-
-#write_form #write_row4 {
-    width:99%; 
-	height:25px; 
-	margin:2px 0 2px 0; 
-}
-
-#write_form #write_row5 {
-    width:99%; 
-	height:25px; 
-	margin:2px 0 2px 0; 
-}
-
-#write_form #write_row6 {
-    width:99%; 
-	height:25px; 
 	margin:2px 0 2px 0; 
 }
 
@@ -238,7 +215,7 @@
 }
 
 #write_row2 .col2 input {
-	width:600px;
+	width:650px;
 	height:17px;
 	border:solid 1px #cccccc;
 }
@@ -248,32 +225,10 @@
 	border:solid 1px #cccccc;
 }
 
-#write_row4 .col2 input {
-	width:500px;
-	height:19px;
-	border:solid 1px #cccccc;
-}
-
-#write_row5 .col2 input {
-	width:500px;
-	height:19px;
-	border:solid 1px #cccccc;
-}
-
-#write_row6 .col2 input {
-	width:500px;
-	height:19px;
-	border:solid 1px #cccccc;
-}
-
 #write_button {
 	margin-top:15px;
 	width:97%;
 	text-align:right;
-}
-
-.delete_ok {
-	margin:0 0 3px 140px;
 }
 
 /* view.php css */
@@ -283,31 +238,79 @@
 }
 
 #view_title {
-	height:18px;
-	padding:10px 8px 8px 8px;  
-	border-top:solid 2px #aaaaaa;
-	background-color:#eeeeee;
-	margin-bottom:5px;
+
+		height:18px;
+
+			padding:10px 8px 20px 20px;  
+
+				border-top:solid 2px #aaaaaa;
+
+					border-bottom: dotted 1px #aaaaaa;
+
+						margin-bottom:5px;
+						width: 1860px;
+
+							justify-content: space-between; /* Distribute elements evenly on both ends */
+
+							}
+
+
+
+							#view_title1 {
+
+								float:left;
+
+									width:40%;
+
+									}
+
+
+
+									#view_title2 {
+
+										float:left;
+
+											width:28%;
+
+												text-align:right;
+
+												}#view_title {
+  height: 18px;
+  padding: 10px 8px 20px 20px;
+  border-top: solid 2px #aaaaaa;
+  border-bottom: dotted 1px #aaaaaa;
+  margin-bottom: 5px;
+  display: flex; /* flexbox를 사용하여 엘리먼트를 정렬합니다. */
+  justify-content: space-between; /* 양 끝에 엘리먼트를 배치합니다. */
 }
 
 #view_title1 {
-	float:left;
-	width:60%;
+  /* 타이틀 엘리먼트의 float 속성을 제거합니다. */
+  /* float: left; */
+  width: 40%;
 }
 
 #view_title2 {
-	float:left;
-	width:40%;
-	text-align:right;
+  /* 타이틀 엘리먼트의 float 속성을 제거합니다. */
+  /* float: left; */
+  width: 28%;
+  text-align: right;
 }
 
+.clear {
+  clear: both; /* 부유(floating)한 엘리먼트 위에 있는 엘리먼트를 초기화합니다. */
+}
+
+
 #view_content {
-	width:98%;
-	min-height:300px;
-	padding:15px 0 15px 8px;
+	width:1870px;
+	min-height:200px;
 	overflow:hidden;
 	line-height:150%;
-	border-bottom:solid 1px #cccccc;
+	border-bottom: dotted 1px #aaaaaa;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
 }
 
 #view_button {
@@ -315,79 +318,183 @@
 	text-align:right;
 	margin-top:15px;
 	margin-bottom:15px;
-
+}
+.button_3 {
+	width: 70px;
+	height: 20px;
+	font-family: 'NEXON Lv2 Gothic';
+	font-size: 11px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	font-weight: 500;
+	color: #000;
+	background-color: #fff;
+	border: none;
+	border-radius: 45px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	outline: none;
+	margin-bottom: 5px;
+	}
+  
+  .button_3:hover {
+	background-color: rgba(41, 42, 112, 0.4);
+	box-shadow: 0px 15px 20px rgba(1, 1, 20, 0.4);
+	color: #fff;
+	transform: translateY(-7px);
+	text-align: center;
+  }
+ .inpung {
+	border: 1px solid #b4b4b4;
+	border-radius: 60px;
+	display: inline-block;
+	padding-left: 5px;
+}
+#reply_container {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
-/* ripple css */
-
-#ripple {
-	width:98%;
-
+#reply_box {
+    float: left;
+    width: 70%; /* 리플 입력란이 차지하는 너비 조정 */
 }
 
-#ripple_writer_title {
-	height:26px;
-	padding-top:10px; 
+#reply_title {
+	margin-top: 20px;
+    font-size: 18px;
+	float: left;
+		font-family: 'NEXON Lv2 Gothic';
 }
 
-#ripple_writer_title ul {
-	margin-left:5px;
+#reply_input textarea {
+    width: 100%;
+    resize: none;
 }
 
-#ripple_writer_title li {
-	display:inline;
+#reply_button {
+    float: left;
+    width: 10%;
+	margin-right: 200px;
+    margin-top: 10px;
 }
 
-#writer_title1 {
-	margin-left:10px;
-	font-weight:bold;
-}
-
-#writer_title2 {
-	margin-left:20px;
-}
-
-#writer_title3 {
-	margin-left:540px;
-}
-
-#ripple_content {
-	padding:10px;
-	margin-left:5px;
-	line-height:150%;
-}
-
-.hor_line_ripple {
-	width:100%;
-	height:1px;
-	margin-bottom:10px;
-	border-bottom:solid 1px #efefef;
-}
-
-#ripple_box {
-	width:99%;
-	height:100px;
-	padding:8px;
-	margin-left:3px;
-	margin-bottom:15px;
-	background-color:#efefef;
+#ripple_box1, #ripple_input, #ripple_display {
+	text-align: left;
 }
 
 #ripple_box1 {
-	float:left;
-	margin:5px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#ripple_input textarea {
+	width: 99.5%;
+	resize: none;
 }
 
 #ripple_box2 {
-	float:left;
-	margin:5px;
+	margin-top: 10px;
 }
 
-#ripple_box2 textarea {
-	border:solid 1px #cccccc;
+#ripple_display {
+	border: 1px solid #ddd;
+	padding: 10px;
+	margin-top: 10px;
 }
 
-#ripple_box3 {
-	float:left;
-	margin:5px 0 0 10px;
+#ripple_writer_title {
+    justify-content: space-between;
+    align-items: center;
+	margin-right: 200px;
 }
+li#writer_title3 {
+    /* 버튼 오른쪽 정렬을 위해 필요한 CSS */
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+.dksl {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 1000px;
+	height: 40px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	margin-right: 300px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	background-color: #e8e6eb;
+	border-radius: 40px;
+}
+
+.dksl li {
+	display: flex;
+	align-items: center;
+}
+
+/* 수정한 부분 */
+#writer_title1,
+#writer_title2,
+#ripple_content,
+#writer_tilte3 {
+	margin-right: 100px; /* 원하는 간격(px)으로 조정해주세요 */
+}
+
+/* 삭제 버튼의 간격은 놔두기 위해 작성한 부분 */
+#ripple_writer_title form {
+	margin-left: auto;
+}
+
+.buttonb {
+	width: 50px;
+	height: 20px;
+	float: right;
+	font-family: 'NEXON Lv2 Gothic';
+	font-size: 11px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	font-weight: 500;
+	color: #000;
+	background-color: #fff;
+	border: none;
+	border-radius: 45px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	outline: none;
+	margin-bottom: 10px;
+	padding: 5px 10px;
+	}
+	#ripple_title {
+		padding-top:10px;
+		padding-left:10px;
+	}
+	
+	#ripple_title li {
+		display:inline;
+	}
+	
+	#ripple_title li#mdi_del {
+		padding-left:20px;
+	}
+	
+	#ripple_content {
+		height: 28px;
+	}
+	
+	#ripple_insert #ripple_button {
+		display: inline-block;
+		margin-right: 60px;
+		margin-bottom: 50px;
+		margin-top: 20px;
+	}
+	a {
+		font-family: 'NEXON Lv2 Gothic';
+	}

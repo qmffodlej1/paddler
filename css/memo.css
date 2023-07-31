@@ -77,8 +77,10 @@
 }
 
 #memo_content {
+	width: 1800px;
 	float: left;
 	text-align: left;
+	border-bottom:dotted 3px #e8e6eb;
 }
 
 #ripple {
@@ -100,7 +102,15 @@
 	margin-bottom: 40px;
 }
 #ripple_writer_title {
-	display: flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+li#writer_title3 {
+    /* 버튼 오른쪽 정렬을 위해 필요한 CSS */
+    margin-left: auto;
+    display: flex;
+    align-items: center;
 }
 #ripple_title {
 	padding-top:10px;
@@ -121,8 +131,9 @@
 }
 
 #ripple_insert #ripple_button {
-	padding: 0px;
-	margin-right: 80px;
+	display: inline-block;
+	margin-right: 60px;
+	margin-bottom: 50px;
 	margin-top: 20px;
 }
 
@@ -168,15 +179,24 @@
 		cursor: pointer;
 		outline: none;
 		margin-bottom: 10px;
+		padding: 5px 10px;
 		}
-	.dksl {
-		display:inline-block;
-		width: 800px;
-		height: 40px;
-		margin-left: 135px;
-		margin-bottom: 20px;
-		padding-top: 20px;
-		padding-left: 20px;
-		background-color: #e8e6eb;
-		border-radius: 40px;
-	}
+		.dksl {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 800px;
+			height: 40px;
+			margin-bottom: 20px;
+			margin-top: 20px;
+			margin-left: 300px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 20px;
+			background-color: #e8e6eb;
+			border-radius: 40px;
+		}
+		.dksl li {
+			display: flex;
+			align-items: center;
+		}
