@@ -102,7 +102,7 @@
                     <option value='nick'>별명</option>
                     <option value='name'>이름</option>
 				</select></div>
-			<div id="list_search4"><input class="button_3" type="text" name="search"></div>
+			<div id="list_search4"><input class="inpung" type="text" name="search"></div>
 			<div id="list_search5"><input href="#" type=button class="button_3" value="목록"></div>
 		</div>
 		</form>
