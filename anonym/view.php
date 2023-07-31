@@ -141,15 +141,33 @@
     <form name="ripple_form" method="post" action="insert_ripple.php?table=<?=$table?>&num=<?=$item_num?>">
         <!-- 리플 입력란 및 버튼을 하나의 div로 묶음 -->
         <div id="reply_box">
-            <div id="reply_title">리플을 남겨주세요!</div>
-            <br>
             <div id="reply_input">
-                <textarea rows="5" cols="65" name="ripple_content"></textarea>
-            </div>
+			<input type="text" class="dlstod" placeholder="덧글을 입력하세용!" name="ripple_content">
             <div id="reply_button">
                 <a href="#"><input type="submit" class="button" value="덧글쓰기"></a>
             </div>
+			<div id="view_button">
+				<a href="list.php?table=<?=$table?>&page=<?=$page?>"><button class="button_3">목록</button></a>&nbsp;
+<? 
+	if(@$userid && ($userid==$item_id))
+	{
+?>
+				<a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><button class="button_3">수정</button></a>&nbsp;
+				<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')"><button class="button_3">삭제</button></a>&nbsp;
+<?
+	}
+?>
+<? 
+	if(@$userid)
+	{
+?>
+				<a href="write_form.php?table=<?=$table?>"><button class="button_3">글쓰기</button></a>
+<?
+	}
+?>
+		</div>
         </div>
+</div>
     </form>
 
     <?php
@@ -167,11 +185,11 @@
 <div id="ripple_writer_title">
     <ul class="dksl">
         <li id="writer_title1">익명</li>
-        <li id="writer_title2"><?= $item_date ?>: </li>
-		<li id="ripple_content"><?= $ripple_content ?></li>
+        <li id="writer_title2"><?=@$item_date ?>: </li>
+		<li id="ripple_content"><?=@$ripple_content ?></li>
 		<li id="writer_tilte3"> 
 		<?php
-                            if ($userid == "admin" || $userid == $ripple_id) {?>
+                            if (@$userid == "admin" || @$userid == $ripple_id) {?>
                                 <!-- 이 부분은 원하는 위치에 넣어주세요. -->
                                 <form action="delete_ripple.php" method="get">
                                 <input type="hidden" name="num" value="<?php echo $ripple_num; ?>">
@@ -191,29 +209,7 @@
     ?>
 
 </div> <!-- end of ripple -->
-
-		<div id="view_button">
-				<a href="list.php?table=<?=$table?>&page=<?=$page?>"><button>목록</button></a>&nbsp;
-<? 
-	if(@$userid && ($userid==$item_id))
-	{
-?>
-				<a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><button>수정</button></a>&nbsp;
-				<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')"><button>삭제</button></a>&nbsp;
-<?
-	}
-?>
-<? 
-	if(@$userid)
-	{
-?>
-				<a href="write_form.php?table=<?=$table?>"><button>글쓰기</button></a>
-<?
-	}
-?>
-		</div>
 		<div class="clear"></div>
-
 	</div> <!-- end of col2 -->
   </div> <!-- end of content -->
 </div> <!-- end of wrap -->
