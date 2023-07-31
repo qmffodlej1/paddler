@@ -1,0 +1,229 @@
+@font-face {
+    font-family: 'NEXON Lv2 Gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.nexon{
+	font-family: 'NEXON Lv2 Gothic', sans-serif;
+	color: rgb(255, 255, 255);
+}
+#memo_row1 {
+    height: 155px;
+    /* border-bottom: solid 1px #dddddd; */
+    text-align: center; /* 메모 작성 폼을 가운데 정렬합니다. */
+	margin-right: 50px;
+    margin-top: 50px; /* 메모 작성 폼을 가운데 정렬합니다. */
+	color: white;
+	font-family: 'NEXON Lv2 Gothic';
+}
+
+#memo1 {
+    display: inline-block; /* 메모 작성 폼을 가운데 정렬합니다. */
+    text-align: center; /* 메모 작성 폼 내부를 왼쪽 정렬합니다. */
+}
+
+#memo2 {
+    margin-left: 5px;
+	margin-top: 10px;
+	font-family: 'NEXON Lv2 Gothic';
+}
+
+#memo_writer {
+	margin-top:10px; 
+	margin-bottom:10px; 
+	margin-right: 580px;  
+	color: black;
+}
+
+#memo1 textarea {
+	border:solid 1px #cccccc;
+}
+
+#memo_writer_title {
+	display: inline-flex;
+	width: 1800px;
+	height:26px;
+	padding-top:10px; 
+	margin-bottom:10px;
+	border-top:solid 1px #cccccc;
+	border-bottom:dotted 1px #cccccc;
+}
+
+#memo_writer_title ul {
+	margin-right: 50px;
+	display: inline-flex;
+}
+
+#memo_writer_title li {
+	display: flex;
+}
+
+#writer_title2 {
+	margin-left: 20px;
+}
+
+#memo_writer_title #writer_title2 {
+	margin-left:10px;
+	
+}
+
+#memo_writer_title #writer_title3 {
+	margin-left:200px;
+}
+
+#memo_writer_title #writer_title4 {
+	margin-left: 50px;
+}
+
+#memo_content {
+	width: 1800px;
+	float: left;
+	text-align: left;
+	border-bottom:dotted 3px #e8e6eb;
+}
+
+#ripple {
+	margin-top:20px;
+	margin-left: 100px;
+/*	overflow:hidden; */
+}
+
+#ripple1 {
+	display:flex;
+	float:left;
+	font-weight:bold;
+}
+
+#ripple2 {
+	float:left;
+	width:92%;
+	margin-left:60px;
+	margin-bottom: 40px;
+}
+#ripple_writer_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+li#writer_title3 {
+    /* 버튼 오른쪽 정렬을 위해 필요한 CSS */
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+#ripple_title {
+	padding-top:10px;
+	padding-left:10px;
+}
+
+#ripple_title li {
+	display:inline;
+}
+
+#ripple_title li#mdi_del {
+	padding-left:20px;
+}
+
+#ripple_content {
+	height: 28px;
+	margin-left: 50px;
+}
+
+#ripple_insert #ripple_button {
+	display: inline-block;
+	margin-right: 60px;
+	margin-bottom: 50px;
+	margin-top: 20px;
+}
+
+#page_num {
+	margin-top:10px;
+	text-align:center;
+}
+.buttona {
+	width: 50px;
+	height: 20px;
+	font-family: 'NEXON Lv2 Gothic';
+	font-size: 11px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	font-weight: 500;
+	color: #000;
+	background-color: #fff;
+	border: none;
+	border-radius: 45px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	outline: none;
+	margin-left: 50px;
+	}
+	.buttonb {
+		width: 50px;
+		height: 20px;
+		float: right;
+		font-family: 'NEXON Lv2 Gothic';
+		font-size: 11px;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 2.5px;
+		font-weight: 500;
+		color: #000;
+		background-color: #fff;
+		border: none;
+		border-radius: 45px;
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease 0s;
+		cursor: pointer;
+		outline: none;
+		margin-bottom: 10px;
+		padding: 5px 10px;
+		}
+		.dksl {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 800px;
+			height: 40px;
+			margin-bottom: 20px;
+			margin-top: 20px;
+			margin-left: 300px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 20px;
+			background-color: #e8e6eb;
+			border-radius: 40px;
+		}
+		.dksl li {
+			display: flex;
+			align-items: center;
+		}
+		.button_1 {
+			width: 140px;
+			height: 45px;
+			font-family: 'NEXON Lv2 Gothic', sans-serif;
+			font-size: 11px;
+			text-align: center;
+			text-transform: uppercase;
+			letter-spacing: 2.5px;
+			font-weight: 500;
+			color: #000;
+			background-color: #fff;
+			border: none;
+			border-radius: 45px;
+			box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+			transition: all 0.3s ease 0s;
+			cursor: pointer;
+			outline: none;
+			margin-bottom: 20px;
+			}
+		  
+		  .button_1:hover {
+			background-color: rgba(41, 42, 112, 0.4);
+			box-shadow: 0px 15px 20px rgba(1, 1, 20, 0.4);
+			color: #fff;
+			transform: translateY(-7px);
+			text-align: center;
+		  }
