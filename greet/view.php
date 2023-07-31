@@ -104,7 +104,7 @@
 	if(@$userid && ($userid==$item_id))
 	{
 ?>
-				<a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><button>수정</button></a>&nbsp;
+				<a href="modify_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><button>수정</button></a>&nbsp;
 				<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')"><button>삭제</button></a>&nbsp;
 <?
 	}
