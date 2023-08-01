@@ -86,21 +86,21 @@ function check_input() {
                 <?php include "../lib/top_menu2.php"; ?>
             </div> <!-- end of menu -->
         </div> <!-- end of wrap -->
-	<div id="col2">       
+		<div id="col_2">        
 		<div id="title">
-			<img src="../img/title_download.gif">
+			<h1>익명 게시판</h1>
 		</div>
 		<div class="clear"></div>
 
 		<div id="write_form_title">
-			<img src="../img/write_form_title.gif">
+			<ul>
+				<li><h2>글쓰기</h2><li>
+		</ul>
 		</div>
-
 		<div class="clear"></div>
 <?
 	if($mode=="modify")
 	{
-
 ?>
 		<form  name="board_form" method="post" action="insert.php?mode=modify&num=<?=$num?>&page=<?=$page?>&table=<?=$table?>" enctype="multipart/form-data"> 
 <?
@@ -111,70 +111,59 @@ function check_input() {
 		<form  name="board_form" method="post" action="insert.php?table=<?=$table?>" enctype="multipart/form-data"> 
 <?
 	}
-?>
+?>	
+		<form  name="board_form" method="post" action="insert.php"> 
 		<div id="write_form">
-			<div class="write_line"></div>
-			<div id="write_row1"><div class="col1"> 닉네임 </div><div class="col2"><?=@$usernick?></div></div>
-			<div class="write_line"></div>
-			<div id="write_row2"><div class="col1"> 제목   </div>
-			<div class="col2"><input type="text" name="subject" value="<?=@$item_subject?>" ></div>
+			<div id="write_row1">
+				<div class="col1"><h3>닉네임:</h3> <h3><?=@$usernick?></h3></div>
+				<div class="col1"><input type="checkbox" name="html_ok" value="y"><h3>HTML 쓰기</h3></div>
 			</div>
 			<div class="write_line"></div>
-			<div id="write_row3"><div class="col1"> 내용   </div>
-			<div class="col2"><textarea rows="15" cols="79" name="content"><?=@$item_content?></textarea></div>
-			</div>
+			<div id="write_row2"><h3>제목</h3><input class="cat" type="text" name="subject" value="<?=@$item_subject?>"></div>
 			<div class="write_line"></div>
-			<div id="write_row4"><div class="col1"> 첨부파일1   </div>
-			<div class="col2"><input type="file" name="upfile[]"> * 5MB까지 업로드 가능!</div>
-			</div>
-			<div class="clear"></div>
+			<div id="write_row3"><h3>내용</h3><textarea class="dog" name="content"><?=@$item_content?></textarea></div>
+			<div class="write_line"></div>
+		</div>
+		<div id="dkdsid">
+			<div id="write_row4"><div class="col4"><h3>이미지파일1</h3><input type="file" name="upfile[]"></div></div>
 <? 	if ($mode=="modify" && $item_file_0)
 	{
 ?>
-			<div class="delete_ok"><?=$item_file_0?> 파일이 등록되어 있습니다. <input type="checkbox" name="del_file[]" value="0"> 삭제</div>
+			<div class="delete_ok"><?=$item_file_0?><h3>파일이 있습니다.</h3><input type="checkbox" name="del_file[]" value="0"><a>삭제</a></div>
 			<div class="clear"></div>
 <?
 	}
 ?>
-			<div class="write_line"></div>
-			<div id="write_row5"><div class="col1"> 첨부파일2  </div>
-			<div class="col2"><input type="file" name="upfile[]">  * 5MB까지 업로드 가능!</div>
-			</div>
+			<div id="write_row4"><div class="col4"><h3>이미지파일2</h3> <input type="file" name="upfile[]"></div></div>
 <? 	if ($mode=="modify" && $item_file_1)
 	{
 ?>
-			<div class="delete_ok"><?=$item_file_1?> 파일이 등록되어 있습니다. <input type="checkbox" name="del_file[]" value="1"> 삭제</div>
+			<div class="delete_ok"><?=$item_file_1?><a>파일이 등록되어 있습니다.</a><input type="checkbox" name="del_file[]" value="1"><a>삭제</a></div>
 			<div class="clear"></div>
 <?
 	}
 ?>
-			<div class="write_line"></div>
 			<div class="clear"></div>
-			<div id="write_row6"><div class="col1"> 첨부파일3   </div>
-			<div class="col2"><input type="file" name="upfile[]">  * 5MB까지 업로드 가능!</div>
-			</div>
+			<div id="write_row4"><div class="col4"><h3>이미지파일3</h3><input type="file" name="upfile[]"></div></div>
 <? 	if ($mode=="modify" && $item_file_2)
 	{
 ?>
-			<div class="delete_ok"><?=$item_file_2?> 파일이 등록되어 있습니다. <input type="checkbox" name="del_file[]" value="2"> 삭제</div>
+			<div class="delete_ok"><?=$item_file_2?><a>파일이 등록되어 있습니다.</a><input type="checkbox" name="del_file[]" value="2"><a>삭제</a></div>
 			<div class="clear"></div>
 <?
 	}
 ?>
-			<div class="write_line"></div>
 
 			<div class="clear"></div>
-		</div>
-			<div class="clear"></div>
-				<form name="board_form" action="write_form.php">
-    			<input type="image" src="../img/ok.png" alt="Submit" onclick="return check_input();">
+			
+			<div id="write_button"><a href="#"><button type="submit" class="button_3" onclick="check_input()">완료</button></a>&nbsp;
 			</form>
-		<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>
+								<a href="list.php?page=<?=$page?>"><input type="button" class="button_3" value="목록"></a>
 		</div>
-		</form>
+</div>
 
 	</div> <!-- end of col2 -->
-    </div> <!-- end of content -->
+  </div> <!-- end of content -->
 </div> <!-- end of wrap -->
 
 </body>
