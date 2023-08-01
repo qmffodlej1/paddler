@@ -10,10 +10,12 @@
 	
 	$table = "greet";
 	$num = $_GET['num'];
+	$page = $_GET['page'];
 	if (isset($_GET['mode'])) {
 	$mode = $_GET['mode'];
 	$find = $_POST['find'];
 	$search = $_POST['search'];
+
 	}
 	$mode = "";
 	include "../lib/dbconn.php";
@@ -97,25 +99,14 @@
 		<div id="view_content">
 			<?= $item_content ?>
 		</div>
-		<div id="view_button">
-				<a href="list.php?table=<?=$table?>&page=<?=$page?>"><button class="button_3">목록</button></a>&nbsp;
-<? 
-	if(@$userid && ($userid==$item_id))
-	{
-?>
-				<a href="modify_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><button class="button_3">수정</button></a>&nbsp;
-				<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')"><button class="button_3">삭제</button></a>&nbsp;
-<?
-	}
-?>
-<? 
-	if(@$userid)
-	{
-?>
-				<a href="write_form.php?table=<?=$table?>"><button class="button_3">글쓰기</button></a>
-<?
-	}
-?>
+				<div id="view_button">
+					<a href="list.php?table=<?=$table?>&page=<?=$page?>"><input type="button" value="목록" class="button_3"></a>&nbsp;
+					<?php if (isset($userid) && ($userid == $item_id)) { ?>
+				<a href="modify_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><input type="button" value="수정" class="button_3"></a>&nbsp;
+		<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')"><input type="button" value="삭제" class="button_3"></a>&nbsp;
+	<? } ?>
+				</div>
+</div> 
 
 		</div>
 		</div>

@@ -8,6 +8,7 @@
 		$userlevel = $_SESSION['userlevel'];
 }
 $table = "greet";
+$page = @$_GET["page"];
 if (isset($_GET['mode'])) {
 $mode = $_GET['mode'];
 $find = $_POST['find'];
@@ -68,8 +69,8 @@ $search = $_POST['search'];
 		</div>
 
 		<div id="write_button"><button type="submit" class="button_3">완료</button>&nbsp;
-			</form>
-								<a href="list.php?page=<?=$page?>"><input type="button" class="button_3" value="목록"></a>
+		</form>
+				<a href="list.php?page=<?=$page?>"><input type="button" class="button_3" value="목록"></a>
 		</div>
 
 	</div> <!-- end of col2 -->
