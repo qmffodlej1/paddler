@@ -136,53 +136,72 @@
                 <?php include "../lib/top_menu2.php"; ?>
             </div> <!-- end of menu -->
         </div> <!-- end of wrap -->
-	<div id="col2">
+	<div id="col_2">
         <form  name="member_form" method="post" action="modify.php"> 
 		<div id="title">
-			<img src="../img/title_member_modify.gif">
+			<h1>회원정보수정</h1>
 		</div>
 		<div id="form_join">
 			<div id="join1">
-                <table class="center-table">
-                    <tr>
-                        <td> 아이디 </td>
-                        <td> <?php echo $row['id']?>
-                    </tr>
-                    <tr>
-                        <td> 비밀번호 </td>
-                        <td> <input type="password" name="pass" value=""></td>
-                    </tr>
-                        <td> 비밀번호 확인 </td>
-                        <td> <input type="password" name="pass_confirm" value=""></td>
-                    </tr>
-                    <tr>
-                        <td> 이름 </td>
-                        <td><input type="text" name="name" value="<?= $row['name'] ?>"></td>
-                    </tr>   
-                    <tr>
-                        <td>닉네임</td>
-                        <td><div id="nick1"><input type="text" name="nick" value="<?=$row['nick'] ?>"></div></td>
-                        <td><div id="nick2" ><a href="#"><img src="../img/check_id.gif" onclick="check_nick()"></td>
-                    </tr>
-                    <tr>
-                        <td>휴대폰</td>
-                        <td><input type="text" class="hp" name="hp1" value="<?=$hp1?>">-
-                            <input type="text" class="hp" name="hp2" value="<?=$hp2?>"> -
-                            <input type="text" class="hp" name="hp3" value="<?=$hp3?>">
-                        </td>
-                    </tr>
-                        <td> 이메일 </td>
-                        <td> <input type="text" id="email1" name="email1" value="<?=$email1?>"> @ <input type="text" name="email2" value="<?=$email2?>"> </td>
-                    </tr>
-                </table>
+            <div id="must"> * 는 필수 입력항목입니다.</div>
+
+                <div class="center-table">
+    <table>
+        <tr>
+            <td>*아이디</td>
+            <td>
+                    <input type="text" name="id" class="input_12">
+            </td>
+        </tr>
+        <tr>
+            <td>*비밀번호</td>
+            <td>
+            <input type="password" name="pass" class="input_12">
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td id="id3">
+            *비밀번호 확인
+        </td>
+            <td>
+                <input type="password" class="input_12" name="pass_confirm">
+            </td>
+        </tr>
+        <tr>
+            <td>
+            이름
+            </td>
+            <td>
+                <input type="text" name="name" class="input_12">
+            </td>
+        </tr>
+        <tr>
+            <td>
+            닉네임
+            </td>
+            <td>
+                <input type="text" name="nick" class="input_12">
+            </td>
+        </tr>
+        <tr>
+    <td>휴대폰</td>
+    <td class="phone-input">
+        <input type="text" class="hp inputta" name="hp1" value="<?php echo $hp1; ?>"><b>-</b>
+        <input type="text" class="hp inputta" name="hp2" value="<?php echo $hp2; ?>"><b>-</b>
+        <input type="text" class="hp inputta" name="hp3" value="<?php echo $hp3; ?>">
+    </td>
+</tr>
+    </table>
             </div>
 		</div>
 			<div class="clear"></div>
-			<div id="must"> * 는 필수 입력항목입니다.^^</div>
-		    <div id="button">
-                <a href="#"><img src="../img/button_save.gif"  onclick="check_input()"></a>&nbsp;&nbsp;
-		        <a href="#"><img src="../img/button_reset.gif" onclick="reset_form()"></a>
-		    </div>
+<div id="button" class="right-bottom">
+    <a href="#"><input type="button" class="button_1" onclick="check_input()" value="저장하기"></a>&nbsp;&nbsp;
+    <a href="#"><input type="button" class="button_1" onclick="reset_form()" value="취소하기"></a>
         </div>
 	    </form>
 	</div>
