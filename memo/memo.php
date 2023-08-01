@@ -97,7 +97,7 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
                 <input type="hidden" name="num" value="<?= $memo_num ?>">
                 <div id="ripple_insert">
                         <input type="text" class="input_1" placeholder="덧글을 입력하세용!" name="ripple_content">
-                    <div id="ripple_button"><button class="button">덧글입력</button></div>
+                    <div id="ripple_button"><button class="button_1">덧글입력</button></div>
                 </div>
             </form>
             <div class="clear"></div>
@@ -145,10 +145,10 @@ function displayMemo($number, $memo_nick, $memo_date, $memo_content, $memo_id, $
     <span>▷ <?= @$usernick ?></span>
   </div>
   <div id="memo1">
-    <textarea rows="6" cols="95" name="content"></textarea>
+    <textarea class="dog2" rows="6" cols="95" name="content"></textarea>
   </div>
   <div id="memo2">
-    <button class="button" type="submit">입력</button> <!-- 입력 버튼 -->
+    <button class="button_1" type="submit">입력</button> <!-- 입력 버튼 -->
   </div>
 </form>
         </div>
