@@ -57,34 +57,39 @@
    }
 </script>
 </head>
-
-<body>
-<div id="wrap">
-  <div id="header">
-    <? include "../lib/top_login2.php"; ?>
-  </div>  <!-- end of header -->
-
-  <div id="menu">
-	<? include "../lib/top_menu2.php"; ?>
-  </div>  <!-- end of menu --> 
-
-  <div id="content">
-	<div id="col1">
-		<div id="left_menu">
-<?
-			include "../lib/left_menu.php";
-?>
+<div id="container">
+    <body>
+        <header class="header">
+		<a href="../index.php"> <!-- 로고를 클릭하면 현재 페이지(index.php)로 연결되도록 설정 -->
+                <img src="../img/logo2.png" class="logo" alt="로고">
+            </a>
+            <?php
+            if (empty($userid)) {
+                echo '<div id="top_login"><a href="../login/login_form.php">로그인</a> | <a href="../member/member_form.php">회원가입</a></div>';
+            } else {
+                echo '<div id="top_login">' . $usernick . ' (level: ' . $userlevel . ') | <a href="../login/logout.php">로그아웃</a> | <a href="../login/member_form_modify.php">정보수정</a></div>';
+            }
+            ?>
+        </header>
+		<div id="body">
+        <div id="wrap">
+            <div id="menu">
+                <?php include "../lib/top_menu2.php"; ?>
+            </div> <!-- end of menu -->
+        </div> <!-- end of wrap -->
 		</div>
 	</div>
 
-	<div id="col2">        
+	<div id="col_2">        
 		<div id="title">
-			<img src="../img/title_free.gif">
+			<h1>자유게시판</h1>
 		</div>
 		<div class="clear"></div>
-
+		<div class="clear"></div>
 		<div id="write_form_title">
-			<img src="../img/write_form_title.gif">
+			<ul>
+				<li><h2>글쓰기</h2><li>
+		</ul>
 		</div>
 		<div class="clear"></div>
 <?
@@ -100,74 +105,56 @@
 		<form  name="board_form" method="post" action="insert.php?table=<?=$table?>" enctype="multipart/form-data"> 
 <?
 	}
-?>
+?>	
+		<form  name="board_form" method="post" action="insert.php"> 
 		<div id="write_form">
-			<div class="write_line"></div>
-			<div id="write_row1"><div class="col1"> 별명 </div><div class="col2"><?=$usernick?></div>
-<?
-	if( $userid && ($mode != "modify"))
-	{
-?>
-				<div class="col3"><input type="checkbox" name="html_ok" value="y"> HTML 쓰기</div>
-<?
-	}
-?>			
+			<div id="write_row1">
+				<div class="col1"><h3>닉네임:</h3> <h3><?=@$usernick?></h3></div>
+				<div class="col1"><input type="checkbox" name="html_ok" value="y"><h3>HTML 쓰기</h3></div>
 			</div>
 			<div class="write_line"></div>
-			<div id="write_row2"><div class="col1"> 제목   </div>
-			                     <div class="col2"><input type="text" name="subject" value="<?=@$item_subject?>" ></div>
-			</div>
+			<div id="write_row2"><h3>제목</h3><input class="cat" type="text" name="subject" value="<?=@$item_subject?>"></div>
 			<div class="write_line"></div>
-			<div id="write_row3"><div class="col1"> 내용   </div>
-			<div class="col2"><textarea rows="15" cols="79" name="content"><?= $item_content ?></textarea></div>
-			</div>
+			<div id="write_row3"><h3>내용</h3><textarea class="dog" name="content"><?=@$item_content?></textarea></div>
 			<div class="write_line"></div>
-			<div id="write_row4"><div class="col1"> 이미지파일1   </div>
-			                     <div class="col2"><input type="file" name="upfile[]"></div>
-			</div>
-			<div class="clear"></div>
+		</div>
+		<div id="dkdsid">
+			<div id="write_row4"><div class="col4"><h3>이미지파일1</h3><input type="file" name="upfile[]"></div></div>
 <? 	if ($mode=="modify" && $item_file_0)
 	{
 ?>
-			<div class="delete_ok"><?=$item_file_0?> 파일이 등록되어 있습니다. <input type="checkbox" name="del_file[]" value="0"> 삭제</div>
+			<div class="delete_ok"><?=$item_file_0?><h3>파일이 있습니다.</h3><input type="checkbox" name="del_file[]" value="0"><a>삭제</a></div>
 			<div class="clear"></div>
 <?
 	}
 ?>
-			<div class="write_line"></div>
-			<div id="write_row5"><div class="col1"> 이미지파일2  </div>
-			                     <div class="col2"><input type="file" name="upfile[]"></div>
-			</div>
+			<div id="write_row4"><div class="col4"><h3>이미지파일2</h3> <input type="file" name="upfile[]"></div></div>
 <? 	if ($mode=="modify" && $item_file_1)
 	{
 ?>
-			<div class="delete_ok"><?=$item_file_1?> 파일이 등록되어 있습니다. <input type="checkbox" name="del_file[]" value="1"> 삭제</div>
+			<div class="delete_ok"><?=$item_file_1?><a>파일이 등록되어 있습니다.</a><input type="checkbox" name="del_file[]" value="1"><a>삭제</a></div>
 			<div class="clear"></div>
 <?
 	}
 ?>
-			<div class="write_line"></div>
 			<div class="clear"></div>
-			<div id="write_row6"><div class="col1"> 이미지파일3   </div>
-			                     <div class="col2"><input type="file" name="upfile[]"></div>
-			</div>
+			<div id="write_row4"><div class="col4"><h3>이미지파일3</h3><input type="file" name="upfile[]"></div></div>
 <? 	if ($mode=="modify" && $item_file_2)
 	{
 ?>
-			<div class="delete_ok"><?=$item_file_2?> 파일이 등록되어 있습니다. <input type="checkbox" name="del_file[]" value="2"> 삭제</div>
+			<div class="delete_ok"><?=$item_file_2?><a>파일이 등록되어 있습니다.</a><input type="checkbox" name="del_file[]" value="2"><a>삭제</a></div>
 			<div class="clear"></div>
 <?
 	}
 ?>
-			<div class="write_line"></div>
 
 			<div class="clear"></div>
+			
+			<div id="write_button"><a href="#"><button type="submit" class="button_3" onclick="check_input()">완료</button></a>&nbsp;
+			</form>
+								<a href="list.php?page=<?=$page?>"><input type="button" class="button_3" value="목록"></a>
 		</div>
-
-		<div id="write_button"><a href="#"><img src="../img/ok.png" onclick="check_input()"></a>&nbsp;
-								<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>
-		</div>
-		</form>
+</div>
 
 	</div> <!-- end of col2 -->
   </div> <!-- end of content -->

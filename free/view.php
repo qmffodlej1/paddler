@@ -110,97 +110,83 @@
             </div> <!-- end of menu -->
         </div> <!-- end of wrap -->
 
-	<div id="col2">        
-		<div id="title">
-			<img src="../img/title_free.gif">
-		</div>
-
-		<div id="view_comment"> &nbsp;</div>
-		<div id="view_title">
-			<div id="view_title1"><?= $item_subject ?></div><div id="view_title2"><?= $item_nick ?> | 조회 : <?= $item_hit ?>  
-			                      | <?= $item_date ?> </div>	
-		</div>
-
-		<div id="view_content">
-<?
-	for ($i=0; $i<3; $i++)
-	{
-		if ($image_copied[$i])
-		{
-			$img_name = $image_copied[$i];
-			$img_name = "./data/".$img_name;
-			$img_width = $image_width[$i];
-			
-			echo "<img src='$img_name' width='$img_width'>"."<br><br>";
-		}
-	}
-?>
-			<?= $item_content ?>
-		</div>
-
-		<div id="ripple">
-<?
-	    $sql = "select * from free_ripple where parent='$item_num'";
-	    $ripple_result = $connect->query($sql);
-
-		while ($row_ripple = $ripple_result->fetch_array(MYSQLI_ASSOC))
-		{
-			$ripple_num     = $row_ripple['num'];
-			$ripple_id      = $row_ripple['id'];
-			$ripple_nick    = $row_ripple['nick'];
-			$ripple_content = str_replace("\n", "<br>", $row_ripple['content']);
-			$ripple_content = str_replace(" ", "&nbsp;", $ripple_content);
-			$ripple_date    = $row_ripple['regist_day'];
-?>
-			<div id="ripple_writer_title">
-			<ul>
-			<li id="writer_title1"><?=$ripple_nick?></li>
-			<li id="writer_title2"><?=$ripple_date?></li>
-			<li id="writer_title3"> 
-		      <? 
-					if(@$userid=="admin" || @$userid==$ripple_id)
-			          echo "<a href='delete_ripple.php?table=$table&num=$item_num&ripple_num=$ripple_num'>[삭제]</a>"; 
-			  ?>
-			</li>
-			</ul>
+		<div id="col_2">        
+			<div id="title">
+				<h1>자유게시판</h1>
 			</div>
-			<div id="ripple_content"><?=$ripple_content?></div>
-			<div class="hor_line_ripple"></div>
-<?
-		}
-?>			
-			<form  name="ripple_form" method="post" action="insert_ripple.php?table=<?=$table?>&num=<?=$item_num?>">  
-			<div id="ripple_box">
-				<div id="ripple_box1"><img src="../img/title_comment.gif"></div>
-				<div id="ripple_box2"><textarea rows="5" cols="65" name="ripple_content"></textarea>
-				</div>
-				<div id="ripple_box3"><a href="#"><img src="../img/ok_ripple.gif"  onclick="check_input()"></a></div>
-			</div>
-			</form>
-		</div> <!-- end of ripple -->
+			<div id="view_title">
+				<div id="view_title1" class="dkshk">제목: <?= $item_subject ?></div>
+					<div id="view_title2"><?= $item_nick ?> | 조회 : <?= $item_hit ?> | <?= $item_date ?></div>
+						<div class="clear"></div> <!-- 부유(floating) 문제 방지를 위한 추가적인 엘리먼트 -->
+					</div>
+					<div id="view_content">
+						<?
+						for ($i=0; $i<3; $i++) {
+							if ($image_copied[$i]) {
+								$img_name = $image_copied[$i];
+								$img_name = "./data/".$img_name;
+								$img_width = $image_width[$i];
+								echo "<img src='$img_name' width='$img_width'>"."<br><br>";
+							}
+						}?>
+					<?= $item_content ?>
+					</div>
 
-		<div id="view_button">
-				<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>&nbsp;
-<? 
-	if(@$userid && ($userid==$item_id))
-	{
-?>
-				<a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><img src="../img/modify.png"></a>&nbsp;
-				<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')"><img src="../img/delete.png"></a>&nbsp;
-<?
-	}
-?>
-<? 
-	if(@$userid)
-	{
-?>
-				<a href="write_form.php?table=<?=$table?>"><img src="../img/write.png"></a>
-<?
-	}
-?>
-		</div>
+					<div id="ripple">
+    					<form name="ripple_form" method="post" action="insert_ripple.php?table=<?=$table?>&num=<?=$item_num?>">
+        				<div id="reply_box">
+            				<div id="reply_input">
+								<input type="text" class="emfdjrk" placeholder="덧글을 입력하세용!" name="ripple_content">
+					</div>
+            					<div id="reply_button">
+                					<a href="#"><input type="submit" class="button_1" value="덧글쓰기"></a>
+							</div>
+						</div>
+					</div>
+					</form>
+					<form>
+						<div id="view_button">
+							<a href="list.php?table=<?=$table?>&page=<?=$page?>"><input type="button" value="목록" class="button_3"></a>&nbsp;
+							<?php if (isset($userid) && ($userid == $item_id)) { ?>
+								<a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><input type="button" value="수정" class="button_3"></a>&nbsp;
+								<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')"><input type="button" value="삭제" class="button_3"></a>&nbsp;
+							<? } ?>
+						</div> 
+					</form>
+
+    <?php
+    $sql = "select * from free_ripple where parent='$item_num'";
+    $ripple_result = $connect->query($sql);
+
+    while ($row_ripple = $ripple_result->fetch_array(MYSQLI_ASSOC)) {
+        $ripple_num = $row_ripple['num'];
+        $ripple_id = $row_ripple['id'];
+        $ripple_nick = $row_ripple['nick'];
+        $ripple_content = str_replace("\n", "<br>", $row_ripple['content']);
+        $ripple_content = str_replace(" ", "&nbsp;", $ripple_content);
+        $ripple_date = $row_ripple['regist_day'];?>
+		<div id="ripple_writer_title">
+    		<ul class="dksl">
+        	<li id="writer_title1">↳ 익명</li>
+        	<li id="writer_title2"><?=@$item_date ?>: </li>
+			<li id="ripple_content"><?=@$ripple_content ?></li>
+			<li id="writer_tilte3"> 
+			<?php
+                if (@$userid == "admin" || @$userid == $ripple_id) {?>
+                    <form action="delete_ripple.php" method="get">
+					<?php echo $ripple_num; ?>
+                    <button type="submit" class="button_3">삭제</button>
+					<input type="hidden" name="table" value="<?php echo $table; ?>">
+                    <input type="hidden" name="ripple_num" value="<?php echo $ripple_num; ?>">
+					<input type="hidden" name="num" value="<?php echo $num; ?>">
+                    </form>
+				<?php } ?>
+</div>
+    <?php
+    }
+    ?>
+</div> <!-- end of ripple -->
 		<div class="clear"></div>
-
 	</div> <!-- end of col2 -->
   </div> <!-- end of content -->
 </div> <!-- end of wrap -->
