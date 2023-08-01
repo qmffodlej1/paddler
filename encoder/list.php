@@ -1,4 +1,15 @@
 <?
+session_start();
+$table = "anonym";
+$ripple_table = "anonym_ripple";
+$num = $_GET['num'];
+$page = $_GET['page'];
+if (isset($_SESSION['userid'])) {
+	$userid = $_SESSION['userid'];
+	$username = $_SESSION['username'];
+	$usernick = $_SESSION['usernick'];
+	$userlevel = $_SESSION['userlevel'];
+}
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
