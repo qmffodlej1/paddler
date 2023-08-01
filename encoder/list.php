@@ -36,11 +36,15 @@ if (isset($_SESSION['userid'])) {
         </div> <!-- end of wrap -->
 	<div id="col_2">        
     <body>
+        <div id="chlwhd2">
     <h1>Encoding Tool</h1>
     <form method="post" action="">
-        <label for="order">Enter a string:</label>
-        <input type="text" name="order" id="order" required>
-        <input type="submit" value="sumbmit">
+        <label for="order"><h2>Enter a string:<h2></label>
+        <div id="chlwhd">
+        <input type="text" class="input_2" name="order" id="order" required>
+        <input type="submit" value="sumbmit" class="button0">
+        </div>
+        </div>
     </form>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
