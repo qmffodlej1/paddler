@@ -1,9 +1,5 @@
 <?
 session_start();
-$table = "anonym";
-$ripple_table = "anonym_ripple";
-$num = $_GET['num'];
-$page = $_GET['page'];
 if (isset($_SESSION['userid'])) {
 	$userid = $_SESSION['userid'];
 	$username = $_SESSION['username'];
