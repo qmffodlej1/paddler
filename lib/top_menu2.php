@@ -30,7 +30,7 @@ li a {
     display: block;
     color: white;
     padding: 10px;
-    margin-left: 180px;
+    margin-left: 155px;
     font-family: 'NEXON Lv2 Gothic';
     font-size: 20px;
 }
@@ -46,6 +46,7 @@ li a:hover {
 <li><a href="../free/list.php">자유게시판</a></li>
 <li><a href="../anonym/list.php">익명게시판</a></li>
 <li><a href="../quote/quote.php">오늘의명언</a></li>
+<li><a href="../encoder/list.php">인코더</a></li>
 </ul>
 </div>
     </head>
