@@ -21,7 +21,7 @@ a:hover, a:visited, a:link, a.nexon {
 }
 .top ul {
     list-style-type: none;
-    background-color: #09131A;
+    background-color: #000;
     height: 40px; /* 필요에 따라 높이 값을 조정하세요. */
     width: 102.7%;
 }

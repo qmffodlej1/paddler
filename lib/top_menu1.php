@@ -18,7 +18,7 @@ a:hover, a:visited, a:link {
 }
 ul {
     list-style-type: none;
-    background-color: #09131A;
+    background-color: #000;
     height: 40px;
     width: 102.7%;
 }
