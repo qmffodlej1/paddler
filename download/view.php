@@ -102,7 +102,7 @@ $result = mysqli_query($connect, $sql);
 	if(@$userid && ($userid==$item_id))
 	{
 ?>
-				<a href="modify_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><button class="gkgkgk">수정</button></a>&nbsp;
+				<a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><button class="gkgkgk">수정</button></a>&nbsp;
 				<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')"><button class="gkgkgk">삭제</button></a>&nbsp;
 <?
 	}
