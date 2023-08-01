@@ -150,7 +150,7 @@
         <tr>
             <td>*아이디</td>
             <td>
-                    <input type="text" name="id" class="input_12">
+            <input name="id" class="input_12" value="<?php echo $userid; ?>" readonly="readonly">
             </td>
         </tr>
         <tr>
@@ -176,7 +176,7 @@
             이름
             </td>
             <td>
-                <input type="text" name="name" class="input_12">
+                <input type="text" name="name" class="input_12" value="<?php echo $username; ?>">
             </td>
         </tr>
         <tr>
@@ -184,7 +184,7 @@
             닉네임
             </td>
             <td>
-                <input type="text" name="nick" class="input_12">
+                <input type="text" name="nick" class="input_12" value="<?php echo $usernick; ?>">
             </td>
         </tr>
         <tr>
