@@ -7,7 +7,7 @@
     <style>
         /* 가운데 정렬을 위한 스타일링 */
         .center-table {
-            margin-left: 600px;
+            margin-left: 720px;
         }
     </style>
 <script>
@@ -121,11 +121,6 @@
             <td>
                     <input type="text" name="id" class="input_12">
             </td>
-            <td>
-                <a href="#">
-                <input type="button" class="button" onclick="check_id()" value="중복확인">
-                </a>
-            </td>
         </tr>
         <tr>
             <td>비밀번호</td>
@@ -137,7 +132,7 @@
             <td>
             </td>
             <td id="id3">
-            4~12자의 영문 소문자, 숫자와 특수기호(_) 만 사용할 수 있습니다.
+            ↳ 4~12자의 영문 소문자, 숫자와 특수기호(_) 만 사용할 수 있습니다.
             </td>
         </tr>
         <tr>
@@ -163,15 +158,12 @@
             <td>
                 <input type="text" name="nick" class="input_12">
             </td>
-            <td>
-                <div id="nick2" ><input type="button" class="button" onclick="check_nick()" value="중복확인"></a>
-            </td>
         </tr>
         <tr>
             <td>
             휴대전화
             </td>
-            <td>
+            <td class="phone-inputt">
                 <select class="hp input_2" name="hp1"> 
                     <option value='010'>010</option>
                     <option value='011'>011</option>
@@ -179,19 +171,18 @@
                     <option value='017'>017</option>
                     <option value='018'>018</option>
                     <option value='019'>019</option>
-                </select>- <input type="text" class="hp input_3" name="hp2">- <input type="text" class="hp input_3" name="hp3">
+                </select><b> -</b><input type="text" class="hp inputt123" name="hp2"><b>-</b><input type="text" class="hp inputt123" name="hp3">
         </td>
         </table>
     </table>
 			<div class="clear"></div>
-</dev>
-		<div id="button">
+            <div id="buttong" class="center-bottom">
             <a href="#">
-                <input type="button" class="button" onclick="showConfirmation(),check_input().call(this)" value="회원가입">
+                <input type="button" class="button_1" onclick="showConfirmation(),check_input().call(this)" value="회원가입">
             </a>&nbsp;&nbsp;
-		    <a href="#"><input type="button" class="button" onclick="reset_form()" value="리셋"></a>
-		</div>
+		    <a href="#"><input type="button" class="button_1" onclick="reset_form()" value="리셋"></a>
 	    </form>
+        </div>
 	</div> <!-- end of col2 -->
     </div> <!-- end of content -->
 </div> <!-- end of wrap -->
