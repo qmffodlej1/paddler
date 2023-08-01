@@ -57,7 +57,7 @@
 		</div>
 		<div class="clear"></div>
 
-		<form  name="board_form" method="post" action="insert.php"> 
+		<form  name="board_form" method="post" action="insert.php?mode=modify&num=<?=$num?>&page=<?=$page?>"> 
 		<div id="write_form">
 			<div id="write_row1">
 				<div class="col1"><h3>닉네임:</h3> <h3><?=$usernick?></h3></div>
