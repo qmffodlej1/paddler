@@ -126,17 +126,16 @@ $connect->query($sql);
     					<form name="ripple_form" method="post" action="insert_ripple.php?table=<?=$table?>&num=<?=$item_num?>">
         				<div id="reply_box">
             				<div id="reply_input">
-								<input type="text" class="dlstod" placeholder="덧글을 입력하세용!" name="ripple_content">
+								<input type="text" class="emfdjrk" placeholder="덧글을 입력하세용!" name="ripple_content">
+					</div>
             					<div id="reply_button">
-                					<a href="#"><input type="submit" class="button" value="덧글쓰기"></a>
-    							</div>
+                					<a href="#"><input type="submit" class="button_1" value="덧글쓰기"></a>
 							</div>
 						</div>
 					</div>
 					</form>
 					<form>
 						<div id="view_button">
-
 							<a href="list.php?table=<?=$table?>&page=<?=$page?>"><input type="button" value="목록" class="button_3"></a>&nbsp;
 							<?php if (isset($userid) && ($userid == $item_id)) { ?>
 								<a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><input type="button" value="수정" class="button_3"></a>&nbsp;
@@ -158,7 +157,7 @@ $connect->query($sql);
         $ripple_date = $row_ripple['regist_day'];?>
 		<div id="ripple_writer_title">
     		<ul class="dksl">
-        	<li id="writer_title1">익명</li>
+        	<li id="writer_title1">↳ 익명</li>
         	<li id="writer_title2"><?=@$item_date ?>: </li>
 			<li id="ripple_content"><?=@$ripple_content ?></li>
 			<li id="writer_tilte3"> 

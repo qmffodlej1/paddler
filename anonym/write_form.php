@@ -147,7 +147,7 @@
 
 			<div class="clear"></div>
 			
-<div id="write_button"><button type="submit" class="button_3">완료</button>&nbsp;
+			<div id="write_button"><a href="#"><button type="submit" class="button_3" onclick="check_input()">완료</button></a>&nbsp;
 			</form>
 								<a href="list.php?page=<?=$page?>"><input type="button" class="button_3" value="목록"></a>
 		</div>
