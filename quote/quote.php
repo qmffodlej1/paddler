@@ -88,6 +88,7 @@
 
 <div id="container">
     <body>
+		<div id="chlwhd2">
     <h1>오늘의 명언</h1>
 	<a>아래의 버튼을 누르면 명언이 랜덤으로 생성됩니다!<a><br>
     <form action="" method="GET">
@@ -105,6 +106,7 @@
             echo "File not found.";
         }
     }?>
+	</div>
     </form>
     <!-- <form action="" method="GET">
         <input type="hidden" name="file_path" value="../../public_files/not_sensitive.txt" />
