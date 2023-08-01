@@ -67,7 +67,7 @@ $search = $_POST['search'];
 			<div class="write_line"></div>
 		</div>
 
-		<div id="write_button"><input onclick="location.href='insert.php'" type=button class="button_3" value="완료">
+		<div id="write_button"><button type="submit" class="button_3">완료</button>&nbsp;
 			</form>
 								<a href="list.php?page=<?=$page?>"><input type="button" class="button_3" value="목록"></a>
 		</div>
