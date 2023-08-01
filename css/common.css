@@ -245,6 +245,10 @@ S
 	margin-top: 100px;
 	text-align:center;
 }
+#col_2 h3 {
+	width: 100px;
+	text-align: center;
+}
 #col2 {
 	width: 1200px;
 	height: 700px;
@@ -436,5 +440,31 @@ h1 {
 	size: 1;
 }
 textarea {
+	font-family: 'NEXON Lv2 Gothic';
+}
+.cat {
+	height: 30px;
+	width: 1800px;
+	border: 1px solid #b4b4b4;
+	border-radius: 60px;
+	display: inline-block;
+	size: 1;
+	margin-right: 20px;
+	padding: 10px;
+	margin-top: 8px;
+}
+.dog {
+		height: 200px;
+		width: 1660px;
+		border: 1px solid #b4b4b4;
+		border-radius: 30px;
+		display: inline-block;
+		size: 1;
+		margin-right: 20px;
+		padding: 10px;
+		padding-left: 20px;
+		padding-top: 20px;
+}
+input {
 	font-family: 'NEXON Lv2 Gothic';
 }
