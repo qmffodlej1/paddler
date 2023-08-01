@@ -97,15 +97,14 @@
 		<div id="view_content">
 			<?= $item_content ?>
 		</div>
-		</div>
 		<div id="view_button">
-				<a href="list.php?table=<?=$table?>&page=<?=$page?>"><button>목록</button></a>&nbsp;
+				<a href="list.php?table=<?=$table?>&page=<?=$page?>"><button class="button_3">목록</button></a>&nbsp;
 <? 
 	if(@$userid && ($userid==$item_id))
 	{
 ?>
-				<a href="modify_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><button>수정</button></a>&nbsp;
-				<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')"><button>삭제</button></a>&nbsp;
+				<a href="modify_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><button class="button_3">수정</button></a>&nbsp;
+				<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')"><button class="button_3">삭제</button></a>&nbsp;
 <?
 	}
 ?>
@@ -113,13 +112,14 @@
 	if(@$userid)
 	{
 ?>
-				<a href="write_form.php?table=<?=$table?>"><button>글쓰기</button></a>
+				<a href="write_form.php?table=<?=$table?>"><button class="button_3">글쓰기</button></a>
 <?
 	}
 ?>
+
+		</div>
 		</div>
 		<div class="clear"></div>
-
 	</div> <!-- end of col2 -->
   </div> <!-- end of content -->
 </div> <!-- end of wrap -->

@@ -26,51 +26,47 @@
 </head>
 
 <body>
-<div id="wrap">
-  <div id="header">
-    <? include "../lib/top_login2.php"; ?>
-  </div>  <!-- end of header -->
-
-  <div id="menu">
-	<? include "../lib/top_menu2.php"; ?>
-  </div>  <!-- end of menu --> 
-
-  <div id="content">
-	<div id="col1">
-		<div id="left_menu">
-<?
-			include "../lib/left_menu.php";
-?>
-		</div>
-	</div> <!-- end of col1 -->
-
-	<div id="col2">        
+        <header class="header">
+		<a href="../index.php"> <!-- 로고를 클릭하면 현재 페이지(index.php)로 연결되도록 설정 -->
+                <img src="../img/logo2.png" class="logo" alt="로고">
+            </a>
+            <?php
+            if (empty($userid)) {
+                echo '<div id="top_login"><a href="../login/login_form.php">로그인</a> | <a href="../member/member_form.php">회원가입</a></div>';
+            } else {
+                echo '<div id="top_login">' . $usernick . ' (level: ' . $userlevel . ') | <a href="../login/logout.php">로그아웃</a> | <a href="../login/member_form_modify.php">정보수정</a></div>';
+            }
+            ?>
+        </header>
+		<div id="body">
+        <div id="wrap">
+            <div id="menu">
+                <?php include "../lib/top_menu2.php"; ?>
+            </div> <!-- end of menu -->
+        </div> <!-- end of wrap -->
+		<div id="col_2">        
 		<div id="title">
-			<img src="../img/title_greet.gif">
+			<h1>가입인사</h1>
 		</div>
-
 		<div class="clear"></div>
 
 		<div id="write_form_title">
-			<img src="../img/write_form_title.gif">
+			<ul>
+				<li><h2>글쓰기</h2><li>
+		</ul>
 		</div>
-
 		<div class="clear"></div>
-		<form  name="board_form" method="post" action="insert.php?mode=modify&num=<?=$num?>&page=<?=$page?>"> 
+
+		<form  name="board_form" method="post" action="insert.php"> 
 		<div id="write_form">
-			<div class="write_line"></div>
 			<div id="write_row1">
-				<div class="col1"> 닉네임 </div>
-				<div class="col2"><?=$usernick?></div>
+				<div class="col1"><h3>닉네임:</h3> <h3><?=$usernick?></h3></div>
+				<div class="col1"><input type="checkbox" name="html_ok" value="y"><h3>HTML 쓰기</h3></div>
 			</div>
 			<div class="write_line"></div>
-			<div id="write_row2"><div class="col1"> 제목   </div>
-			                     <div class="col2"><input type="text" name="subject" value="<?=$item_subject?>" ></div>
-			</div>
+			<div id="write_row2"><h3>제목</h3><input class="cat" type="text" name="subject" value="<?=$item_subject?>" ></div>
 			<div class="write_line"></div>
-			<div id="write_row3"><div class="col1"> 내용   </div>
-			                     <div class="col2"><textarea rows="15" cols="79" name="content"><?=$item_content?></textarea></div>
-			</div>
+			<div id="write_row3"><h3>내용</h3><textarea class="dog" rows="15" cols="79" name="content"><?=$item_content?></textarea></div>
 			<div class="write_line"></div>
 		</div>
 

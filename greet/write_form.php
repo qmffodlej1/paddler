@@ -41,33 +41,29 @@ $search = $_POST['search'];
                 <?php include "../lib/top_menu2.php"; ?>
             </div> <!-- end of menu -->
         </div> <!-- end of wrap -->
-	<div id="col2">        
+	<div id="col_2">        
 		<div id="title">
-			<img src="../img/title_greet.gif">
+			<h1>가입인사</h1>
 		</div>
 		<div class="clear"></div>
 
 		<div id="write_form_title">
-			<img src="../img/write_form_title.gif">
+			<ul>
+				<li><h2>글쓰기</h2><li>
+		</ul>
 		</div>
 		<div class="clear"></div>
 
 		<form  name="board_form" method="post" action="insert.php"> 
 		<div id="write_form">
-			<div class="write_line"></div>
 			<div id="write_row1">
-				<div class="col1"> 닉네임 </div>
-				<div class="col2"><?=$usernick?></div>
-				<div class="col3"><input type="checkbox" name="html_ok" value="y"> HTML 쓰기</div>
+				<div class="col1"><h3>닉네임:</h3> <h3><?=$usernick?></h3></div>
+				<div class="col1"><input type="checkbox" name="html_ok" value="y"><h3>HTML 쓰기</h3></div>
 			</div>
 			<div class="write_line"></div>
-			<div id="write_row2"><div class="col1"> 제목   </div>
-			                     <div class="col2"><input type="text" name="subject"></div>
-			</div>
+			<div id="write_row2"><h3>제목</h3><input class="cat" type="text" name="subject"></div>
 			<div class="write_line"></div>
-			<div id="write_row3"><div class="col1"> 내용   </div>
-			                     <div class="col2"><textarea rows="15" cols="79" name="content"></textarea></div>
-			</div>
+			<div id="write_row3"><h3>내용</h3><textarea class="dog" rows="15" cols="79" name="content"></textarea></div>
 			<div class="write_line"></div>
 		</div>
 
