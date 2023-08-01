@@ -67,10 +67,10 @@ $search = $_POST['search'];
 			<div class="write_line"></div>
 		</div>
 
-		<div id="write_button"><input type="image" src="../img/ok.png">&nbsp;
-								<a href="list.php?page=<?=$page?>"><img src="../img/list.png"></a>
+		<div id="write_button"><input onclick="location.href='insert.php'" type=button class="button_3" value="완료">
+			</form>
+								<a href="list.php?page=<?=$page?>"><input type="button" class="button_3" value="목록"></a>
 		</div>
-		</form>
 
 	</div> <!-- end of col2 -->
   </div> <!-- end of content -->

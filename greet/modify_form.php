@@ -64,14 +64,14 @@
 				<div class="col1"><input type="checkbox" name="html_ok" value="y"><h3>HTML 쓰기</h3></div>
 			</div>
 			<div class="write_line"></div>
-			<div id="write_row2"><h3>제목</h3><input class="cat" type="text" name="subject" value="<?=$item_subject?>" ></div>
+			<div id="write_row2"><h3>제목</h3><input class="cat" type="text" name="subject"></div>
 			<div class="write_line"></div>
 			<div id="write_row3"><h3>내용</h3><textarea class="dog" rows="15" cols="79" name="content"><?=$item_content?></textarea></div>
 			<div class="write_line"></div>
 		</div>
 
-		<div id="write_button"><input type="image" src="../img/ok.png">&nbsp;
-								<a href="list.php?page=<?=$page?>"><img src="../img/list.png"></a>
+		<div id="write_button"><button type="submit" class="button_3">완료</button>&nbsp;
+								<a href="list.php?page=<?=$page?>"><input type="button" class="button_3" value="목록"></a>
 		</div>
 		</form>
 
