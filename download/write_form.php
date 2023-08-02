@@ -88,7 +88,7 @@ function check_input() {
         </div> <!-- end of wrap -->
 		<div id="col_2">        
 		<div id="title">
-			<h1>익명 게시판</h1>
+			<h1>자료실</h1>
 		</div>
 		<div class="clear"></div>
 
