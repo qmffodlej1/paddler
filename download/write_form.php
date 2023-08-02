@@ -46,7 +46,7 @@
 <meta charset="utf-8">
 <link href="../css/common.css" rel="stylesheet" type="text/css" media="all">
 <link href="../css/board3.css" rel="stylesheet" type="text/css" media="all">
-<script>
+<!-- <script>
 function check_input() {
     if (!document.board_form.subject.value)
     {
@@ -64,7 +64,7 @@ function check_input() {
 // document.board_form.submit();
 	return true;
 }
-</script>
+</script> -->
 </head>
 <div id="container">
     <body>
