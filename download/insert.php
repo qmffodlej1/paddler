@@ -29,6 +29,25 @@
 		");
 		exit;
 	}
+	if(!$subject) {
+		echo("
+	   <script>
+	     window.alert('제목을 입력하세요.')
+	     history.go(-1)
+	   </script>
+		");
+	 exit;
+	}
+
+	if(!$content) {
+		echo("
+	   <script>
+	     window.alert('내용을 입력하세요.')
+	     history.go(-1)
+	   </script>
+		");
+	 exit;
+	}
 
 	$regist_day = date("Y-m-d (H:i)");  // 현재의 '년-월-일-시-분'을 저장
 
