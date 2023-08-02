@@ -155,7 +155,6 @@
 ?>
 			<div id="page_button">
 				<div id="page_num"> ◀ 이전 &nbsp;&nbsp;&nbsp;&nbsp; 
-<?
    // 게시판 목록 하단에 페이지 링크 번호 출력
 <?
    // 게시판 목록 하단에 페이지 링크 번호 출력
