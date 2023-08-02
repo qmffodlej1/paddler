@@ -14,7 +14,6 @@
 	$find = $_POST['find'];
 	$search = $_POST['search'];
 	}
-	//$mode = "";
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -31,16 +30,13 @@
     if (@$mode=="search")
 	{
 		if(!$search)
-		{
-			echo("
+		{ ?>
 				<script>
-				 window.alert('검색할 단어를 입력해 주세요!');
-			     history.go(-1);
-				</script>
-			");
-			exit;
+				window.alert('검색할 단어를 입력해 주세요!');
+				window.location.href = 'list.php';
+				</script> 
+		<?php
 		}
-
 		$sql = "select * from $table where $find like '%$search%' order by num desc";
 	}
 	else
@@ -56,10 +52,10 @@
 		$total_page = floor($total_record/$scale);      
 	else
 		$total_page = floor($total_record/$scale) + 1; 
- 
+
 	if (!$page)                 // 페이지번호($page)가 0 일 때
 		$page = 1;              // 페이지 번호를 1로 초기화
- 
+
 	// 표시할 페이지($page)에 따라 $start 계산  
 	$start = ($page - 1) * $scale;      
 
@@ -102,9 +98,14 @@
                     <option value='nick'>별명</option>
                     <option value='name'>이름</option>
 				</select></div>
-			<div id="list_search4"><input class="inpung" type="text" name="search"></div>
-			<div id="list_search5"><input href="#" type=button class="button_3" value="목록"></div>
-		</div>
+				<form id="searchForm" action="list.php?mode=search" method="post">
+					<div id="list_search4">
+						<input class="inpung" type="text" name="search">
+					</div>
+					<div id="list_search5">
+    					<input type="submit" class="button_3" value="검색">
+					</div>
+				</form>
 		</form>
 
 		<div class="clear"></div>
