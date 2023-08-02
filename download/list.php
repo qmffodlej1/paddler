@@ -31,14 +31,12 @@
     if (@$mode=="search")
 	{
 		if(!$search)
-		{
-			echo("
+		{ ?>
 				<script>
-				 window.alert('검색할 단어를 입력해 주세요!');
-			     history.go(-1);
-				</script>
-			");
-			exit;
+				window.alert('검색할 단어를 입력해 주세요!');
+				window.location.href = 'list.php';
+				</script> 
+		<?php
 		}
 
 		$sql = "select * from $table where $find like '%$search%' order by num desc";
@@ -102,9 +100,14 @@
                     <option value='nick'>별명</option>
                     <option value='name'>이름</option>
 				</select></div>
-			<div id="list_search4"><input class="inpung" type="text" name="search"></div>
-			<div id="list_search5"><input href="#" type=button class="button_3" value="검색"></div>
-		</div>
+				<form id="searchForm" action="list.php?mode=search" method="post">
+					<div id="list_search4">
+						<input class="inpung" type="text" name="search">
+					</div>
+					<div id="list_search5">
+    					<input type="submit" class="button_3" value="검색">
+					</div>
+				</form>
 		</form>
 
 		<div class="clear"></div>
