@@ -37,7 +37,7 @@
 <meta charset="utf-8">
 <link href="../css/common.css" rel="stylesheet" type="text/css" media="all">
 <link href="../css/board4.css" rel="stylesheet" type="text/css" media="all">
-<script>
+<!-- <script>
   function check_input()
    {
       if (!document.board_form.subject.value)
@@ -55,7 +55,7 @@
       }
       document.board_form.submit();
    }
-</script>
+</script> -->
 </head>
 <div id="container">
     <body>
