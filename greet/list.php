@@ -157,15 +157,17 @@
 				<div id="page_num"> ◀ 이전 &nbsp;&nbsp;&nbsp;&nbsp; 
 <?
    // 게시판 목록 하단에 페이지 링크 번호 출력
+<?
+   // 게시판 목록 하단에 페이지 링크 번호 출력
    for ($i=1; $i<=$total_page; $i++)
    {
 		if ($page == $i)     // 현재 페이지 번호 링크 안함
 		{
-			echo "<a style='ab' href='#'><b> $i </b></a>";
+			echo "<b> $i </b>";
 		}
 		else
 		{ 
-			echo "<a style='ab' href='list.php?page=$i'><b> $i </b></a>";
+			echo "<a href='list.php?table=$table&page=$i'> $i </a>";
 		}      
    }
 ?>			
