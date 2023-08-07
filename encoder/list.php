@@ -44,7 +44,6 @@ if (isset($_SESSION['userid'])) {
         <input type="text" class="input_2" name="order" id="order" required>
         <input type="submit" value="sumbmit" class="button0">
         </div>
-        </div>
     </form>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -82,7 +81,7 @@ if (isset($_SESSION['userid'])) {
     }
     ?>
 </body>
-
+</div>
 </html>
 
 
