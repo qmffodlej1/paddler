@@ -99,7 +99,10 @@ $result = mysqli_query($connect, $sql);
 		<div id="view_button">
 				<a href="list.php?table=<?=$table?>&page=<?=$page?>"><button class="gkgkgk">목록</button></a>&nbsp;
 
-					<?php if ($userid == "admin" || isset($userid) && ($userid == $item_id)) { ?>
+<? 
+	if(@$userid && ($userid==$item_id))
+	{
+?>
 	
 
 				<a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><button class="gkgkgk">수정</button></a>&nbsp;
