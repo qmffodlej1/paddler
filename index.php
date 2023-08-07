@@ -41,5 +41,11 @@
                 <?php include "./lib/top_menu1.php"; ?>
             </div> <!-- end of wrap -->
         </div> <!-- end of container -->
+        <div id="col_2">
+        <img src="./img/박종범.png" width="400px">
+        <img src="./img/진현철.png" width="400px">
+        <img src="./img/안태욱.png" width="400px">
+        <img src="./img/고유진.png" width="380px">
+        </div>
     </body>
 </html>
