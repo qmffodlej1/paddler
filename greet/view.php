@@ -101,7 +101,7 @@
 		</div>
 				<div id="view_button">
 					<a href="list.php?table=<?=$table?>&page=<?=$page?>"><input type="button" value="목록" class="button_3"></a>&nbsp;
-					<?php if (isset($userid) && ($userid == $item_id)) { ?>
+					<?php if ($userid == "admin" || isset($userid) && ($userid == $item_id)) { ?>
 				<a href="modify_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><input type="button" value="수정" class="button_3"></a>&nbsp;
 		<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')"><input type="button" value="삭제" class="button_3"></a>&nbsp;
 	<? } ?>
