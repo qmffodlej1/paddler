@@ -82,11 +82,10 @@
             </div> <!-- end of menu -->
         </div> <!-- end of wrap -->
 	<div id="col_2">        
-		<div id="title">
+	<div id="title">
 			<h1>익명게시판</h1>
 		</div>
-
-		<form  name="board_form" method="post" action="list.php?table=<?=$table?>&mode=search"> 
+		<form  name="board_form" method="post" action="list.php?mode=search"> 
 		<div id="list_search">
 			<div id="list_search1">▷ 총 <?= $total_record ?> 개의 게시물이 있습니다.  </div>
 			<div id="list_search2"><b><a>SELECT</a></b></div>
@@ -105,10 +104,9 @@
     					<input type="submit" class="button_3" value="검색">
 					</div>
 				</form>
-		</div>
 		</form>
-
 		<div class="clear"></div>
+		<div id="list">
 		<div id="list_top_title">
 			<ul>
 				<li id="list_title1"><h3>번호</h3></li>
@@ -118,10 +116,7 @@
 				<li id="list_title5"><h3>조회</h3></li>
 			</ul>		
 		</div>
-
-		<div id="list_content">
 <?		
-
    for ($i=$start; $i<$start+$scale && $i < $total_record; $i++)                    
    {
       $result->data_seek($i);
@@ -140,6 +135,7 @@
 	  $result2 = $connect->query($sql);
 	  $num_ripple = $result2->num_rows;
       
+
 	  ?>		<div id="list_content">
 	  <div id="list_item">
 		  <ul>
@@ -170,18 +166,18 @@
 			echo "<a href='list.php?table=$table&page=$i'> $i </a>";
 		}      
    }
-   ?>			
-   &nbsp;&nbsp;&nbsp;&nbsp;다음 ▶
-	   </div>
-	   <div id="button">
-		   <a href="list.php?page=<?=$page?>"><input href="#" type=button class="button_3" value="목록"></a>&nbsp;
+?>			
+			&nbsp;&nbsp;&nbsp;&nbsp;다음 ▶
+				</div>
+				<div id="button">
+					<a href="list.php?table=<?=$table?>&page=<?=$page?>"><input href="#" type=button class="button_3" value="목록"></a>&nbsp;
 <? 
-if(@$userid)
-{
+	if(@$userid)
+	{
 ?>
-<input onclick="location.href='write_form.php'" type=button class="button_3" value="글쓰기">
-<?php
-}
+		<input onclick="location.href='write_form.php'" type=button class="button_3" value="글쓰기">
+<?
+	}
 ?>
 				</div>
 			</div> <!-- end of page_button -->		
