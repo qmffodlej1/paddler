@@ -98,10 +98,10 @@ $result = mysqli_query($connect, $sql);
 		</div>
 		<div id="view_button">
 				<a href="list.php?table=<?=$table?>&page=<?=$page?>"><button class="gkgkgk">목록</button></a>&nbsp;
-<? 
-	if(@$userid && ($userid==$item_id))
-	{
-?>
+
+					<?php if ($userid == "admin" || isset($userid) && ($userid == $item_id)) { ?>
+	
+
 				<a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><button class="gkgkgk">수정</button></a>&nbsp;
 				<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')"><button class="gkgkgk">삭제</button></a>&nbsp;
 <?
