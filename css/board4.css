@@ -70,11 +70,10 @@
 #list_top_title {
     text-align: left;
     height: 40px; /* 높이를 늘려서 각 항목이 세로로 정렬되도록 합니다. */
-    width: 1890px;
+    width: 100%;
     border-top: solid 2px #aaaaaa;
 	border-bottom: dotted 2px #aaaaaa;
     margin-bottom: 3px;
-    display: flex;
     align-items: center; /* 내부 항목들을 수직 중앙 정렬합니다. */
 }
 
@@ -90,19 +89,19 @@
     padding-left: 5px; /* 각 항목들의 왼쪽 간격을 늘려서 정렬합니다. */
 }
 #list_top_title #list_title1 {
-	margin-left: 135px;
+	margin-left: 140px;
 }
 #list_top_title #list_title2 {
 	margin-right: 5px;
 }
 #list_top_title #list_title4 {
-	margin-right: 2px;
+	margin-right: 18px;
 }
 #list_top_title #list_title5 {
 	margin-right: 140px;
 }
 #list_item {
-    width: 1890px;
+    width: 100%;
 	margin-top: 10px;
 	margin-bottom: 10px;
     display: flex; /* flex 컨테이너로 변경하여 항목을 세로로 정렬합니다. */
@@ -111,7 +110,7 @@
 
 #list_item ul {
     height: auto; /* 댓글 목록의 높이를 자동으로 조정하도록 변경합니다. */
-    width: 110%;
+    width: 100%;
     margin-top: 2px;
     padding-bottom: 8px;
     display: flex; /* flex 컨테이너로 변경하여 항목을 세로로 정렬합니다. */
@@ -126,8 +125,17 @@
     display: inline-block;
     text-align: center;
 }
-#list_item1 {
-	margin-left: 20px;
+#list_item #list_item1 {
+	margin-left: 35px;
+}
+#list_item #list_item2 {
+	margin-right: 10px;
+}
+#list_item #list_item4 {
+	margin-right: 20px;
+}
+#list_item #list_item5 {
+	margin-right: 30px;
 }
 #page_button {
 	margin-top:20px;
