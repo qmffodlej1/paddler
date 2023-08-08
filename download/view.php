@@ -100,7 +100,7 @@ $result = mysqli_query($connect, $sql);
 				<a href="list.php?table=<?=$table?>&page=<?=$page?>"><button class="gkgkgk">목록</button></a>&nbsp;
 
 <? 
-	if(@$userid && ($userid==$item_id))
+	if($userid == "admin" || @$userid && ($userid==$item_id))
 	{
 ?>
 	
