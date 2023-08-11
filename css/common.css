@@ -14,16 +14,14 @@ b {
 	font-family: 'NEXON Lv2 Gothic', sans-serif;
 	color: rgb(255, 255, 255);
 }
- body {
-	background-color: #F0F0F0;
-	font-family: Arial, sans-serif;
-	font-size: 16px;
-  }
+body {
+    margin: 0; /* body의 기본 여백을 제거 */
+    background-color: #F0F0F0;
+}
   .container {
-	max-width: 960px;
-	margin: 0 auto;
-	padding: 0 20px;
-  }
+    width: 100%; /* 너비를 100%로 설정하여 가로 폭에 맞게 확장 */
+    overflow: hidden; /* 컨테이너의 내부 컨텐츠를 감춤 */
+}
   .section {
 	margin: 40px 0;
 	padding: 20px;
@@ -38,38 +36,18 @@ b {
 	line-height: 1.5;
 	margin-bottom: 20px;
   }
-    /* 모바일 뷰(Mobile) */
-    @media screen and (max-width: 767px) {
-		body {
-		  font-size: 14px;
-		}
-		.container {
-		  padding: 0 10px;
-		}
-		.section {
-		  margin: 20px 0;
-		  padding: 10px;
-		}
-		.section h2 {
-		  font-size: 24px;
-		  margin-bottom: 5px;
-		}
-		.section p {
-		  font-size: 14px;
-		  margin-bottom: 10px;
-		}
-	  }
-.header {
-	background: linear-gradient(to top, #000, #000 3%, transparent), url("../img/sky.jpg");
-	background-size: cover;
-	height: 250px;
-	font-size: 15px;
-	line-height: 200px;
-	padding: 20px; /* 상단 여백 및 내부 요소 간격 설정 */
-	box-sizing: border-box; /* padding을 전체 크기에 포함하도록 설정 */
-	position: relative; /* 헤더를 상대적으로 위치시킴 */
-}
 
+  .header {
+    background: linear-gradient(to top, #000, #000 3%, transparent), url("../img/sky.jpg");
+    background-size: cover;
+	width: 100%;
+    height: 300px; /* 헤더의 높이 설정 */
+    font-size: 15px;
+    line-height: 300px; /* 텍스트 수직 가운데 정렬을 위해 높이와 동일하게 설정 */
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
 .body {
 	margin: 0;
 	padding: 0;
@@ -102,13 +80,6 @@ html, body {
 	height: 100%;
   }
   
-  .wrap {
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-  }
-  
   .button {
 	width: 140px;
 	height: 45px;
@@ -136,82 +107,6 @@ S
 .linespace_10 {
 	height:10px;
 }
-.btn {
-	margin: 1rem;
-  
-	&-jittery {
-	  animation: jittery 4s infinite;
-	}
-  
-	&-icon {
-	  position: relative;
-	  margin-left: 8px;
-	  overflow: hidden;
-  
-	  i {
-		position: absolute;
-		top: 41%;
-		left: 48%;
-		transform: scale(0.75) translate(-16%, 400%);
-		transition: 0.2s;
-	  }
-  
-	  span {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		transition: 0.2s;
-	  }
-  
-	  &:hover {
-		i {
-		  transform: scale(0.75) translate(-16%, 0);
-		}
-  
-		span {
-		  transform: translateY(-400%);
-		}
-	  }
-	}
-}
-&-open-line {
-    border: none;
-    transition: 0.3s;
-
-    &::before,
-    &::after {
-      position: absolute;
-      content: "";
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: var(--btn-bg);
-      opacity: 0;
-      transform: scaleX(0);
-      transition: 0.4s ease-in-out;
-    }
-
-    &::before {
-      top: 0;
-    }
-
-    &::after {
-      bottom: 0;
-    }
-
-    &:hover {
-      letter-spacing: 5px;
-      color: var(--btn-bg);
-      background: transparent;
-
-      &::before,
-      &::after {
-        opacity: 1;
-        transform: scaleX(1.2);
-      }
-    }
-  }
-  
 #wrap {
 	margin-right: auto;
 	margin-left: auto;
@@ -225,36 +120,57 @@ S
 	margin-right:0px;
 }
 
-#menu {
-	margin-top:0px;
-	margin-right: 50px;
-}
-
 #content {
-	width:1800px;
-	height: 800px;
-	margin-right: auto;
-	margin-left: auto;
+	max-width:100%;
+	height: auto;
+}
+@media screen and (max-width: 768px) {
+	#content {
+		max-width: 98%;
+		
+	}
 }
 
 #content #main_img {
 	margin-top:20px;
 }
 #col_2 {
-	width: 1800px;
-	height: 700px;
-	margin-top: 100px;
+	max-width: 100%;
+	height: 100%;
+	margin-top: 2%;
+	margin-bottom: 2%;
 	text-align:center;
 }
 #col_2 h3 {
-	width: 100px;
+	width: 50%;
 	text-align: center;
 }
+@media screen and (max-width: 768px) {
+	#col_2 {
+		max-width: 90%;
+		text-align:center;
+		font-size: 10px;
+	}
+}
+#col_3 {
+	max-width: 80%;
+	height: 80%;
+	text-align:center;
+	display: flex; /* 이미지들을 가로로 나열하기 위해 Flex 사용 */
+	justify-content: center; /* 이미지들을 수평 가운데 정렬 */
+	margin-left: 9%;
+}
+@media screen and (max-width: 768px) {
+	#col_3 {
+		max-width: 80%;
+		height: 80%;
+	}
+}
 #col2 {
-	width: 1200px;
-	height: 700px;
-	margin-top: 100px;
-	margin-bottom: 50px;
+	width: 100%;
+	height: 100%;
+	margin-top: 5%;
+	margin-bottom: 2%;
 	text-align:center;
 }
 #col_1 {
@@ -469,16 +385,16 @@ textarea {
 		padding-top: 20px;
 }
 .dog2 {
-	height: 130px;
-	width: 1660px;
+	height: 50%;
+	width: 200%;
 	border: 1px solid #b4b4b4;
 	border-radius: 30px;
-	display: inline-block;
+	display: flex; /* 이미지들을 가로로 나열하기 위해 Flex 사용 */
+	justify-content: center; /* 이미지들을 수평 가운데 정렬 */
 	size: 1;
-	margin-right: 20px;
-	padding: 10px;
-	padding-left: 20px;
-	padding-top: 20px;
+	padding: 2%;
+	padding-left: 2%;
+	padding-top: 2%;
 }
 input {
 	font-family: 'NEXON Lv2 Gothic';
@@ -501,8 +417,15 @@ input {
 	font-family: 'NEXON Lv2 Gothic';
   }
   #chlwhd {
-	margin-left: 50px;
+	display: inline-block;
+	justify-content: center;
+	width: 80%;
   }
   #chlwhd2 {
-	margin-left: 100px;
+	justify-content: center;
+	min-width: 100%;
+	height: auto;
   }
+  .black {
+	color: #000;
+}

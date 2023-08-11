@@ -9,17 +9,15 @@
 	color: rgb(255, 255, 255);
 }
 #memo_row1 {
-    height: 155px;
-    /* border-bottom: solid 1px #dddddd; */
+    height: 10%;
     text-align: center; /* 메모 작성 폼을 가운데 정렬합니다. */
-	margin-right: 50px;
-    margin-top: 50px; /* 메모 작성 폼을 가운데 정렬합니다. */
+    margin-top: 2%; /* 메모 작성 폼을 가운데 정렬합니다. */
 	color: white;
 	font-family: 'NEXON Lv2 Gothic';
 }
 
 #memo1 {
-    display: inline-block; /* 메모 작성 폼을 가운데 정렬합니다. */
+    display: flex; /* 메모 작성 폼을 가운데 정렬합니다. */
     text-align: center; /* 메모 작성 폼 내부를 왼쪽 정렬합니다. */
 }
 
@@ -42,10 +40,10 @@
 
 #memo_writer_title {
 	display: inline-flex;
-	width: 1800px;
+	width: 90%;
 	height:26px;
-	padding-top:10px; 
-	margin-bottom:10px;
+	padding-top: 1%; 
+	margin-bottom: 1%;
 	border-top:solid 1px #cccccc;
 	border-bottom:dotted 1px #cccccc;
 }
@@ -77,10 +75,12 @@
 }
 
 #memo_content {
-	width: 1800px;
-	float: left;
+	width: 80%;
+	display: flex; /* 이미지들을 가로로 나열하기 위해 Flex 사용 */
+	justify-content: center; /* 이미지들을 수평 가운데 정렬 */
 	text-align: left;
 	border-bottom:dotted 3px #e8e6eb;
+	margin-left: 10%;
 }
 
 #ripple {
@@ -185,14 +185,12 @@ li#writer_title3 {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			width: 800px;
-			height: 40px;
-			margin-bottom: 20px;
-			margin-top: 20px;
-			margin-left: 300px;
-			padding-top: 10px;
-			padding-bottom: 10px;
-			padding-left: 20px;
+			width: 90%;
+			height: 10%;
+			margin-bottom: 2%;
+			margin-top: 2%;
+			padding-top: 1%;
+			padding-bottom: 1%;
 			background-color: #d4d5e6b9;
 			border-radius: 40px;
 		}
