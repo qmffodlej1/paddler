@@ -76,19 +76,17 @@
             ?>
         </header>
 		<div id="body">
-        <div id="wrap">
             <div id="menu">
                 <?php include "../lib/top_menu2.php"; ?>
             </div> <!-- end of menu -->
-        </div> <!-- end of wrap -->
 	<div id="col_2">        
 	<div id="title">
 			<h1>자유게시판</h1>
 		</div>
 		<form  name="board_form" method="post" action="list.php?mode=search"> 
+			<a class="black">▷ 총 <?= $total_record ?> 개의 게시물이 있습니다.</a><br><br>
 		<div id="list_search">
-			<div id="list_search1">▷ 총 <?= $total_record ?> 개의 게시물이 있습니다.  </div>
-			<div id="list_search2"><b><a>SELECT</a></b></div>
+			<div id="list_search2"><b><a class="black">SELECT</a></b></div>
 			<div id="list_search3">
 				<select class="inpung" name="find">
                     <option value='subject'>제목</option>
@@ -103,6 +101,7 @@
 					<div id="list_search5">
     					<input type="submit" class="button_3" value="검색">
 					</div>
+		</div>
 				</form>
 		</form>
 		<div class="clear"></div>
@@ -186,7 +185,6 @@
 
 	</div> <!-- end of col2 -->
   </div> <!-- end of content -->
-</div> <!-- end of wrap -->
 
 </body>
 </html>
