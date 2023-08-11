@@ -21,7 +21,20 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/common.css">
 </head>
-
+<style>
+    .responsive-img {
+    max-width: 30%; /* 이미지가 부모 요소의 크기를 넘지 않도록 설정 */
+    height: 30%; /* 가로 너비가 변경되면 세로 비율에 맞게 자동 조절 */
+    display: block; /* 이미지 사이에 빈 공간을 없애기 위해 */
+    margin-bottom: 10px; /* 이미지 아래 여백 추가 */
+}
+@media screen and (max-width: 768px) {
+    .responsive-img {
+        max-width: 28s%;
+        height: 28%;
+    }
+}
+</style>
 <body>
     <div id="container">
         <header class="header">
@@ -41,11 +54,11 @@
                 <?php include "./lib/top_menu1.php"; ?>
             </div> <!-- end of wrap -->
         </div> <!-- end of container -->
-        <div id="col_2">
-        <img src="./img/박종범.png" width="400px">
-        <img src="./img/진현철.png" width="400px">
-        <img src="./img/안태욱.png" width="400px">
-        <img src="./img/고유진.png" width="380px">
-        </div>
+        <div id="col_3">
+    <img src="./img/박종범.png" class="responsive-img">
+    <img src="./img/진현철.png" class="responsive-img">
+    <img src="./img/안태욱.png" class="responsive-img">
+    <img src="./img/고유진.png" class="responsive-img">
+</div>
     </body>
 </html>
