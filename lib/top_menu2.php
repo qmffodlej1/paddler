@@ -7,38 +7,49 @@
     font-weight: normal;
     font-style: normal;
 }
-.color {
-    color: black;
+
+#menu {
+    background-color: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+#menu li {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 20px
+}
+#menu li a:hover {
+    color: #0AAFD0;
+}
+/* 반응형 스타일 */
+@media screen and (max-width: 768px) {
+    #menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #menu li {
+        flex: 0 0 50%;
+        text-align: center;
+    }
 }
 a {
 	text-decoration:none;
 	font-family:'NEXON Lv2 Gothic';
-}
-a:hover, a:visited, a:link, a.nexon {
-	font: size 13px;
-	font-weight:normal;
-	color:#ffffff;
-}
-.top ul {
-    list-style-type: none;
-    background-color: #000;
-    height: 40px; /* 필요에 따라 높이 값을 조정하세요. */
-    width: 102.7%;
-}
-
-li a {
-    display: block;
     color: white;
-    padding: 10px;
-    margin-left: 155px;
-    font-family: 'NEXON Lv2 Gothic';
-    font-size: 20px;
-}
-li a:hover {
-    color: #81BEF7;
 }
 </style>
-<div class="top">
 <ul>
 <li><a href="../memo/memo.php">낙서장</a></li>
 <li><a href="../greet/list.php">가입인사</a></li>
@@ -48,6 +59,5 @@ li a:hover {
 <li><a href="../quote/quote.php">오늘의명언</a></li>
 <li><a href="../encoder/list.php">인코더</a></li>
 </ul>
-</div>
     </head>
 </html>

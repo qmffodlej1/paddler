@@ -7,31 +7,51 @@
     font-weight: normal;
     font-style: normal;
 }
+
+#menu {
+    background-color: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+#menu li {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 20px
+}
+
+#menu li a:hover {
+    color: #0AAFD0;
+}
+
+/* 반응형 스타일 */
+@media screen and (max-width: 768px) {
+    #menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #menu li {
+        flex: 0 0 50%;
+        text-align: center;
+    }
+}
 a {
 	text-decoration:none;
 	font-family:'NEXON Lv2 Gothic';
     color: white;
-}
-a:hover, a:visited, a:link {
-	font: size 13px;
-	font-weight:normal;
-}
-ul {
-    list-style-type: none;
-    background-color: #000;
-    height: 40px;
-    width: 102.7%;
-}
-li a {
-    display: block;
-    color: white;
-    padding: 10px;
-    margin-left: 155px;
-    font-family: 'NEXON Lv2 Gothic';
-    font-size: 20px;
-}
-li a:hover {
-    color: #81BEF7;
 }
 </style>
 <ul>
